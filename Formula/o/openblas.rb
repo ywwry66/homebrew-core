@@ -28,7 +28,7 @@ class Openblas < Formula
   keg_only :shadowed_by_macos, "macOS provides BLAS in Accelerate.framework"
 
   depends_on "gcc" # for gfortran
-  fails_with :clang
+  depends_on "libomp"
 
   def install
     ENV.runtime_cpu_detection
@@ -53,6 +53,18 @@ class Openblas < Formula
     # Apple Silicon does not support SVE
     # https://github.com/xianyi/OpenBLAS/issues/4212
     ENV["NO_SVE"] = "1" if Hardware::CPU.arm?
+
+    # -fopenmp can only be passed to the prepocessor for Apple clang
+    omp_c_flags = "-Xpreprocessor -fopenmp"
+    inreplace "Makefile.system", "-fopenmp", omp_c_flags
+
+    # Linker needs to be informed of the libomp library
+    omp_ld_flags = "-L#{Formula["libomp"].opt_lib} -lomp"
+    ENV.append "LDFLAGS", omp_ld_flags
+
+    # Patch openblas.pc
+    inreplace "Makefile.install", "-fopenmp", omp_c_flags
+    inreplace "Makefile.install", "-lgomp", omp_ld_flags
 
     # Must call in two steps
     system "make", "CC=#{ENV.cc}", "FC=gfortran", "libs", "netlib", "shared"
