@@ -41,10 +41,6 @@ class Openblas < Formula
   depends_on "pkgconf" => :test
   depends_on "gcc" # for gfortran
 
-  on_macos do
-    depends_on "libomp"
-  end
-
   def install
     ENV.runtime_cpu_detection
 
@@ -58,7 +54,6 @@ class Openblas < Formula
     end
 
     args = %W[
-      -DUSE_OPENMP=ON
       -DBUILD_SHARED_LIBS=ON
       -DBUILD_STATIC_LIBS=ON
       -DNUM_THREADS=64
@@ -66,12 +61,6 @@ class Openblas < Formula
     ]
 
     args << "-DDYNAMIC_ARCH=ON" if !OS.mac? || Hardware::CPU.intel?
-
-    if OS.mac?
-      libomp = Formula["libomp"]
-      args << "-DOpenMP_Fortran_LIB_NAMES=omp"
-      args << "-DOpenMP_omp_LIBRARY=#{libomp.opt_lib}/libomp.dylib"
-    end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
