@@ -65,8 +65,6 @@ class Openblas < Formula
       -DTARGET=#{target}
     ]
 
-    args << "-DDYNAMIC_ARCH=ON" if !OS.mac? || Hardware::CPU.intel?
-
     if OS.mac?
       libomp = Formula["libomp"]
       args << "-DOpenMP_Fortran_LIB_NAMES=omp"
