@@ -1,8 +1,8 @@
 class Seam < Formula
-  desc "This utility lets you control Seam resources"
-  homepage "https://github.com/seamapi/seam-cli"
-  url "https://registry.npmjs.org/seam-cli/-/seam-cli-0.0.61.tgz"
-  sha256 "64135eb8de1ddbc5190379088a34f87927b2e803a9bb71ce47cf1d873b1d94a0"
+  desc "Command-line interface (CLI) for interacting and developing with the Seam API"
+  homepage "https://github.com/seamapi/cli"
+  url "https://registry.npmjs.org/@seamapi/cli/-/cli-0.27.2.tgz"
+  sha256 "ddb148bf0cb69f50821dcfcb8bda803ec743536b26c0ae7ce1593359223b27fb"
   license "MIT"
 
   bottle do
@@ -13,16 +13,28 @@ class Seam < Formula
   depends_on "node"
 
   def install
-    system "npm", "install", *std_npm_args
+    # Optional dependencies include `@anthropic-ai` packages
+    # which uses proprietary license.
+    (libexec/"seam").install buildpath.children
+    cd libexec/"seam" do
+      system "npm", "install", "--omit=optional", "--omit=dev", *std_npm_args(prefix: false)
+      with_env(npm_config_prefix: libexec) do
+        system "npm", "link"
+      end
+    end
+
     bin.install_symlink libexec.glob("bin/*")
 
-    # Build an `:all` bottle by removing workflow files
-    node_modules = libexec/"lib/node_modules"
-    rm_r node_modules/"seam-cli/ldid/.github"
+    generate_completions_from_executable bin/"seam",
+                                         "completion",
+                                         "--loader",
+                                         base_name: "seam"
   end
 
   test do
-    output = shell_output("#{bin}/seam seam devices list", 1)
-    assert_match "Not logged in. Please run \"seam login\"", output
+    output = shell_output("#{bin}/seam workspaces list 2>&1", 1)
+    assert_includes output, "seam login"
+    assert_match version.to_s, shell_output("#{bin}/seam --version")
+    refute_path_exists libexec/"seam/node_modules/@anthropic-ai"
   end
 end
