@@ -59,6 +59,9 @@ class Ollama < Formula
     end
   end
 
+  # downloads go modules in install and runs a server in test
+  deny_network_access! :postinstall
+
   def install
     # Build llama-server
     llama_source_dir = buildpath/"llama.cpp"
