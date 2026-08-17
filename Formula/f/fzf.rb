@@ -20,6 +20,9 @@ class Fzf < Formula
 
   uses_from_macos "ncurses"
 
+  # install downloads go modules
+  allow_network_access! :build
+
   def install
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
     ldflags = %W[
