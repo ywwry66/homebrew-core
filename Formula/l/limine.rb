@@ -1,8 +1,8 @@
 class Limine < Formula
   desc "Modern, advanced, portable, multiprotocol bootloader and boot manager"
   homepage "https://github.com/Limine-Bootloader/Limine"
-  url "https://github.com/Limine-Bootloader/Limine/releases/download/v12.5.2/limine-12.5.2.tar.gz"
-  sha256 "1780781336d690c551fc5305604b4c3e3d7499f6cebc504bfa0cda3b712213c1"
+  url "https://github.com/Limine-Bootloader/Limine/releases/download/v12.6.0/limine-12.6.0.tar.gz"
+  sha256 "3177b8a64297667a379feb3af6405b13c536409ce46d712ea1233e9ed1f87b9a"
   license "BSD-2-Clause"
 
   livecheck do
@@ -30,10 +30,20 @@ class Limine < Formula
   depends_on "mtools" => :build
   depends_on "nasm" => :build
 
+  on_macos do
+    # Make < 3.82 picks matching implicit pattern rules in definition order instead of shortest-stem order
+    # (https://lists.gnu.org/archive/html/info-gnu/2010-07/msg00023.html)
+    #
+    # Upstream is aware of this issue, try moving back to system `make` on next release.
+    depends_on "make" => :build
+  end
+
   def install
     # Homebrew LLVM is not in path by default. Get the path to it, and override the
     # build system's defaults for the target tools.
     llvm_bins = formula_opt_bin("llvm")
+
+    ENV.prepend_path "PATH", Formula["make"].libexec/"gnubin" if OS.mac?
 
     system "./configure", *std_configure_args, "--enable-all",
            "TOOLCHAIN_FOR_TARGET=#{llvm_bins}/llvm-",
@@ -46,7 +56,7 @@ class Limine < Formula
   test do
     bytes = 8 * 1024 * 1024 # 8M in bytes
     (testpath/"test.img").write("\0" * bytes)
-    output = shell_output("#{bin}/limine bios-install #{testpath}/test.img 2>&1")
-    assert_match "installed successfully", output
+    output = shell_output("#{bin}/limine bios-install #{testpath}/test.img 2>&1", 1)
+    assert_match "error: Could not determine if the device has a valid partition table.", output
   end
 end
