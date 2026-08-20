@@ -7,7 +7,7 @@ class Pachi < Formula
     "GPL-2.0-only",
     "BSD-2-Clause", # `caffe`
   ]
-  revision 3
+  revision 4
   head "https://github.com/pasky/pachi.git", branch: "master"
 
   bottle do
@@ -22,6 +22,7 @@ class Pachi < Formula
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "wget" => :build
+  depends_on "abseil" # For caffe
   depends_on "boost" # For caffe
   depends_on "gflags" # For caffe
   depends_on "glog" # For caffe
@@ -49,6 +50,15 @@ class Pachi < Formula
     caffe_prefix = libexec/"caffe"
 
     resource("caffe").stage do
+      # Caffe's legacy protobuf discovery drops protobuf's transitive Abseil targets.
+      inreplace "cmake/ProtoBuf.cmake" do |s|
+        s.sub! "find_package( Protobuf REQUIRED )",
+               "find_package( Protobuf REQUIRED )\nfind_package(absl CONFIG REQUIRED)"
+        s.sub! "list(APPEND Caffe_LINKER_LIBS PUBLIC ${PROTOBUF_LIBRARIES})",
+               "list(APPEND Caffe_LINKER_LIBS PUBLIC ${PROTOBUF_LIBRARIES} " \
+               "absl::absl_check absl::absl_log)"
+      end
+
       # Abseil (via protobuf) is not on Caffe's default include path.
       ENV.append_to_cflags "-I#{formula_opt_include("abseil")}"
 
