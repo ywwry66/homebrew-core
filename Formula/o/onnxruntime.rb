@@ -4,7 +4,7 @@ class Onnxruntime < Formula
   url "https://github.com/microsoft/onnxruntime/archive/refs/tags/v1.29.0.tar.gz"
   sha256 "0f065cfd3816eaa4b709a057ea0e237ebc6463843af44a439e0d81af76d6620e"
   license "MIT"
-  revision 1
+  revision 2
   compatibility_version 7
 
   livecheck do
