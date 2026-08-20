@@ -1,8 +1,8 @@
 class Snap < Formula
   desc "Tool to work with .snap files"
   homepage "https://snapcraft.io/"
-  url "https://github.com/canonical/snapd/releases/download/2.76.2/snapd_2.76.2.vendor.tar.xz"
-  sha256 "873fedb8525057c2b276003c2f90c2e5f7b541ec1bb409a6f489c51b5c72af2b"
+  url "https://github.com/canonical/snapd/releases/download/2.76.3/snapd_2.76.3.vendor.tar.xz"
+  sha256 "d97627913cbe4ec0a72b507e561f7c9da87c4be5c59412a3e1a94bdc079fa838"
   license "GPL-3.0-only"
 
   livecheck do
@@ -23,9 +23,12 @@ class Snap < Formula
   depends_on "squashfs"
 
   def install
+    # TODO: Drop when a release tarball ships a `vendor` synced with `go.mod`.
+    inreplace "mkversion.sh", "MOD=-mod=vendor", "MOD=-mod=mod"
+
     system "./mkversion.sh", version.to_s
     tags = OS.mac? ? "nosecboot" : ""
-    system "go", "build", *std_go_args(tags:), "./cmd/snap"
+    system "go", "build", "-mod=mod", *std_go_args(tags:), "./cmd/snap"
 
     bash_completion.install "data/completion/bash/snap"
     zsh_completion.install "data/completion/zsh/_snap"
