@@ -4,6 +4,7 @@ class PerconaXtrabackup < Formula
   url "https://downloads.percona.com/downloads/Percona-XtraBackup-8.4/Percona-XtraBackup-8.4.0-6/source/tarball/percona-xtrabackup-8.4.0-6.tar.gz"
   sha256 "e0e886b78d18b34122bd15b2d80f52fc5df2422260edaa3074820902beecd351"
   license "GPL-2.0-only"
+  revision 1
 
   livecheck do
     url "https://www.percona.com/wp-admin/admin-ajax.php", post_form: {
@@ -187,6 +188,8 @@ class PerconaXtrabackup < Formula
     (lib/"libmysqlservices.a").unlink
     # remove conflicting libraries/headers that are installed by percona-server
     (lib/"libkmip.a").unlink
+    (lib/"libkmipclient.a").unlink
+    (lib/"libkmipcore.a").unlink
     (lib/"libkmippp.a").unlink
     (include/"kmip.h").unlink
     (include/"kmippp.h").unlink
