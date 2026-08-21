@@ -1,8 +1,8 @@
 class Bitwise < Formula
   desc "Terminal based bit manipulator in ncurses"
   homepage "https://github.com/mellowcandle/bitwise"
-  url "https://github.com/mellowcandle/bitwise/releases/download/v0.50/bitwise-v0.50.tar.gz"
-  sha256 "806271fa5bf31de0600315e8720004a8f529954480e991ca84a9868dc1cae97e"
+  url "https://github.com/mellowcandle/bitwise/releases/download/v0.60/bitwise-v0.60.tar.gz"
+  sha256 "92727527d53286488751515830afd8934fde75f9d652521c69aea9c9f0e742ad"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -24,7 +24,13 @@ class Bitwise < Formula
   depends_on "automake" => :build
   depends_on "readline"
 
+  uses_from_macos "ncurses"
+
   def install
+    # `inc/compat.h` is missing from the release tarball; it only declares strndup/l64a fallbacks
+    # Upstream PR ref: https://github.com/mellowcandle/bitwise/pull/71
+    inreplace "inc/bitwise.h", "#include \"compat.h\"\n", ""
+
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
