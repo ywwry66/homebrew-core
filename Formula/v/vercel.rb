@@ -1,8 +1,8 @@
 class Vercel < Formula
   desc "Command-line interface for Vercel"
   homepage "https://vercel.com/home"
-  url "https://registry.npmjs.org/vercel/-/vercel-59.1.4.tgz"
-  sha256 "38e5e9a89b68b5835a0edcec69661b7f1500668be55e3ea8e61e829ae13b0d5a"
+  url "https://registry.npmjs.org/vercel/-/vercel-59.3.0.tgz"
+  sha256 "47f19d656b69800cdd430bdc097d86b714f54dc372ce18f1518ebeab69815325"
   license "Apache-2.0"
 
   bottle do
@@ -25,10 +25,13 @@ class Vercel < Formula
 
     deuniversalize_machos node_modules/"fsevents/fsevents.node" if OS.mac?
 
-    (node_modules/"@vercel/go/bin").glob("**/proxy-*").each do |f|
-      next if OS.linux? && f.arch == Hardware::CPU.arch
+    proxy_arch = Hardware::CPU.intel? ? "amd64" : "arm64"
+    ["@vercel/go", "@vercel/rust"].each do |package|
+      (node_modules/package/"bin").glob("**/proxy-*").each do |f|
+        next if OS.linux? && f.basename.to_s == "proxy-linux-#{proxy_arch}"
 
-      rm f
+        rm f
+      end
     end
 
     bin.install_symlink libexec.glob("bin/*")
