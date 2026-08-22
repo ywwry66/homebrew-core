@@ -30,16 +30,14 @@ class MipsLinuxGnuBinutils < Formula
     depends_on "zlib-ng-compat"
   end
 
-  conflicts_with "mipsel-linux-gnu-binutils", because: "both install `libdep.so` library"
-
   def install
     target = "mips-linux-gnu"
     system "./configure", "--target=#{target}",
-                          "--infodir=#{info}/#{target}",
+                          "--infodir=#{info/target}",
                           "--with-system-zlib",
                           "--with-zstd",
                           "--disable-nls",
-                          *std_configure_args(libdir: lib/"target")
+                          *std_configure_args(libdir: lib/target)
     system "make"
     system "make", "install"
   end
