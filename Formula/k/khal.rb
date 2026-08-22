@@ -9,7 +9,7 @@ class Khal < Formula
   head "https://github.com/pimutils/khal.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a598a487199040d80d3ce7390275d25c3a385f60edf9f0bbd8e3e3403787d872"
+    sha256 cellar: :any_skip_relocation, all: "462a481392a29fd151d6eda8d1af77697f20cf803b8c4700f02bae5dfcca381e"
   end
 
   depends_on "python@3.14"
