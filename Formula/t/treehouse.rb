@@ -1,8 +1,8 @@
 class Treehouse < Formula
   desc "Manage worktrees without managing worktrees"
   homepage "https://github.com/kunchenguid/treehouse"
-  url "https://github.com/kunchenguid/treehouse/archive/refs/tags/v2.2.1.tar.gz"
-  sha256 "6991409415221ea7052c21c357c10e24aab2b81d76f7ad7575f657579c28943c"
+  url "https://github.com/kunchenguid/treehouse/archive/refs/tags/v2.3.0.tar.gz"
+  sha256 "c8941c4df4e3193e7a27698d521f2f3d86b8cf399cd7ae8206395ee2920ce4de"
   license "MIT"
 
   bottle do
