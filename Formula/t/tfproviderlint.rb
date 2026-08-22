@@ -18,7 +18,9 @@ class Tfproviderlint < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "45dcc2992373e36bd948f80f3a4e9db317c4d209ee2e449c476fbd1e4490854c"
   end
 
-  depends_on "go" => [:build, :test]
+  # TODO: unpin go@1.26 when tfproviderlint supports go 1.27
+  # ref: https://github.com/bflad/tfproviderlint/issues/345
+  depends_on "go@1.26" => [:build, :test]
 
   def install
     ldflags = %W[
@@ -34,6 +36,9 @@ class Tfproviderlint < Formula
       url "https://github.com/russellcardullo/terraform-provider-pingdom/archive/refs/tags/v1.1.3.tar.gz"
       sha256 "3834575fd06123846245eeeeac1e815f5e949f04fa08b65c67985b27d6174106"
     end
+
+    # TODO: remove when unpinning go 1.26
+    ENV.prepend_path "PATH", formula_opt_libexec("go@1.26")/"bin" # for keg_only go 1.26 binary
 
     testpath.install resource("homebrew-test_resource")
     assert_match "S006: schema of TypeMap should include Elem",
