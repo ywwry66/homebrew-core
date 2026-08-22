@@ -1,8 +1,8 @@
 class Weave < Formula
   desc "Entity-level semantic merge driver for Git using tree-sitter"
   homepage "https://ataraxy-labs.github.io/weave/"
-  url "https://github.com/Ataraxy-Labs/weave/archive/refs/tags/v0.5.1.tar.gz"
-  sha256 "3574c794451633f8b2e799a714ec85b9e0fa55eabe406dc71d3803ae6d1f85a2"
+  url "https://github.com/Ataraxy-Labs/weave/archive/refs/tags/v0.5.2.tar.gz"
+  sha256 "f28df8d0ef3d3ab3d8d614d27e6cbb930519350b93ebc6af7232a28547698b51"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/Ataraxy-Labs/weave.git", branch: "main"
 
