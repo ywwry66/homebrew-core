@@ -1,8 +1,8 @@
 class Astra < Formula
   desc "Command-Line Interface for DataStax Astra"
   homepage "https://docs.datastax.com/en/astra-cli"
-  url "https://github.com/datastax/astra-cli/archive/refs/tags/v1.1.2.tar.gz"
-  sha256 "698c14212df3301065bffe3c39744e51645c03c04f76223d251b8b9cdf0198c6"
+  url "https://github.com/datastax/astra-cli/archive/refs/tags/v1.1.3.tar.gz"
+  sha256 "b252b461004d27c3331e456cb7a47f02c9b566025c61c74d8778fcb55f4508df"
   license "Apache-2.0"
 
   bottle do
@@ -34,6 +34,9 @@ class Astra < Formula
     system "gradle", "nativeCompile", "-Pprod", "--exclude-task", "test", "--no-daemon"
 
     bin.install "build/native/nativeCompile/astra"
+
+    # `astra compgen` writes an upgrade-notifier file under `ASTRA_HOME`, which defaults to `$HOME`
+    ENV["ASTRA_HOME"] = buildpath
 
     generate_completions_from_executable bin/"astra", "compgen", shell_parameter_format: :none, shells: [:bash, :zsh]
   end
