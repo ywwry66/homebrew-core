@@ -16,12 +16,12 @@ class Katago < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ee0fd1ff4a672c29c9b05a3437aae50134c20a121ee5df17cec1b5484a68df44"
-    sha256 cellar: :any, arm64_sequoia: "1dd38c3c9eecd06994e6dcb1479710ca80ceedd4bc31e5ed0b29fe55cdc2f2b5"
-    sha256 cellar: :any, arm64_sonoma:  "c38bfda9dc68298fd3c0148b662a90385b81143d676934591e0efd50052fbf6f"
-    sha256 cellar: :any, sonoma:        "6617bb7fa38c3a3942333fd51d882b5980813d9095b500bb7f9f9057010f39e4"
-    sha256 cellar: :any, arm64_linux:   "d6aadf6a7e263aaacef3546ea4dc244fd0433be890a29de37c2b6e62dd90f2e7"
-    sha256 cellar: :any, x86_64_linux:  "c82900b21096967d6b7d5cd06dfa38b49e2a28fe250cbc1fbf92ad3f8ede8274"
+    sha256 cellar: :any, arm64_tahoe:   "d3d1de95feed943733df3d9875b1776a181df37818ac9a72881aafa7242df6e1"
+    sha256 cellar: :any, arm64_sequoia: "3493f8a86573109fb96b0253b782108479e5e82b5f36e75482f613f9c467999e"
+    sha256 cellar: :any, arm64_sonoma:  "055f54e8afc7cae1f6ddf7cf779f2021a2d6cc430e9e827ceed8ac218620396d"
+    sha256 cellar: :any, sonoma:        "74774c6b69a3d71ca74c76a03350ca46573a7200eedcde2eb7c657ee56e1c886"
+    sha256 cellar: :any, arm64_linux:   "763e64fb06563a376f5569e8bc7ba512542d659b4039f58ed76831c79f90baa7"
+    sha256 cellar: :any, x86_64_linux:  "8a6ee8ff0d27f804fb65f28c5e43138e147810fd2cf3a0e6ab81b305c43d1da9"
   end
 
   depends_on "cmake" => :build
