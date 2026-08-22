@@ -10,12 +10,12 @@ class RustWasm < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a2a025eddabd286683a57df898c57faa4fe7f725dc9757cceefd857bab18b711"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a2a025eddabd286683a57df898c57faa4fe7f725dc9757cceefd857bab18b711"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2a025eddabd286683a57df898c57faa4fe7f725dc9757cceefd857bab18b711"
-    sha256 cellar: :any_skip_relocation, sonoma:        "36e1f9a9cbdd8af0622bbd2aebc34ef28523fab55ff3b07b9aacf4d410dbc5ae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "db9ef63960eceff9c4be18897b803d4ec3f73f2c538dd0d0bdbed319927090d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fee79e1eb1af305dc167a5b628a135f2e7d9a42649c807fdda01f45bf8776253"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f49381471219e7a274f2f017174826c7a66b70b81a90653e83a28d8a3f4df11e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f49381471219e7a274f2f017174826c7a66b70b81a90653e83a28d8a3f4df11e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f49381471219e7a274f2f017174826c7a66b70b81a90653e83a28d8a3f4df11e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1a78dd2e83962a88531f0cc2a159557a0a33f802a53b8f835a1736af1e97b997"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c30fea1650f7b85768b4cc9bdea400f63bb09f730ef87e1aaf388c9c4ad189b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14315e2a9195e641b21c676bdc89da562c0bbcebb3e02bee7eb6839de41ee79a"
   end
 
   depends_on "wasmtime" => :test
