@@ -7,12 +7,12 @@ class SemCli < Formula
   head "https://github.com/Ataraxy-Labs/sem.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "da48e47cd49d0b225f91883698ebb836a2155a64346c5d91df55f077b1c99b03"
-    sha256 cellar: :any, arm64_sequoia: "01cba5be5abf8075aa0d3a3ee41f682695d71b74db0643e5e356ffda8235c433"
-    sha256 cellar: :any, arm64_sonoma:  "644ee6ce740cbcc479b55abdff4fb7985591c4f3bc16fd14fcb8b660aeae2122"
-    sha256 cellar: :any, sonoma:        "015669c258b110b4c0835f0f4f124ec1a44488d92c1a259a702de89986dbc2f1"
-    sha256 cellar: :any, arm64_linux:   "ad4188bbb122cfc32b8fda919b985085456cd063b9c93a4b287b75af93924e27"
-    sha256 cellar: :any, x86_64_linux:  "27d1c241ebcaddd7de7f5efa6cd39a6106b068a0b70d8511647f8f25a7ddb168"
+    sha256 cellar: :any, arm64_tahoe:   "9b75c10f3f3cc618ea1f2b173ab77c3e43e855c9fbe8f585d90547bd7e4dda7a"
+    sha256 cellar: :any, arm64_sequoia: "0677172b241f814dfe08838b30d589ef0e6b7e02ea192072266c02801bffb262"
+    sha256 cellar: :any, arm64_sonoma:  "a7b41ef4cb47eecccbd0b601d5a676e6a00a8f013edf94297bee218da78f418e"
+    sha256 cellar: :any, sonoma:        "0680f1c1a394dcc8a8da45541455316e11aecf40d4a118e03c3876166e93cdfa"
+    sha256 cellar: :any, arm64_linux:   "1407b3c062987e33acec4793f4404b01ad906200199fcb6826c16ca9c2b87db2"
+    sha256 cellar: :any, x86_64_linux:  "49032aa6e84f448dfd93f148a15e98c5a9458281698d25bf93d281a443f635b4"
   end
 
   depends_on "pkgconf" => :build
