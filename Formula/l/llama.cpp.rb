@@ -3,20 +3,16 @@ class LlamaCpp < Formula
   homepage "https://llama.app"
   # CMake uses Git to generate version information.
   url "https://github.com/ggml-org/llama.cpp.git",
-      tag:      "b10520",
-      revision: "cd644c39545aac3dca63261f99a9bfc35956cb25"
+      tag:      "v0.2.0",
+      revision: "bb4caa7540188872173c44d161602d9271386413"
   license "MIT"
+  version_scheme 1
   compatibility_version 1
   head "https://github.com/ggml-org/llama.cpp.git", branch: "master"
 
-  # llama.cpp publishes new tags too often
-  # Having multiple updates in one day is not very convenient
-  # Update formula only after 10 new tags (1 update per ≈2 days)
-  #
-  # `throttle 10` doesn't work
   livecheck do
     url :stable
-    regex(/^v?b(\d+(?:\.\d+)*0)$/i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -41,6 +37,7 @@ class LlamaCpp < Formula
       -DLLAMA_OPENSSL=ON
       -DLLAMA_USE_SYSTEM_GGML=ON
     ]
+    args << "-DLLAMA_BUILD_IS_DEV=OFF" if build.stable?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
