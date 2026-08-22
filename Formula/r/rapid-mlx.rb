@@ -3,8 +3,8 @@ class RapidMlx < Formula
 
   desc "Fast local AI engine for Apple Silicon with an OpenAI-compatible API"
   homepage "https://github.com/raullenchai/Rapid-MLX"
-  url "https://files.pythonhosted.org/packages/a1/a6/a6e3d84d5f3f310a04ca6efa198fc32899cd1824628c59c01e8b30e4ff2f/rapid_mlx-0.12.17.tar.gz"
-  sha256 "d3703dfce945a493fbd7b1d7a9092d7467da394a57c63a8fe519286a1ab9587a"
+  url "https://files.pythonhosted.org/packages/6b/f1/43fb68b3b667eb6cf04c34d3c80c04d0484fd68f058d3f4d0c7a489bce3a/rapid_mlx-0.12.18.tar.gz"
+  sha256 "74f8e921721859d1095386561ea3d6fc2ea6f5cae1a7147a0b9765000a71bc54"
   license "Apache-2.0"
 
   bottle do
@@ -180,8 +180,8 @@ class RapidMlx < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/da/01/9ef0afd7999eb9badb3a768b4aedd78c86d4c65cfaf1958ab276199e76b4/protobuf-7.35.1.tar.gz"
-    sha256 "ce115a26fe0c39a2c29973d914d327e516a6455464489fe3cd1e51a1b354f81a"
+    url "https://files.pythonhosted.org/packages/a7/e7/0553e21d25ca4d9f573135775348a372c3ec34a93a71d5f297c3bac38341/protobuf-7.36.0.tar.gz"
+    sha256 "e8e09cb0d794c6687926fa558a8a6e72aa10edb997d5ca61da0765f12a3e00ea"
   end
 
   resource "psutil" do
