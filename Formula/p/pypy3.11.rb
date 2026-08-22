@@ -12,12 +12,12 @@ class Pypy311 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b514cd171f5fa038f30daaab338b4ebf1bba30e7505fd714fc4b18eeafe3eeb4"
-    sha256 cellar: :any, arm64_sequoia: "d47f809ecf524251e045bc253c1f2e3d7515f767f025270dae2b3651fa399930"
-    sha256 cellar: :any, arm64_sonoma:  "b8a3e6b99d1a681cc140a070a3392796dd74387db8f2fa70d7d0263fc4a74005"
-    sha256 cellar: :any, sonoma:        "cb9cce87748367b7b24ac46ef41c80eaaa331353f0553b1c1441041c306a66f9"
-    sha256 cellar: :any, arm64_linux:   "1f8ea65f8bb78e499efb93f5cd32f677275b7c6d3f0db8c5b2a56589f07739f6"
-    sha256 cellar: :any, x86_64_linux:  "1745920536668478e1ae5efcaf39dbf7df0762a15b2cb72c225b3bcfafeb8501"
+    sha256 cellar: :any, arm64_tahoe:   "3c1660e17d7360389844c21e0dd90e40f291c04efc569b0d64cf96e1b89b4110"
+    sha256 cellar: :any, arm64_sequoia: "c4e23b23ed712b028f95f63665c161812aa866a09106ff8fc9e6fe1fa0a15fe3"
+    sha256 cellar: :any, arm64_sonoma:  "3f599b8f7b09b417fc02650f91c0e1ce11a0973bd67c8492e3c6a87c0e2ff5be"
+    sha256 cellar: :any, sonoma:        "8079052ae3bf3c1487087f6525f7e9bbb3f4a3f70b711f1234230747a59c2c9e"
+    sha256 cellar: :any, arm64_linux:   "3fb7fd9c301e8b9c916fab38ddd222af014f219b7eddad00b8d81b5f1b36bb46"
+    sha256 cellar: :any, x86_64_linux:  "36d4e831a1ccbabe784a220bbbbef72e52484265c2ab4831a86dd87c43196b0c"
   end
 
   depends_on "pkgconf" => :build
