@@ -1,8 +1,8 @@
 class Depot < Formula
   desc "Build your Docker images in the cloud"
   homepage "https://depot.dev/"
-  url "https://github.com/depot/cli/archive/refs/tags/v2.102.4.tar.gz"
-  sha256 "41f6b53d27d79e23c1bc95df789392409cdab545472799b94aa4ed33afcc51c3"
+  url "https://github.com/depot/cli/archive/refs/tags/v2.102.6.tar.gz"
+  sha256 "225b34e6f7f26916f68947b33bee44ec21d3d3132a8e6568ddee9d805ed22c4c"
   license "MIT"
   head "https://github.com/depot/cli.git", branch: "main"
 
@@ -23,6 +23,14 @@ class Depot < Formula
   end
 
   depends_on "go" => :build
+
+  # Fix linking on Linux arm64 with Go 1.27, which rejects cpuid 2.0.4's linkname to `runtime.sched_getaffinity`.
+  patch do
+    url "https://github.com/depot/cli/commit/627f8a6dfad7e7f2f33c774d3aa22af9884f0ebb.patch?full_index=1"
+    sha256 "bffa3eaea34bebeeb3c27fb9ed326137b8824a1ded170eeeb2cdd91c30dd48ac"
+    type :unofficial
+    resolves "https://github.com/depot/cli/pull/570"
+  end
 
   def install
     ldflags = %W[
