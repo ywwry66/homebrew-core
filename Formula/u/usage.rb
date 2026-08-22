@@ -1,19 +1,19 @@
 class Usage < Formula
   desc "Tool for working with usage-spec CLIs"
   homepage "https://usage.jdx.dev/"
-  url "https://github.com/jdx/usage/archive/refs/tags/v5.1.0.tar.gz"
-  sha256 "2e5d498eda9338f9dc476f4fb722e81e6d7032f9186f24986b017b1b5a104061"
+  url "https://github.com/jdx/usage/archive/refs/tags/v6.0.0.tar.gz"
+  sha256 "9742bf204947556bc5f2eb7715fdee4350435aa764527e916efff14c0b355efa"
   license "MIT"
   compatibility_version 1
   head "https://github.com/jdx/usage.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c0d9516476640ec7a1ae7408e92cd9eaa90ee993a25fe409adcad7ed92f43cae"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2c47c014a817b0c40568946f3039d77325caa5860e44cb32a1a184e36e54a2e9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cd2c8630d11c8d29ba4c050f4d796f0392764c247e4aaead9c16d0d08cfc435e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "42ecc2a47be7049626b7129ccb9a01976949845b22e17e75b83e9b2872c1a892"
-    sha256 cellar: :any,                 arm64_linux:   "133c823a61ed0da00b1e651d546aeb720f4bc9b81470d61c0ba3f2eb84a7de8d"
-    sha256 cellar: :any,                 x86_64_linux:  "dc781f93a93a32ce7d7959b46efad352bc2d3fd1bb0fa0f6bc377d73c8cce6f7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "03c0ab2a24e2958d24a06252cda3b037303968453c529e534e964d2a031120cf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b010e93da0b659f06d0120aa9a8e643f77efc5a3d4674e5cdb6d901faf55c9e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "99ab3a7e5a6591c5ef30fb82228eead1fea1871beb2e76e8146d3800b5d0e288"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9b1dbdf0107ff160054d0cc3c89c7d7358a39fa99579c9eca25b80ef09a10e03"
+    sha256 cellar: :any,                 arm64_linux:   "a9e4090525d3749f33080db84153c9b6fcf6614fd3c5a4055f974535289a1ab8"
+    sha256 cellar: :any,                 x86_64_linux:  "db643d2a88a7999e32cd78391ac9bb0aaca1ff3f927b440a2155941b6f3c34d4"
   end
 
   depends_on "rust" => :build
@@ -25,7 +25,7 @@ class Usage < Formula
   end
 
   test do
-    assert_match "usage-cli", shell_output("#{bin}/usage --version").chomp
+    assert_match version.to_s, shell_output("#{bin}/usage --version").chomp
     assert_equal "--foo", shell_output("#{bin}/usage complete-word --spec 'flag \"--foo\"' -").chomp
   end
 end
