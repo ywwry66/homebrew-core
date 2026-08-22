@@ -87,12 +87,12 @@ class Rust < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "dc391f2a71b8e48c7d0f8ed3c4f3e14df9bb991c6dddd1414664e84479bce646"
-    sha256 cellar: :any, arm64_sequoia: "25ff6081fac97e06b375c93eb4ff9c6e0141ec79c260980f0bc4cfef91a368b9"
-    sha256 cellar: :any, arm64_sonoma:  "2f34e9569144e19525b94a5a2292d377a5c7d0d207210fb267852768b5866fd8"
-    sha256 cellar: :any, sonoma:        "b4981bdf4f2c4029b4a76558483148598ab5eb4455d55218c2d5312989636d9b"
-    sha256 cellar: :any, arm64_linux:   "2b6fa64888235aca5d12040ba56321ff091328de700519e50ffd92c7e0cbe171"
-    sha256 cellar: :any, x86_64_linux:  "4a46dd3e1d009e18e17ca702ee293abfbdfa2ba82491172b5d7bf4604dc40eef"
+    sha256 cellar: :any, arm64_tahoe:   "f78b2076bec55baa8a870cdbf11344d065b9b2e47d8ad46d4b122e165ebdb3ab"
+    sha256 cellar: :any, arm64_sequoia: "a5c91891a86462225689bbfa214ba1ea282fdba15e0622ea484aee768072aaae"
+    sha256 cellar: :any, arm64_sonoma:  "24cce416fb291a7eaa442aed719ae23b5a12d1c2bf76e3542902b11d7e10c66e"
+    sha256 cellar: :any, sonoma:        "cd3db92982a19f63513a2d2d88eb9b47791cfbcf5d8b63aab244b6351b97f5b4"
+    sha256 cellar: :any, arm64_linux:   "898f075f0eb9dadbdb4666ddc8485e7b82fb4d634b8f94c5fa01dfb3e785e1c8"
+    sha256 cellar: :any, x86_64_linux:  "5093c4a4a9c390fc0e550560d7aa7683d1afc5ff64ec02dbb28fafc21f500ef7"
   end
 
   depends_on "libgit2"
