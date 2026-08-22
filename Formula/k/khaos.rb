@@ -1,8 +1,8 @@
 class Khaos < Formula
   desc "Kafka traffic simulator for observability and chaos engineering"
   homepage "https://github.com/aleksandarskrbic/khaos"
-  url "https://github.com/aleksandarskrbic/khaos/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "3d20d75c1977eb9c490f10cbe09cfcbfdfc673479f499877fd7b872555c0c0c1"
+  url "https://github.com/aleksandarskrbic/khaos/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "fbc05cb87e75670ad28fe03cad653523df19689096db068019781897f01aabb2"
   license "Apache-2.0"
   head "https://github.com/aleksandarskrbic/khaos.git", branch: "main"
 
