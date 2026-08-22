@@ -7,12 +7,12 @@ class Chsrc < Formula
   head "https://github.com/RubyMetric/chsrc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3a7b8cb08752253481f1e49338fc928a66c498697c5ed244f819e8c0468cbfb5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a69cfe2318fc6b78b425e9ad7479f6fd20aeefeb3729ba1e102d615f3ded4c7d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ea4c96f4f5d64c22974d70db7af45e9e7326311d44eab7fcdcd24f1d319510f3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a858db8c54b9223087b0e13427fbef6c4e30dd8389b0a2c87cde38e4214c455f"
-    sha256 cellar: :any,                 arm64_linux:   "41497163995d010ffd5734692d48a7a1d85d1b23b64b7c374afe65ca41841bf6"
-    sha256 cellar: :any,                 x86_64_linux:  "32c61defae7463f66119e40c5ec35a89c56359b8791b81db6370c7d55f2e40e3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d7f90c25de6c9f97b35d02a8e13ae0fd92a55dec3325a17a27af4fefd281be8f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d608a1cce2b8e7fc7fbbaea8ddd3d277cd00e25d3c381bad28ab82259cf96c10"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b439a709ecd0c47ccc6230f64b777fd25358bb648f2bcce97d15e797eb3f7ca8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "95a23c1fe921358ab41fa784cd89561e7d76d6557110b3df996598b70d3ce1ea"
+    sha256 cellar: :any,                 arm64_linux:   "edc2e8809f8a0ed9424a92048b78d42fc1b57df1f1ab1569560a0b392c225969"
+    sha256 cellar: :any,                 x86_64_linux:  "34a2da1cd4b1ca1ae81556b7eda7f9e7da37ef6160b7999ccec37dc0d87fcf0a"
   end
 
   def install
