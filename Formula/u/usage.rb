@@ -1,8 +1,8 @@
 class Usage < Formula
   desc "Tool for working with usage-spec CLIs"
   homepage "https://usage.jdx.dev/"
-  url "https://github.com/jdx/usage/archive/refs/tags/v5.1.0.tar.gz"
-  sha256 "2e5d498eda9338f9dc476f4fb722e81e6d7032f9186f24986b017b1b5a104061"
+  url "https://github.com/jdx/usage/archive/refs/tags/v6.0.0.tar.gz"
+  sha256 "9742bf204947556bc5f2eb7715fdee4350435aa764527e916efff14c0b355efa"
   license "MIT"
   compatibility_version 1
   head "https://github.com/jdx/usage.git", branch: "main"
@@ -25,7 +25,7 @@ class Usage < Formula
   end
 
   test do
-    assert_match "usage-cli", shell_output("#{bin}/usage --version").chomp
+    assert_match version.to_s, shell_output("#{bin}/usage --version").chomp
     assert_equal "--foo", shell_output("#{bin}/usage complete-word --spec 'flag \"--foo\"' -").chomp
   end
 end
