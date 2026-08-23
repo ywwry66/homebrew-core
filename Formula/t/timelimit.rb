@@ -1,13 +1,14 @@
 class Timelimit < Formula
   desc "Limit a process's absolute execution time"
   homepage "https://devel.ringlet.net/sysutils/timelimit/"
-  url "https://devel.ringlet.net/files/sys/timelimit/timelimit-1.9.2.tar.gz"
-  sha256 "320a72770288b2deeb9abbd343f9c27afcb6190bb128ad2a1e1ee2a03a796d45"
+  url "https://devel.ringlet.net/files/sys/timelimit/timelimit-1.9.5.tar.xz"
+  sha256 "96b39c61a850d3395eaf4dde5fd22c290854d42ff69f192b12aef05d99d5ddbb"
   license "BSD-2-Clause"
+  head "https://gitlab.com/timelimit/timelimit.git", branch: "master"
 
   livecheck do
-    url :homepage
-    regex(/latest release is .*?timelimit[._-]v?(\d+(?:\.\d+)+)</i)
+    url "https://devel.ringlet.net/files/sys/timelimit/"
+    regex(/href=.*?timelimit[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -33,11 +34,8 @@ class Timelimit < Formula
 
     args = %W[LOCALBASE=#{prefix} MANDIR=#{man}/man]
 
-    check_args = args + ["check"]
-    install_args = args + ["install"]
-
-    system "make", *check_args
-    system "make", *install_args
+    system "make", "check", *args
+    system "make", "install", *args
   end
 
   test do
