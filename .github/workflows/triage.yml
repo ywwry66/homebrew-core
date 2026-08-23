@@ -303,25 +303,18 @@ jobs:
                 gdb|\
                 ghc|\
                 graph-tool|\
-                gstreamer|\
                 haskell-language-server|\
                 influxdb|\
                 libtensorflow|\
                 llvm|\
                 mame|\
                 metashell|\
-                mlkit|\
-                mpich|\
                 mycli|\
                 node|\
-                octave|\
-                opencascade|\
                 opencrabs|\
-                openfast|\
                 openvino|\
                 pcl|\
                 ponyc|\
-                prowler|\
                 pytorch|\
                 qtwebengine|\
                 root|\
