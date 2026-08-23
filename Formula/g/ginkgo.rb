@@ -18,9 +18,12 @@ class Ginkgo < Formula
   depends_on "nlohmann-json" => :build
   depends_on "yaml-cpp" => :build
   depends_on "pkgconf" => :test
-  depends_on "libomp"
   depends_on "metis"
   depends_on "open-mpi"
+
+  on_macos do
+    depends_on "libomp"
+  end
 
   def install
     # Avoid superenv shim reference
