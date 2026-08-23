@@ -3,8 +3,8 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/43/46/16217d4b09b121a701f622d656e5ca724fa6f154be520f635d72fca17eae/mycli-2.15.0.tar.gz"
-  sha256 "3468002140b35e8eb511374157820a572f3e1427ff78b539691a96469c7ddb27"
+  url "https://files.pythonhosted.org/packages/42/91/9ca31b0fb2e8d55ebc6b7ad9480e7a0a4e8d7f3bfb420e120df8b1b75125/mycli-2.16.0.tar.gz"
+  sha256 "e1a567df0f4ec4d7fd537b12df8c664bdf6a03d480ff443b606b3c086d0de343"
   license "BSD-3-Clause"
 
   bottle do
@@ -165,8 +165,8 @@ class Mycli < Formula
   end
 
   resource "narwhals" do
-    url "https://files.pythonhosted.org/packages/2b/1d/58946e5aab18393e793bd4add6985b95d0e01c3a2d832f38f54468b10dcd/narwhals-2.24.0.tar.gz"
-    sha256 "b5c0f684ccd9d7475b564111e319a4964abcf2baf79d3cf6b1003d06ac9b828d"
+    url "https://files.pythonhosted.org/packages/6f/7b/6248dada39781db1ab3ebf08943080df0796098515a87f6f8696d14ec744/narwhals-2.25.0.tar.gz"
+    sha256 "62c036c810662bf7820b7737077176313bc59350eeeefb808510f388c743e4b2"
   end
 
   resource "openai" do
