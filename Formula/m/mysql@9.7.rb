@@ -10,6 +10,15 @@ class MysqlAT97 < Formula
     regex(/href=.*?mysql[._-](?:boost[._-])?v?(9\.7(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    sha256 arm64_tahoe:   "bb270bfff714f88fe2a73214efbaa1d27b38bf962bdf81d7c379421c63224be5"
+    sha256 arm64_sequoia: "1f22ca4ce9e523055160ea862c1d4f00cedbe7d30433145f418975e00b0f7a99"
+    sha256 arm64_sonoma:  "2582f4b746e4f1a2ca7a2b7a44365834d817d913402437ec5b7d4fbeb5dfa7df"
+    sha256 sonoma:        "6e56cd237d7eb48e93a86afd59a2d0d797a80f7f9ff852f3d0b6c84a4e2b8439"
+    sha256 arm64_linux:   "1cf3b35d7b7da933227199319d0db4a6b11fe963303bb3d208069b93d6c9ca77"
+    sha256 x86_64_linux:  "5e765b3d6e632d4629a54c53078f1100060d7a94cd4639d7c8ba376099ba1533"
+  end
+
   keg_only :versioned_formula
 
   # See: https://endoflife.date/mysql
