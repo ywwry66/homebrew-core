@@ -6,6 +6,15 @@ class DejaVu < Formula
   license "MIT"
   head "https://github.com/vshulcz/deja-vu.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "956b66cdd2338a53000f2e6315c3d7509deb993c89e30bc129d7036bafbb80dc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "956b66cdd2338a53000f2e6315c3d7509deb993c89e30bc129d7036bafbb80dc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "956b66cdd2338a53000f2e6315c3d7509deb993c89e30bc129d7036bafbb80dc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b7e49974618d7eeb8238c9fd0f1804a4718a309af2a1c450d2550c0046943723"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "73669c619405eedda605b6e4733ac382570140c997c08133173ba84ec6cb6e12"
+    sha256 cellar: :any,                 x86_64_linux:  "bebb1461acac508e615a26cfa53a513086309b96424bb6f702899a97d692c762"
+  end
+
   depends_on "go" => :build
 
   deny_network_access! [:postinstall, :test]
