@@ -15,6 +15,9 @@ class Leaf < Formula
     sha256 cellar: :any,                 x86_64_linux:  "56e5014d28745e5755f1823813e15924744302bd393ffc58ede0821c402fbf4e"
   end
 
+  deprecate! date: "2026-08-23", because: :unmaintained
+  disable! date: "2027-08-23", because: :unmaintained
+
   depends_on "go" => :build
 
   # Failing on Intel macOS with Go 1.27 due to outdated golang.org/x/sys dependency
