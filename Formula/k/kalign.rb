@@ -15,7 +15,10 @@ class Kalign < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "libomp"
+
+  on_macos do
+    depends_on "libomp"
+  end
 
   def install
     args = %w[
