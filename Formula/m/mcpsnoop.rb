@@ -1,18 +1,18 @@
 class Mcpsnoop < Formula
   desc "Transparent proxy and TUI for debugging MCP traffic"
   homepage "https://github.com/kerlenton/mcpsnoop"
-  url "https://github.com/kerlenton/mcpsnoop/archive/refs/tags/v0.20.0.tar.gz"
-  sha256 "e7ab00599b1be81183d40c3c3121e65aa7054ac616e0804a4b28e0d873f156a0"
+  url "https://github.com/kerlenton/mcpsnoop/archive/refs/tags/v0.21.0.tar.gz"
+  sha256 "a0f29d27e44977b4d2ce484bdf5274ee1156beea59f768c85e6c42e54e5e2b38"
   license "MIT"
   head "https://github.com/kerlenton/mcpsnoop.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "80e6eea12f15d9a6829d497e0ff8e4529cb2bf07d06ef0dfc284eab52d34835b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80e6eea12f15d9a6829d497e0ff8e4529cb2bf07d06ef0dfc284eab52d34835b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "80e6eea12f15d9a6829d497e0ff8e4529cb2bf07d06ef0dfc284eab52d34835b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7f8e321f24e2cddca791c9f19796f4d134f7e6aa10ae93f9f49f24665d5e5968"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b5a420b50cdc155c6ead1a84a81aa376318f432d8736e3c700f0d958568b1d81"
-    sha256 cellar: :any,                 x86_64_linux:  "047160897178e03473b2b69d077bcbc675827396978a641c787e6b6368111450"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0227c3ec8ab4ee40334d63991b37ee311df98b78fe41d7e7ca03c5679c707237"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0227c3ec8ab4ee40334d63991b37ee311df98b78fe41d7e7ca03c5679c707237"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0227c3ec8ab4ee40334d63991b37ee311df98b78fe41d7e7ca03c5679c707237"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1e6a6718374121a97666e5a0d90ddb103d5b6ccb76f48c5f26b725b261ffffa3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d2f0e5b95c1c7fc2422e3b52a8e16959411c11e74cc73d71ea0212a54dae542"
+    sha256 cellar: :any,                 x86_64_linux:  "45dfda246d340b8c674cddceab0f5c6c36021604519387b6b8c8c0f1a90f791b"
   end
 
   depends_on "go" => :build
