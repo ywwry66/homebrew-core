@@ -295,7 +295,6 @@ jobs:
             - label: long build
               path: "Formula/.+/(\
                 agda|\
-                apache-pulsar|\
                 aws-sdk-cpp|\
                 cbmc|\
                 cp2k|\
