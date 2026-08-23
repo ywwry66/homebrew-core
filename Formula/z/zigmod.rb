@@ -1,8 +1,8 @@
 class Zigmod < Formula
   desc "Package manager for the Zig programming language"
   homepage "https://nektro.github.io/zigmod/"
-  url "https://github.com/nektro/zigmod/archive/refs/tags/r103.tar.gz"
-  sha256 "965bd1aacbe4fee5c3dbbe0715d40f5b6a6413065bf5dc0385ba1ba1acc6c2e2"
+  url "https://github.com/nektro/zigmod/archive/refs/tags/r104.tar.gz"
+  sha256 "ae9d845a67750d5f7fae685768cc3bc9bf6de059b767502ffdd8064c5d8e4c96"
   license "MIT"
 
   livecheck do
@@ -19,8 +19,7 @@ class Zigmod < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "16cb1acf242e2c9a8cb520633cf1befd7139391a76d88ad10a031d443c31431e"
   end
 
-  depends_on "pkgconf" => :build
-  depends_on "zig@0.15"
+  depends_on "zig"
 
   def install
     args = %W[
