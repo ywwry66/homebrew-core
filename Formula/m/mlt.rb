@@ -27,7 +27,6 @@ class Mlt < Formula
   depends_on "glib"
   depends_on "libdv"
   depends_on "libexif"
-  depends_on "libomp"
   depends_on "libsamplerate"
   depends_on "libvidstab"
   depends_on "libvorbis"
@@ -46,6 +45,7 @@ class Mlt < Formula
     depends_on "freetype"
     depends_on "gettext"
     depends_on "harfbuzz"
+    depends_on "libomp"
   end
 
   on_linux do
