@@ -25,6 +25,11 @@ class Leaf < Formula
 
   depends_on "go" => :build
 
+  # Failing on Intel macOS with Go 1.27 due to outdated golang.org/x/sys dependency
+  on_macos do
+    depends_on arch: :arm64
+  end
+
   conflicts_with "leaf-markdown-viewer", because: "both install `leaf` binaries"
   conflicts_with "leaf-proxy", because: "both install `leaf` binaries"
 
