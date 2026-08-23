@@ -17,10 +17,9 @@ class Pgrx < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "rustup" => :test
-  depends_on "openssl@3"
 
   on_linux do
-    depends_on "zlib-ng-compat"
+    depends_on "openssl@4"
   end
 
   def install
