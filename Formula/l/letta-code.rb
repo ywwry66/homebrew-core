@@ -1,8 +1,8 @@
 class LettaCode < Formula
   desc "Memory-first coding agent"
   homepage "https://docs.letta.com/letta-code"
-  url "https://registry.npmjs.org/@letta-ai/letta-code/-/letta-code-0.30.28.tgz"
-  sha256 "fb06fec69e531c28f9d82e2271162e01181361531cc7da7bca642f29df0af867"
+  url "https://registry.npmjs.org/@letta-ai/letta-code/-/letta-code-0.30.29.tgz"
+  sha256 "b6c629def4c90b7f8cdff23d1c271eb364c99cbf6e247194d00dafa346e393ac"
   license "Apache-2.0"
 
   bottle do
@@ -41,6 +41,9 @@ class LettaCode < Formula
     node_modules = libexec/"lib/node_modules/@letta-ai/letta-code/node_modules"
     rm_r(node_modules.glob("@vscode/ripgrep-*"))
     rm_r(node_modules/"@vscode/ripgrep") # keeping separate from previous rm_r to fail if missing
+
+    # Remove Electron-only sharp fork with x86_64-only pre-built binaries
+    rm_r(node_modules/"@janhapke")
 
     # Replace node-pty pre-built binaries
     cd node_modules/"node-pty" do
