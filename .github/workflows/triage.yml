@@ -342,7 +342,6 @@ jobs:
                 gtk\\+3|\
                 harfbuzz|\
                 jpeg-turbo|\
-                jpeg-xl|\
                 libomp|\
                 libpng|\
                 mpfr|\
