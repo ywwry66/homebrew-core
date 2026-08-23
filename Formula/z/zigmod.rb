@@ -14,7 +14,6 @@ class Zigmod < Formula
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5ef437f4e9b2f69a1be4adaa651df67f580cfd84f34fe9efc3f20001361e303e"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "84e496ca7896cdd75e684c8640aa3fed836274cb3dfb8d02454a03910d98b7ae"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aa5303dd5bb7b26327a14ae30734651f0904d1247f5aa18458bd4a737ad75fe2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "018603bd82921507439ac811e64a345a812d8c8ec1c70244372b91e791c25806"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "49762f0cd3b574d5b33a269347537dc5636c94c4dd61f5b7a6c2ea1b234863f8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6cc6fc70bf0c8af0294cbe4319ad37118c9ebe83c9f4ec940961d6b04c03b625"
   end
@@ -23,10 +22,6 @@ class Zigmod < Formula
   depends_on "zig@0.15"
 
   def install
-    # Avoid zig-nfs mkdirat failure when creating absolute cache paths on macOS x86_64.
-    inreplace "src/common.zig", "try nfs.cwd().makePath(cachepath);",
-                                "try std.fs.cwd().makePath(cachepath);"
-
     args = %W[
       -Dtag=r#{version}
       -Dstrip=true
