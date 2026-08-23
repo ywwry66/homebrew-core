@@ -1,13 +1,10 @@
 class Mysql < Formula
   desc "Open source relational database management system"
-  # FIXME: Actual homepage fails audit due to Homebrew's user-agent
-  # homepage "https://dev.mysql.com/doc/refman/9.3/en/"
   homepage "https://github.com/mysql/mysql-server"
-  url "https://cdn.mysql.com/Downloads/MySQL-9.7/mysql-9.7.1.tar.gz"
-  mirror "https://repo.mysql.com/apt/ubuntu/pool/mysql-innovation/m/mysql-community/mysql-community_9.7.1.orig.tar.gz"
-  sha256 "dabff263022be6a09151c21812322873437e0d77aec8c4cc7381882c3ea1aeae"
+  url "https://cdn.mysql.com/Downloads/MySQL-26.7/mysql-26.7.0.tar.gz"
+  mirror "https://repo.mysql.com/apt/ubuntu/pool/mysql-innovation/m/mysql-community/mysql-community_26.7.0.orig.tar.gz"
+  sha256 "95e949183b94bbe39e70c6355e6c90d2a640a62ede996ca5f7a6a3e0827a3260"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
-  revision 3
 
   livecheck do
     url "https://dev.mysql.com/downloads/mysql/?tpl=files&os=src"
@@ -119,16 +116,6 @@ class Mysql < Formula
     if OS.linux?
       args << "-DCURL_LIBRARY=#{formula_opt_lib("curl")}"
       args << "-DCURL_INCLUDE_DIR=#{formula_opt_include("curl")}"
-    end
-
-    # Replace deprecated `std::is_trivial_v<T>`
-    # https://isocpp.org/files/papers/P3247R2.html
-    # Upstream report: https://bugs.mysql.com/bug.php?id=119246
-    if OS.mac? && MacOS.version == :tahoe
-      inreplace buildpath/"libs/mysql/gtid/tag_plain.h", "static_assert(std::is_trivial_v<Tag_plain>);", <<~CPP
-        static_assert(std::is_trivially_default_constructible_v<Tag_plain>);
-        static_assert(std::is_trivially_copyable_v<Tag_plain>);
-      CPP
     end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
