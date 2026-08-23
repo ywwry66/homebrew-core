@@ -1,8 +1,8 @@
 class Honker < Formula
   desc "SQLite message queue extension"
   homepage "https://honker.dev"
-  url "https://static.crates.io/crates/honker-extension/honker-extension-0.4.0.crate"
-  sha256 "fde7ef3e6cc439573683730d7bb5f598d804bfc169e0e9c8488e5e59ff762148"
+  url "https://static.crates.io/crates/honker-extension/honker-extension-0.5.0.crate"
+  sha256 "e63f3f389f225cd250a2846becbadf15c91dc25285cb1bd43901187c8f1e3774"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
