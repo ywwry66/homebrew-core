@@ -1,8 +1,8 @@
 class Ps2eps < Formula
   desc "Convert PostScript to EPS files"
   homepage "https://github.com/roland-bless/ps2eps"
-  url "https://github.com/roland-bless/ps2eps/archive/refs/tags/v1.70.tar.gz"
-  sha256 "cd7064e3787ddb79246d78dc8f76104007a21c2f97280b1bed3e7d273af97945"
+  url "https://github.com/roland-bless/ps2eps/archive/refs/tags/v1.71.tar.gz"
+  sha256 "5020371b18a661ed40fa5567420bde562f15e47827616792f2e4389af61d24c6"
   license "GPL-2.0-or-later"
 
   bottle do
