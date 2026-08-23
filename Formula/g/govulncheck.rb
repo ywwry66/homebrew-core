@@ -1,8 +1,10 @@
 class Govulncheck < Formula
   desc "Database client and tools for the Go vulnerability database"
   homepage "https://github.com/golang/vuln"
-  url "https://github.com/golang/vuln/archive/refs/tags/v1.7.0.tar.gz"
-  sha256 "4fb7f0204b7e039f550d8938b714c5218d870694895585e0e19b2c0c4700e4c7"
+  # git checkout needed for buildInfo support
+  url "https://github.com/golang/vuln.git",
+      tag:      "v1.7.0",
+      revision: "617f44b718537dccdea1915395650e0529e3b72e"
   license "BSD-3-Clause"
   revision 2
   head "https://github.com/golang/vuln.git", branch: "master"
@@ -23,6 +25,7 @@ class Govulncheck < Formula
   end
 
   test do
+    assert_match "Scanner: govulncheck@v#{version}", shell_output("#{bin}/govulncheck --version")
     mkdir "brewtest" do
       system "go", "mod", "init", "brewtest"
       (testpath/"brewtest/main.go").write <<~GO
