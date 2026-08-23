@@ -1,10 +1,9 @@
 class Ccache < Formula
   desc "Object-file caching compiler wrapper"
   homepage "https://ccache.dev/"
-  url "https://github.com/ccache/ccache/releases/download/v4.13.6/ccache-4.13.6.tar.xz"
-  sha256 "a7de667ca08cf67c3c8af9f213f6aa701a1188a2b3163fb74483858ce5e79fbb"
+  url "https://github.com/ccache/ccache/releases/download/v4.14/ccache-4.14.tar.xz"
+  sha256 "b093ac5d38204cb4d9f29b0bbd570675aa5a592a78e6675b2c506dbe045234e7"
   license "GPL-3.0-or-later"
-  revision 1
   compatibility_version 1
   head "https://github.com/ccache/ccache.git", branch: "master"
 
@@ -34,14 +33,6 @@ class Ccache < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
-  end
-
-  # Expose base16 source digest in debug input text
-  patch do
-    url "https://github.com/ccache/ccache/commit/517329f27aeb90195bda57955435cafbe88f38c6.patch?full_index=1"
-    sha256 "4e14cfc43d5654f67f011393501ecba8402acbaf51fffd55cce94f668b3aa35c"
-    type :unofficial
-    resolves "https://github.com/ccache/ccache/pull/1735"
   end
 
   def install
@@ -133,7 +124,7 @@ class Ccache < Formula
     input_text = testpath.glob("test.o.*.ccache-input-text").first.read
     assert_match File.basename(ENV.cc), input_text
     assert_match "test.c", input_text
-    assert_match "### sourcecode hash (base16)", input_text
+    assert_match "### sourcecode hash", input_text
     assert_match file_hash, input_text
 
     # The format of the log file seems to differ on Linux.
