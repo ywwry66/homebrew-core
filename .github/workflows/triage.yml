@@ -295,9 +295,6 @@ jobs:
             - label: long build
               path: "Formula/.+/(\
                 agda|\
-                aws-sdk-cpp|\
-                cbmc|\
-                cp2k|\
                 deno|\
                 dotnet|\
                 emscripten|\
