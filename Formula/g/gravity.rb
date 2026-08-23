@@ -2,7 +2,7 @@ class Gravity < Formula
   desc "Embeddable programming language"
   homepage "https://www.gravity-lang.org/"
   url "https://github.com/marcobambini/gravity/archive/refs/tags/0.9.8.tar.gz"
-  sha256 "7340092fb4b66a9ebda721cae39324422612d1b969ba70fee8eb7664951cdd80"
+  sha256 "c221a8dc747e46de61482631209efd1c3cd95c1b8dd441e7eeeefcdb2fbfce5a"
   license "MIT"
   head "https://github.com/marcobambini/gravity.git", branch: "master"
 
