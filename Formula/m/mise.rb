@@ -25,8 +25,6 @@ class Mise < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
-  depends_on "usage"
-
   uses_from_macos "bzip2"
 
   on_linux do
