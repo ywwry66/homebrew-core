@@ -1,13 +1,12 @@
 class OpenMpi < Formula
   desc "High performance message passing library"
   homepage "https://www.open-mpi.org/"
-  url "https://download.open-mpi.org/release/open-mpi/v5.0/openmpi-5.0.9.tar.bz2"
-  sha256 "dfb72762531170847af3e4a0f21d77d7b23cf36f67ce7ce9033659273677d80b"
+  url "https://download.open-mpi.org/release/open-mpi/v5.0/openmpi-5.0.10.tar.bz2"
+  sha256 "0acecc4fc218e5debdbcb8a41d182c6b0f1d29393015ed763b2a91d5d7374cc6"
   license all_of: [
     "BSD-3-Clause-Open-MPI",
     "mpich2", # opal/datatype/opal_datatype_pack_unpack_predefined.h
   ]
-  revision 1
   compatibility_version 1
 
   livecheck do
