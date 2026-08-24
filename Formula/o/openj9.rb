@@ -1,8 +1,8 @@
 class Openj9 < Formula
   desc "High performance, scalable, Java virtual machine"
   homepage "https://www.eclipse.org/openj9/"
-  url "https://github.com/eclipse-openj9/openj9/archive/refs/tags/openj9-0.60.0.tar.gz"
-  sha256 "6f9f2a6afaaaf88f3eedd5224b303926f3386b96337c5d28bd71dae39e87f80d"
+  url "https://github.com/eclipse-openj9/openj9/archive/refs/tags/openj9-0.61.0.tar.gz"
+  sha256 "903620a8a2625b2c1152a70cfb5ed935623da0b00b41ff12dbf34c526d5f5e17"
   license any_of: [
     "EPL-2.0",
     "Apache-2.0",
@@ -66,9 +66,9 @@ class Openj9 < Formula
 
   resource "omr" do
     url "https://github.com/eclipse-openj9/openj9-omr.git",
-        branch:   "v0.60.0-release",
-        revision: "2e3166f7afc61f577ccaa63b85444b63b82491f7"
-    version "0.60.0"
+        branch:   "v0.61.0-release",
+        revision: "ebd02d9129dc06fa67a6f885f99a3926aa869154"
+    version "0.61.0"
 
     livecheck do
       formula :parent
@@ -80,9 +80,9 @@ class Openj9 < Formula
   # This matches official documentation and allows us to bootstrap from an OpenJDK formula
   resource "openj9-openjdk-jdk" do
     url "https://github.com/ibmruntimes/openj9-openjdk-jdk25.git",
-        branch:   "v0.60.0-release",
-        revision: "e4aaece3226fa3b588146d3ef3f52caa7afc3330"
-    version "0.60.0"
+        branch:   "v0.61.0-release",
+        revision: "fd5c7608e811f85a9c9ccaa7263dd52ae4171a0f"
+    version "0.61.0"
 
     livecheck do
       formula :parent
