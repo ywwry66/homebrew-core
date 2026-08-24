@@ -2,12 +2,14 @@ class Zigmod < Formula
   desc "Package manager for the Zig programming language"
   homepage "https://nektro.github.io/zigmod/"
   url "https://github.com/nektro/zigmod/archive/refs/tags/r104.tar.gz"
+  version "r104"
   sha256 "ae9d845a67750d5f7fae685768cc3bc9bf6de059b767502ffdd8064c5d8e4c96"
   license "MIT"
+  version_scheme 1
 
   livecheck do
     url :stable
-    regex(/^r(\d+)$/i)
+    regex(/^(r\d+)$/i)
   end
 
   bottle do
@@ -22,7 +24,7 @@ class Zigmod < Formula
 
   def install
     args = %W[
-      -Dtag=r#{version}
+      -Dtag=#{version}
       -Dstrip=true
     ]
 
@@ -39,6 +41,7 @@ class Zigmod < Formula
       license: MIT
       description: Test zig.mod dependency
       min_zig_version: 0.11.0
+      min_zigmod_version: #{version}
       dependencies:
     YAML
     (testpath/"dependency/src/lib.zig").write <<~ZIG
