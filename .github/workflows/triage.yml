@@ -344,7 +344,6 @@ jobs:
                 jpeg-turbo|\
                 libomp|\
                 libpng|\
-                mpfr|\
                 node|\
                 numpy|\
                 openblas|\
