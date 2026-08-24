@@ -13,12 +13,12 @@ class Mkvtoolnix < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "52eb23767fbd584b2e031aa579499490c07c2f7fb019f47d9590ff70b8d4b04b"
-    sha256 cellar: :any, arm64_sequoia: "8991df383d4864b9abfa415213c7e4303c949cd86459bcbadaf930346638e85a"
-    sha256 cellar: :any, arm64_sonoma:  "08213519ac3a191b670dcebbef75996ace3bd59e7ee5e3d336b77b02238a9f5b"
-    sha256 cellar: :any, sonoma:        "9b02181683dadf4e184faf6fd4ea574ac2f1ecd423fce46b575ad1dc8835a2e0"
-    sha256               arm64_linux:   "d613bee84bbdde1b66fab2da93a8df321659a2c59f777eb20f6dae8f305e6d64"
-    sha256               x86_64_linux:  "0cd2df8bc5402cdcb14fb1fec812346c03a6b26bd076264c88404bccd5efa3f0"
+    sha256 cellar: :any, arm64_tahoe:   "3ff5c3aad9f1ab57279360a434eddf3b7216ab2b06c57ee4cf3f7a6a67ad2b93"
+    sha256 cellar: :any, arm64_sequoia: "5e0a5f979ea23ce8a48a9b4b0698136989ee2a3fbc60ce71f36720b8af4609bd"
+    sha256 cellar: :any, arm64_sonoma:  "66af302b764a41ff4212bfbecc26b3aac8993ad6bb04e8504b1874543278287a"
+    sha256 cellar: :any, sonoma:        "efdb3ead6bc75d6ff701c04940b0875d1a522a20979b7c20d62353a62ba999dd"
+    sha256               arm64_linux:   "65fb959753a895dc35eb9ff584353577ed03cfdd18bcf54260bf1af3e18300e4"
+    sha256               x86_64_linux:  "0cbad7fd51fbaf008f50d6270454bda97854b7bfe96eee5dfc0c12e12742e370"
   end
 
   head do
