@@ -1,12 +1,12 @@
 class Xmlto < Formula
   desc "Convert XML to another format (based on XSL or other tools)"
-  homepage "https://pagure.io/xmlto/"
-  url "https://pagure.io/xmlto/archive/0.0.29/xmlto-0.0.29.tar.gz"
-  sha256 "40504db68718385a4eaa9154a28f59e51e59d006d1aa14f5bc9d6fded1d6017a"
+  homepage "https://codeberg.org/xmlto/xmlto"
+  url "https://codeberg.org/xmlto/xmlto/archive/0.0.29.tar.gz"
+  sha256 "ccf0657f71f874d01a28729e7c08ea468ae705e087a4e12d1dcacb6b54a5d25d"
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "https://pagure.io/xmlto.git"
+    url "https://codeberg.org/xmlto/xmlto.git"
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
