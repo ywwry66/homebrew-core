@@ -33,6 +33,9 @@ class Harfbuzz < Formula
     depends_on "zlib-ng-compat"
   end
 
+  # downloads test resources
+  allow_network_access! :test
+
   def install
     args = %w[
       --default-library=both
