@@ -3,8 +3,8 @@ class Katago < Formula
   homepage "https://katagotraining.org/"
   # Occasionally check upstream docs in case recommended model/network is changed.
   # Ref: https://github.com/lightvector/KataGo?tab=readme-ov-file#other-questions
-  url "https://github.com/lightvector/KataGo/archive/refs/tags/v1.18.0.tar.gz"
-  sha256 "e6deda07ba926d9813bfcb56eac78f207fc206caff93fbaddc139a1f599d1827"
+  url "https://github.com/lightvector/KataGo/archive/refs/tags/v1.18.1.tar.gz"
+  sha256 "011a205c60c22f83008ba92d31f91196640f620edbfc2f09af79ef3f3311750c"
   license all_of: [
     "MIT",
     "CC0-1.0", # g170 resources
