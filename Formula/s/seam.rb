@@ -6,8 +6,12 @@ class Seam < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "e78f5c486295d6805811e6a48f3f0a1443706bc5d98430f3f860fc3ae84d8c99"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "88622228e3abea43a2aaffb45371f7950e3f05967e15b9be8fc37fb1067d1bb8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "357d2ebb780b8a77a273d30c5c5e5983a0b87780b272d083f64c934254c3e924"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf2f8b203b6253564af715d92bd5ad4a3bd162d655d55e3962b0f3c1a5ceb412"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c8d5291d124e2108faa51bc80c97f8d6be977b424460ddf97f12b4cbdae8e081"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "78496a97c56d5d59b51aef6523e4634b4b2eca08ed6fd62cc1fb65b44dc1cfb0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80a4f24fa304a51f72e0c8c66799f9015c7ee462dc56d323a3fbb35f4409acc0"
   end
 
   depends_on "node"
