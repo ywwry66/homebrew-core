@@ -1,12 +1,10 @@
 class Emacs < Formula
   desc "GNU Emacs text editor"
   homepage "https://www.gnu.org/software/emacs/"
-  # TODO: Bump to use tree-sitter 0.26+ when new Emacs release supports it
-  url "https://ftpmirror.gnu.org/gnu/emacs/emacs-30.2.tar.xz"
-  mirror "https://ftp.gnu.org/gnu/emacs/emacs-30.2.tar.xz"
-  sha256 "b3f36f18a6dd2715713370166257de2fae01f9d38cfe878ced9b1e6ded5befd9"
+  url "https://ftpmirror.gnu.org/gnu/emacs/emacs-31.1.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/emacs/emacs-31.1.tar.xz"
+  sha256 "1da5790d9580c81932b5bf700633114468da7b3412d69faa767daebf974f4586"
   license "GPL-3.0-or-later"
-  revision 2
   compatibility_version 1
 
   bottle do
@@ -30,7 +28,7 @@ class Emacs < Formula
   depends_on "texinfo" => :build
   depends_on "gmp"
   depends_on "gnutls"
-  depends_on "tree-sitter@0.25"
+  depends_on "tree-sitter"
 
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
@@ -78,11 +76,6 @@ class Emacs < Formula
     system "./configure", *args
     system "make"
     system "make", "install"
-
-    # Follow MacPorts and don't install ctags from Emacs. This allows Vim
-    # and Emacs and ctags to play together without violence.
-    (bin/"ctags").unlink
-    (man1/"ctags.1.gz").unlink
   end
 
   service do
