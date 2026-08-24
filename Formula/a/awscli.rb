@@ -102,6 +102,9 @@ class Awscli < Formula
     which("python3.14")
   end
 
+  # downloads wheels during build
+  allow_network_access! :build
+
   def install
     ENV["AWS_CRT_BUILD_USE_SYSTEM_LIBCRYPTO"] = "1"
     ENV["AWS_CRT_BUILD_USE_SYSTEM_LIBS"] = "1"
