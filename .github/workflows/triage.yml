@@ -349,7 +349,6 @@ jobs:
                 numpy|\
                 openblas|\
                 openjdk|\
-                openjpeg|\
                 openssl@3|\
                 pango|\
                 pcre2|\
