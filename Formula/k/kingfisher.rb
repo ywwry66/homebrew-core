@@ -1,8 +1,8 @@
 class Kingfisher < Formula
   desc "MongoDB's blazingly fast secret scanning and validation tool"
   homepage "https://mongodb.github.io/kingfisher/"
-  url "https://github.com/mongodb/kingfisher/archive/refs/tags/v1.113.0.tar.gz"
-  sha256 "5434e513fab1729dd34b1cf478f3e4fd1004d567b8c0d09d6e5f2d7d8e662c0a"
+  url "https://github.com/mongodb/kingfisher/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "9ba06e23ed6605ad28ea612d2ac82bc9ac5122ba3024798f5dc3215f60f2b317"
   license "Apache-2.0"
 
   bottle do
@@ -16,6 +16,7 @@ class Kingfisher < Formula
 
   depends_on "boost" => :build
   depends_on "cmake" => :build
+  depends_on "openssl@3" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
