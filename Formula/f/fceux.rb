@@ -6,7 +6,7 @@ class Fceux < Formula
     "LGPL-2.1-or-later", # src/drivers/common/{hq2x.cpp,nes_ntsc*}
     "MIT", # src/emufile*, src/drivers/Qt/TasEditor/, src/lua/
   ]
-  revision 11
+  revision 12
   head "https://github.com/TASEmulators/fceux.git", branch: "master"
 
   stable do
