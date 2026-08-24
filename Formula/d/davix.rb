@@ -1,10 +1,9 @@
 class Davix < Formula
   desc "Library and tools for advanced file I/O with HTTP-based protocols"
   homepage "https://github.com/cern-fts/davix"
-  url "https://github.com/cern-fts/davix/releases/download/R_0_8_10/davix-0.8.10.tar.gz"
-  sha256 "66aa9adadee6ff2bae14caba731597ba7a7cd158763d9d80a9cfe395afc17403"
+  url "https://github.com/cern-fts/davix/releases/download/R_0_9_0/davix-0.9.0.tar.gz"
+  sha256 "cf68461550fcd8fd88320658a42c55c7e7f6653e2be1461dfa95013adc56cced"
   license "LGPL-2.1-or-later"
-  revision 1
   head "https://github.com/cern-fts/davix.git", branch: "devel"
 
   livecheck do
@@ -25,6 +24,7 @@ class Davix < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "nlohmann-json" => :build
   depends_on "openssl@3"
 
   uses_from_macos "python" => :build
