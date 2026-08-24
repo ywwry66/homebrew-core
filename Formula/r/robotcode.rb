@@ -7,6 +7,15 @@ class Robotcode < Formula
   sha256 "c07031d5103affc0de98a474a584b27f7dc2589bc908e0b908ca10969e617421"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any, arm64_tahoe:   "dc02d922264811178c04dbfd08b9392eac51531704dfa4239dd5f6bb606ad145"
+    sha256 cellar: :any, arm64_sequoia: "72d4063f3a2822a6cd6a717e64265afc7394132c9beb58cb7d91ecd64c31a805"
+    sha256 cellar: :any, arm64_sonoma:  "53c2166d27e0edcd855340e74850db31d37a10a41ec932066cf482c76d7aea73"
+    sha256 cellar: :any, sonoma:        "2c2397817576f74f14584d570bc467917fd04d51c9cffceea861e6ceb3bcb687"
+    sha256 cellar: :any, arm64_linux:   "ff091dc169596b248548510f29d0f161f945d09dae9576d6c90c8468d6ab7986"
+    sha256 cellar: :any, x86_64_linux:  "5df9e93a9ea8ec9c5cac1ae6acbf5dca1079db2981a63c8f31de5726c561b3a3"
+  end
+
   depends_on "libyaml"
   depends_on "python@3.14"
 
