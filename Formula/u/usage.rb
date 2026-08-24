@@ -8,12 +8,12 @@ class Usage < Formula
   head "https://github.com/jdx/usage.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "76bf1523d960effdceda19a3f4336294b397008883ebc7bab300ecf8f9da3816"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd912cd5488af90f2a04eca9fd9ab9d78ba595b9865edbc4fbee35a27f184358"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "45bb177a565ceb5231e21fbaf0f9f75ab4c647fd3d69bdca736a7a2e2688d34a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3dd8f206a837f6cefa84301a326034e214bda53532a62c56437c71f4fc09e5f2"
-    sha256 cellar: :any,                 arm64_linux:   "f1b1e781bbbd80e193bc4fa6360cd7d1bb51c6262c7590fc3452817b99938ed5"
-    sha256 cellar: :any,                 x86_64_linux:  "e6095adcf36b5bec4c72b51166a4f138d0a3b06fcdab28a0c6f3283151a73a1f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "869e05b17fafd629ae7ab4247671f212c83ab22d7819ab680f8039adbaf1ab3d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "079f3eb202bcac08e05cc32a132570d56a4cbeb092f298b6042ae617e35cc925"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac4ea75a6a73a86a569154f43185bed4af4d60bf1d9224396c11cbd7a11af2d8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "28aadb91d9695c453c2312eb54cbb36c1ffb55ff78bd92e68879d0d8341528e8"
+    sha256 cellar: :any,                 arm64_linux:   "2d7e7abf580969ad647ccb3716e7fe0e07d29c9bb67dc29b8e2b555c3fb77d05"
+    sha256 cellar: :any,                 x86_64_linux:  "6c887085ba476d24d3fbbd2cedb6b5c3f476fe3cb4694503c9f06e00026db3f4"
   end
 
   depends_on "rust" => :build
