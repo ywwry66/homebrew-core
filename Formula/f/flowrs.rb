@@ -12,12 +12,12 @@ class Flowrs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "caa860df246f0d307adb63cc63c17ca7aba0da7ce8958e115ae278c80f1a3ae6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f24bc1c33324d16f75f68e684170d6ca2fe381a0ebddd63e539d3a44187f878"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b893eeaed4ef4fa0e13bc0017e596b66b7ff31e2ffdf6ba3637c301afd6a9bad"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8284549fa10148c69a5cae5e86ec25917ba9cc9f3d43cdac01913c03d6ca04a7"
-    sha256 cellar: :any,                 arm64_linux:   "c48fec61e6f5f787090f832fb3798e8b2b3263fba333e5ce3731e6d1aee840dd"
-    sha256 cellar: :any,                 x86_64_linux:  "73ba645a584b09e4fecbdebf4c8434faa60192e1f946252a0551fd7507f35172"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "937abe64a003e0e310ec3b8d49e2b1281591b9ec452e4d65177c7071c9ee3605"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "045cb005c6eca86f6b522eb66af552ea8ee790f12e761b3d1da00b3c7ee41b2e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "34f965d553b15fdbbca9f9d667f1a409da4c313162caad7df2ebb383064c36f8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "13969d087071323903fcfb607a67d976bbd125e0ae7c4f1949c2c53972841d00"
+    sha256 cellar: :any,                 arm64_linux:   "b51a0802a824be8c53d4240dce9ee26ee87f58ef0ea636b2fb8c9cac1b6d2eeb"
+    sha256 cellar: :any,                 x86_64_linux:  "8f25461052a27da65b16f78443ca207a6327c61eaf3b928a7ea1e0738eb20732"
   end
 
   depends_on "pkgconf" => :build
