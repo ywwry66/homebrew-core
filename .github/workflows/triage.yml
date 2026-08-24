@@ -342,15 +342,12 @@ jobs:
                 gtk\\+3|\
                 harfbuzz|\
                 jpeg-turbo|\
-                jpeg-xl|\
                 libomp|\
                 libpng|\
-                mpfr|\
                 node|\
                 numpy|\
                 openblas|\
                 openjdk|\
-                openjpeg|\
                 openssl@3|\
                 pango|\
                 pcre2|\
