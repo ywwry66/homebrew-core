@@ -1,8 +1,8 @@
 class Tin < Formula
   desc "Threaded, NNTP-, and spool-based UseNet newsreader"
   homepage "http://www.tin.org"
-  url "https://sunsite.icm.edu.pl/pub/unix/news/tin/v2.6/tin-2.6.5.tar.xz"
-  sha256 "91384d133d72671863494dd9742bc622b4089ea8ea760884a5b8c34095d76dc5"
+  url "https://sunsite.icm.edu.pl/pub/unix/news/tin/v2.6/tin-2.6.6.tar.xz"
+  sha256 "bf8a2ed051bc33d0bfce8bf2163ac80691c91ab3bbe380dce764481f0aae6338"
   license "BSD-3-Clause"
 
   livecheck do
