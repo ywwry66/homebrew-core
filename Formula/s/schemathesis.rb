@@ -3,17 +3,17 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/c5/11/8ff5201912370724f7f50b8035cf46c1dcaa7c4ceb1fe04005e57d482a0a/schemathesis-4.25.1.tar.gz"
-  sha256 "d48ce5c0d3f408d86b114256cd86477c186163651dd9e7c2a44551ab4ece7db8"
+  url "https://files.pythonhosted.org/packages/6f/35/75220b21d261df932d516b3b75e525436b4e4f543c361728cbc943b2d48e/schemathesis-4.25.2.tar.gz"
+  sha256 "18bfad05b06b0442749b5bb232454798747eec5e8e71470da35cbfd92c12c6e4"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "bcb9a87aaddd40e6b7392da297c6e43ca8081cb616916c6e58b83c3541906a95"
-    sha256 cellar: :any, arm64_sequoia: "ec5497ae23c8564f4ac8bec961ea0e58cba08753276bb21ca9dc31f01d4d2cef"
-    sha256 cellar: :any, arm64_sonoma:  "9d91a5336f85cbb748ef21d7b4d3345154e172d02b0afe928c85d0cde41bc2c9"
-    sha256 cellar: :any, sonoma:        "8a11e9f1096e3889e3ba305ab4f9e704d51d85f7bed5e5c4c66383349dea0a76"
-    sha256 cellar: :any, arm64_linux:   "5995bef4dbc97045bafe0bd0c661f94f25da41a49bd2d76b4d14d8a15dfc4c01"
-    sha256 cellar: :any, x86_64_linux:  "3bb5c995c064a1bcb8f97e591c9a5c68c8b0dd61eef5daa5140a8ba974366d01"
+    sha256 cellar: :any, arm64_tahoe:   "68ed000fa4f2425d657ae29311cc921ff9121ff66ed76aa32e36ee81e6d94529"
+    sha256 cellar: :any, arm64_sequoia: "7329eeec845c7c56434b9853c0ced6af3f71cc5f7c904f3b5e5d0f0727e583c6"
+    sha256 cellar: :any, arm64_sonoma:  "0a873926966c05f9c577a34c6e014035e7ed9efbbd63f50224d2eac40ed9de45"
+    sha256 cellar: :any, sonoma:        "97bf7af4066d6d39888f60e9f3f43a5e38e3b50d36335015d4853f18594fb994"
+    sha256 cellar: :any, arm64_linux:   "76dfca2bb2701e80387d9f39f6a351f23810a36f43163ffc942bafb58ba120a1"
+    sha256 cellar: :any, x86_64_linux:  "2d20e99fb7e76fda8db63b4997b9af086d7240bda79b9449aec8b630555a0fac"
   end
 
   depends_on "rust" => :build # for jsonschema-rs
