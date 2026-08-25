@@ -11,12 +11,12 @@ class Perltidy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "15a69f989f6d316abb6efd6e2aff7661b8689651ccfa32a5a175dfc4d589da80"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "15a69f989f6d316abb6efd6e2aff7661b8689651ccfa32a5a175dfc4d589da80"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "15a69f989f6d316abb6efd6e2aff7661b8689651ccfa32a5a175dfc4d589da80"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7ce4242877009763e7922a9619ecd5e0dfcc5e1beea3e3d5773447b35bfbe406"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "091f7edd17a5f90b0215fc283454a389d2d10e517697b89a7e3deb9d177b1939"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b61c89f7cd8d112e74c3d4be2ad03e448fce71ee1f67e44001fcf7c2f569145a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6ea81ffa8a0bdc1cf59c5164e9e403bc43a05b2aef8b84c4224052f50af2dd45"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ea81ffa8a0bdc1cf59c5164e9e403bc43a05b2aef8b84c4224052f50af2dd45"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ea81ffa8a0bdc1cf59c5164e9e403bc43a05b2aef8b84c4224052f50af2dd45"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b7499848e07ec98c29eaf2a034a2640e6d206b38f1a5899cae13a0cc23d0d4fa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b1bdc238e368a4029736a77c69d72d1c59ac4d1a33ee4c170a1dbbde58f9b5b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf5e7362a9ea3ea23e431f32732aa8d01f0fbdd0db89a55b9830f97ac076a6f5"
   end
 
   uses_from_macos "perl"
