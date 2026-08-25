@@ -1,8 +1,8 @@
 class OpensslAT35 < Formula
   desc "Cryptography and SSL/TLS Toolkit"
   homepage "https://openssl-library.org"
-  url "https://github.com/openssl/openssl/releases/download/openssl-3.5.7/openssl-3.5.7.tar.gz"
-  sha256 "a8c0d28a529ca480f9f36cf5792e2cd21984552a3c8e4aa11a24aa31aeac98e8"
+  url "https://github.com/openssl/openssl/releases/download/openssl-3.5.8/openssl-3.5.8.tar.gz"
+  sha256 "a8f84a39918ec6415ce765d9b429d313ba97b8143169c172e734b9514464f5b2"
   license "Apache-2.0"
 
   livecheck do
@@ -33,8 +33,8 @@ class OpensslAT35 < Formula
     end
 
     resource "Test::More" do
-      url "https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302220.tar.gz"
-      sha256 "bbca30d9fb64a67a28ccd9086cdc08cdb6046423fa032d9101f978d7ccd46cf9"
+      url "https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302224.tar.gz"
+      sha256 "6c366b8ab03553976dd1813940770b60bdb4396e7bbae8c263baa6e96ec52fd7"
     end
 
     resource "ExtUtils::MakeMaker" do
