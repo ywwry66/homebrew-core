@@ -1,8 +1,8 @@
 class Renovate < Formula
   desc "Automated dependency updates. Flexible so you don't need to be"
   homepage "https://github.com/renovatebot/renovate"
-  url "https://registry.npmjs.org/renovate/-/renovate-44.41.0.tgz"
-  sha256 "264950fe2216ffc996f50222248bbabfae36c9864522d7d16539910534404e57"
+  url "https://registry.npmjs.org/renovate/-/renovate-44.42.0.tgz"
+  sha256 "fa15da586765d9c11044165a8ee7b454435fd7c964b3d5adda8d21d01e65c268"
   license "AGPL-3.0-only"
 
   # livecheck needs to surface multiple versions for version throttling but
@@ -18,7 +18,7 @@ class Renovate < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "12387ab5d4f25a630b571956618578cdc2a06423c3198547ce586116dcfa5a50"
+    sha256 cellar: :any_skip_relocation, all: "9e1db7a41946de669b5ba86a4b41205456bf0ddd4fffeb8b3eb47cf79b3f6e51"
   end
 
   depends_on "node@24"
