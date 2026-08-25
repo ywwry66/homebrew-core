@@ -13,7 +13,6 @@
   "artifactory-cli-go": "jfrog-cli",
   "badtouch": "authoscope",
   "bash-completion2": "bash-completion@2",
-  "berkeley-db4": "berkeley-db@4",
   "boot2docker": "docker-machine",
   "bro": "zeek",
   "cagent": "docker-agent",
