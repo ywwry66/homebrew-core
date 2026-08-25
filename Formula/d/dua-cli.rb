@@ -1,8 +1,8 @@
 class DuaCli < Formula
   desc "View disk space usage and delete unwanted data, fast"
   homepage "https://lib.rs/crates/dua-cli"
-  url "https://github.com/Byron/dua-cli/archive/refs/tags/v2.42.1.tar.gz"
-  sha256 "31a452ce11ff6246da6298b70f892ae6b575eea5669adfd438381afd2157f748"
+  url "https://github.com/Byron/dua-cli/archive/refs/tags/v2.43.0.tar.gz"
+  sha256 "0bdce37da1f5a3c04cb6b72e22fe3b02863367199c0af25201438ea101ab55e2"
   license "MIT"
 
   livecheck do
@@ -31,9 +31,9 @@ class DuaCli < Formula
     (testpath/"file.txt").write("01")
 
     expected = %r{
-      \e\[32m\s*0\s*B\e\[39m\ #{testpath}/empty.txt\n
-      \e\[32m\s*2\s*B\e\[39m\ #{testpath}/file.txt\n
-      \e\[32m\s*2\s*B\e\[39m\ total\n
+      \s*0\s*B\s*#{testpath}/empty.txt\n
+      \s*2\s*B\s*#{testpath}/file.txt\n
+      \s*2\s*B\s*total\n
     }x
     assert_match expected, shell_output("#{bin}/dua -A #{testpath}/*.txt")
   end
