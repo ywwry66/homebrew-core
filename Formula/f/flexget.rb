@@ -3,8 +3,8 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/8a/dc/98169f2669e2a8b88a465c4b06da69a92d41ee2d72b62901af892a76e877/flexget-3.20.6.tar.gz"
-  sha256 "edabda5ddb9bef16ddebc54d3c120b187a658c4aa90d0496cbf9785432d30e40"
+  url "https://files.pythonhosted.org/packages/45/34/bccff53dd91602ad5e895a08f7d4c1b22ad5cf3c940123d402866336e963/flexget-3.20.7.tar.gz"
+  sha256 "640f558fa2c5da99e01cd3f3c5a673ad25eb87334ff2be22c8c4533848b4848f"
   license "MIT"
 
   bottle do
@@ -88,8 +88,8 @@ class Flexget < Formula
   end
 
   resource "curl-cffi" do
-    url "https://files.pythonhosted.org/packages/b4/23/d32e113b16dbfb458bea408871ed98dd12f306a366a04215e84537e0af7e/curl_cffi-0.16.0.tar.gz"
-    sha256 "b00b423da8028eb6221e3b63bcd63d681150c07cee8b16000d1f7ea292731895"
+    url "https://files.pythonhosted.org/packages/bb/df/8ef4b9a05139fdb6baf39ab44cc6529b91ef2425aab14d4f4a1dab940a56/curl_cffi-0.16.1.tar.gz"
+    sha256 "0662a4fe752d395ab3e2e23fbec68e34e1671884d0dd68dfc9671e150f634a99"
   end
 
   resource "feedparser" do
@@ -159,8 +159,8 @@ class Flexget < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "importlib-resources" do
