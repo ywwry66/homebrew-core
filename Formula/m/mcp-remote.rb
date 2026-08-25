@@ -6,7 +6,7 @@ class McpRemote < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3d371c1c0821fcb852bb49a9d2220901ec1a9a06215571a41f57dca4973a2582"
+    sha256 cellar: :any_skip_relocation, all: "30131aa850f41e3ecacd02d393f4a8d5d0eeebf041194ba1859703b2d6940ce1"
   end
 
   depends_on "node"
