@@ -11,12 +11,12 @@ class Pkcs11Tools < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c226d97ae6a863b54da9102b0e957528b0916d7c5301928d0be68589cbcf8d80"
-    sha256 cellar: :any, arm64_sequoia: "e9c6808bf746910582e3d676f0c2e7df3fcbe9a0735eb68c546dc001c59876c0"
-    sha256 cellar: :any, arm64_sonoma:  "d1aa10759d83a4c6a9cdb66a2619a9b0a53dce443c4a9daad5971e5283df0356"
-    sha256 cellar: :any, sonoma:        "1e633c9727fdb43fc0096ef9d9ec96af9cc4b2ff50258d2d204ec0ce1e36193a"
-    sha256 cellar: :any, arm64_linux:   "152142a9362cad79d82dddbe8a58eea70980306428735d230dc86ce4c8d89861"
-    sha256 cellar: :any, x86_64_linux:  "9f508ab8f95eb06dcc84950bae1b5c2901a48014a606e0b250ac236b34328b10"
+    sha256 cellar: :any, arm64_tahoe:   "5b02e59c3f8c22113c8b018ff174c8161114bb71d6fda388d15a5909742f4b27"
+    sha256 cellar: :any, arm64_sequoia: "9d27731ea76ada1931c7640bdd28941d96be8b3530606ddd2fdd75a6f38c8e67"
+    sha256 cellar: :any, arm64_sonoma:  "dadb18faf7a87e2533761708ba4544c0f5888827e1c7825beb7e4e29db500baf"
+    sha256 cellar: :any, sonoma:        "29de8f4a0e24abc961812265ca1d38fcf80492b6852bc2370a655311c00e7ef3"
+    sha256 cellar: :any, arm64_linux:   "1bdf74894a71fb209115f44c7d31d3f6b764d7c9253a9a093a302867645e0a97"
+    sha256 cellar: :any, x86_64_linux:  "21fd610270f0466e7874a83f473ce0f0c3f37f8a182366e2b37457f81c4f8978"
   end
 
   depends_on "pkgconf" => :build
