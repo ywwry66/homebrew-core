@@ -1,47 +1,10 @@
 class Llgo < Formula
   desc "Go compiler based on LLVM integrate with the C ecosystem and Python"
   homepage "https://github.com/xgo-dev/llgo"
+  url "https://github.com/xgo-dev/llgo/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "ad31bdf097990cccd96c8703452a59f790ecdc3efd7a0fcf1f6465c026b99748"
   license "Apache-2.0"
   head "https://github.com/xgo-dev/llgo.git", branch: "main"
-
-  stable do
-    url "https://github.com/xgo-dev/llgo/archive/refs/tags/v0.13.0.tar.gz"
-    sha256 "4b413886ba07f37ce7d6b4cd088e98e2d0bddfdc1a68f33cdd7b027bffcb6990"
-
-    # Backport commit for Go 1.25+ on Linux
-    patch do
-      url "https://github.com/xgo-dev/llgo/commit/be20b8c6dae62e7e41b9dc6203bbe69d9c7190bc.patch?full_index=1"
-      sha256 "0ac5ba89d96e5f41a49e1df5ab4c0cdca682cc9ac7934134e6ae1dd11863b29e"
-      type :backport
-    end
-
-    # Backport plan9asm update to fix Go 1.25+ on arm64
-    patch do
-      url "https://github.com/xgo-dev/llgo/commit/76a913ff126cc91d500e223d84661b20e8bc4e75.patch?full_index=1"
-      sha256 "747bd47539a6900de4391f3a7e9246e58af67be32fab5358b6f7d6ff54219355"
-      type :backport
-    end
-    patch do
-      url "https://github.com/xgo-dev/llgo/commit/4a1c8967ff09a528ae80529c4e05b359455dd467.patch?full_index=1"
-      sha256 "0db29e139fd3cd4d7304d3b20b58fc483317ea93ae9f7e81ec20156bd6565010"
-      type :backport
-    end
-    patch do
-      url "https://github.com/xgo-dev/llgo/commit/b1cf3f532eb4b3629d3612e2e629334926744034.patch?full_index=1"
-      sha256 "a0df2aedf39d9a63a76e2805670f0e7e388322fbf9b3edc9e89b231027120560"
-      type :backport
-    end
-    patch do
-      url "https://github.com/xgo-dev/llgo/commit/81726f17b7d5e54bc499de028b7dc1883f0182e3.patch?full_index=1"
-      sha256 "a8e9f93a119c3553c7c4bac1d7d77eefc495a80670a6efdb2d75b6965ac9a7d4"
-      type :backport
-    end
-    patch do
-      url "https://github.com/xgo-dev/llgo/commit/5f0475cc7eac8389c48121016736a787683eb9cc.patch?full_index=1"
-      sha256 "ca9d00ab8bfb6b436ca61966e7f2d979a2fea8fc94f678d747af342035f8eeb8"
-      type :backport
-    end
-  end
 
   livecheck do
     url :stable
@@ -49,12 +12,12 @@ class Llgo < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a69dfe92f0174bddd936c41ab15e24aba7d5da6b5ae7ece3f2f88445ccfe6294"
-    sha256 cellar: :any, arm64_sequoia: "cfe6f68591ff9abb7ea2249da7f083c92ec88efd856f7200d9b6628c5a943428"
-    sha256 cellar: :any, arm64_sonoma:  "7e4e99e73cd69c24a5908f213783858063980107a37c4cef4fff0710cec7c07e"
-    sha256 cellar: :any, sonoma:        "14563b6d5da0dd0f5eeedbec90fb0eff4173ca48e6bbf427a8a73b43321750b0"
-    sha256               arm64_linux:   "8f66517ae84493e5d2df91e066f1d4e9d781e9b9a290e2d12afdad82c326616f"
-    sha256               x86_64_linux:  "4f1bc48d3326081d40afb359011bd7261e15425784300cbb703b586c37723d36"
+    sha256 cellar: :any, arm64_tahoe:   "5d7c649f4b49ee892c88db46e97927451dc14223e81ca536da6c18d6e17fa0ec"
+    sha256 cellar: :any, arm64_sequoia: "415205e958c5f929d425c4ed7d7b0b932505d33e05fab8473e7e5493830e8241"
+    sha256 cellar: :any, arm64_sonoma:  "d354e7e50fc4f853be7326abd16862a24be785dc55c604032d2f996cd0154fec"
+    sha256 cellar: :any, sonoma:        "5c744fb398c44a0d3d7164e7d09a1cec1d0fdae09f6d9256276fe5ed341c3105"
+    sha256               arm64_linux:   "df266464afbfee740c5d19205989f36ed950363adf5823e2f9c08f182e52ef19"
+    sha256               x86_64_linux:  "e7fc6b0ecb8d514fdff53fc55668b1758aba32ae88338dcac671a2071380abca"
   end
 
   depends_on "bdw-gc" => :no_linkage
@@ -84,10 +47,11 @@ class Llgo < Formula
 
   def install
     llvm = find_dep("llvm")
+    module_path = "github.com/xgo-dev/llgo"
     ldflags = %W[
-      -X github.com/goplus/llgo/internal/env.buildVersion=v#{version}
-      -X github.com/goplus/llgo/internal/env.buildTime=#{time.iso8601}
-      -X github.com/goplus/llgo/xtool/env/llvm.ldLLVMConfigBin=#{llvm.opt_bin}/llvm-config
+      -X #{module_path}/internal/env.buildVersion=v#{version}
+      -X #{module_path}/internal/env.buildTime=#{time.iso8601}
+      -X #{module_path}/xtool/env/llvm.ldLLVMConfigBin=#{llvm.opt_bin}/llvm-config
     ]
     tags = %W[llvm#{llvm.version.major}]
     path_deps = %w[lld go pkgconf].map { |name| find_dep(name).opt_bin }
