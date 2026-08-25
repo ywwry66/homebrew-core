@@ -39,6 +39,9 @@ class OpensslAT4 < Formula
     type :backport
   end
 
+  # Tests require an internet connection
+  allow_network_access! :build
+
   def install
     configure_args = %W[
       --prefix=#{prefix}
