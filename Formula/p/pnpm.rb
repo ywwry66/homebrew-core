@@ -1,8 +1,8 @@
 class Pnpm < Formula
   desc "Fast, disk space efficient package manager"
   homepage "https://pnpm.io/"
-  url "https://registry.npmjs.org/pnpm/-/pnpm-11.23.0.tgz"
-  sha256 "78dcbf44f40cef50d1f4b535ca9961a30edb4b13c420c360bf4068d424a41bc4"
+  url "https://registry.npmjs.org/pnpm/-/pnpm-11.24.0.tgz"
+  sha256 "d1eab2433172661cc36a18ec85fce93f771db1962717329cc01ec9c2824ca24f"
   license "MIT"
   compatibility_version 1
 
@@ -14,15 +14,14 @@ class Pnpm < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "82d7e8560c5192ffa92ba0fec2db3f70fcd78a36dc43d3bb1ef5147b4511be52"
-    sha256 cellar: :any,                 arm64_sequoia: "82d7e8560c5192ffa92ba0fec2db3f70fcd78a36dc43d3bb1ef5147b4511be52"
-    sha256 cellar: :any,                 arm64_sonoma:  "82d7e8560c5192ffa92ba0fec2db3f70fcd78a36dc43d3bb1ef5147b4511be52"
-    sha256 cellar: :any,                 tahoe:         "6c64d4d4f1d239f1759a4083a85a737a08e46ec668de6c0716b043b635267b99"
-    sha256 cellar: :any,                 sequoia:       "6c64d4d4f1d239f1759a4083a85a737a08e46ec668de6c0716b043b635267b99"
-    sha256 cellar: :any,                 sonoma:        "6c64d4d4f1d239f1759a4083a85a737a08e46ec668de6c0716b043b635267b99"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5542eb4192344444b735ddb2dc85fb3a6ed21113f5ccda4ec482678b1534b691"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5542eb4192344444b735ddb2dc85fb3a6ed21113f5ccda4ec482678b1534b691"
+    sha256 cellar: :any,                 arm64_tahoe:   "f7a8e74e58eaaab8d4f85e43b8ca4a31077f54083f5b87f4b98e72afa820f403"
+    sha256 cellar: :any,                 arm64_sequoia: "f7a8e74e58eaaab8d4f85e43b8ca4a31077f54083f5b87f4b98e72afa820f403"
+    sha256 cellar: :any,                 arm64_sonoma:  "f7a8e74e58eaaab8d4f85e43b8ca4a31077f54083f5b87f4b98e72afa820f403"
+    sha256 cellar: :any,                 tahoe:         "243f479bf86802dccfe44862b5ddbc43feec74ba975295ffc105661b40f8ff0d"
+    sha256 cellar: :any,                 sequoia:       "243f479bf86802dccfe44862b5ddbc43feec74ba975295ffc105661b40f8ff0d"
+    sha256 cellar: :any,                 sonoma:        "243f479bf86802dccfe44862b5ddbc43feec74ba975295ffc105661b40f8ff0d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "482adae72a25632a98d8d39e310f5919d99ee485c6550a8feca330771525bdea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "482adae72a25632a98d8d39e310f5919d99ee485c6550a8feca330771525bdea"
   end
 
   depends_on "node" => [:build, :test]
