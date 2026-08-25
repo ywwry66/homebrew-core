@@ -21,7 +21,7 @@ class Llgo < Formula
   end
 
   depends_on "bdw-gc" => :no_linkage
-  depends_on "go@1.25"
+  depends_on "go@1.26" # TODO: unpin go@1.26 when llgo supports go 1.27
   depends_on "libuv" => :no_linkage
   depends_on "openssl@3"
   depends_on "pkgconf"
