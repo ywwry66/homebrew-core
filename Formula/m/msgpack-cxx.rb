@@ -12,7 +12,7 @@ class MsgpackCxx < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6de7041c12a82c297b5848097c83d18a7b3b2ebd4e7f7771d9a57c2cda5988d6"
+    sha256 cellar: :any_skip_relocation, all: "01cb7589dc70746dda9933c2ca5b02197b948771544bdb519b8c5f626fd72f7e"
   end
 
   depends_on "cmake" => :build
