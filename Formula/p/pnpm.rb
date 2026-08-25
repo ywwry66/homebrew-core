@@ -14,17 +14,23 @@ class Pnpm < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "187a955d366ce5dcd5ed4e4186ea2b044ba7acb9834552a6bf069f047bb7688c"
-    sha256 cellar: :any,                 arm64_sequoia: "187a955d366ce5dcd5ed4e4186ea2b044ba7acb9834552a6bf069f047bb7688c"
-    sha256 cellar: :any,                 arm64_sonoma:  "187a955d366ce5dcd5ed4e4186ea2b044ba7acb9834552a6bf069f047bb7688c"
-    sha256 cellar: :any,                 sonoma:        "33839de96e747b9343da5b676883080ac558264abc4381096365faa3da83bb6e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "24113ad9f7f6f3f5aefb1d80d153498b5d773a240d268b8777ca9fc07371b4af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24113ad9f7f6f3f5aefb1d80d153498b5d773a240d268b8777ca9fc07371b4af"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "82d7e8560c5192ffa92ba0fec2db3f70fcd78a36dc43d3bb1ef5147b4511be52"
+    sha256 cellar: :any,                 arm64_sequoia: "82d7e8560c5192ffa92ba0fec2db3f70fcd78a36dc43d3bb1ef5147b4511be52"
+    sha256 cellar: :any,                 arm64_sonoma:  "82d7e8560c5192ffa92ba0fec2db3f70fcd78a36dc43d3bb1ef5147b4511be52"
+    sha256 cellar: :any,                 tahoe:         "6c64d4d4f1d239f1759a4083a85a737a08e46ec668de6c0716b043b635267b99"
+    sha256 cellar: :any,                 sequoia:       "6c64d4d4f1d239f1759a4083a85a737a08e46ec668de6c0716b043b635267b99"
+    sha256 cellar: :any,                 sonoma:        "6c64d4d4f1d239f1759a4083a85a737a08e46ec668de6c0716b043b635267b99"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5542eb4192344444b735ddb2dc85fb3a6ed21113f5ccda4ec482678b1534b691"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5542eb4192344444b735ddb2dc85fb3a6ed21113f5ccda4ec482678b1534b691"
   end
 
   depends_on "node" => [:build, :test]
 
   conflicts_with "corepack", because: "both install `pnpm` and `pnpx` binaries"
+
+  # downloads npm packages during install
+  allow_network_access! :build
 
   def install
     system "npm", "install", *std_npm_args
