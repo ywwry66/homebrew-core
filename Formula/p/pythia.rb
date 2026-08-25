@@ -1,7 +1,7 @@
 class Pythia < Formula
   desc "Monte Carlo event generator"
   homepage "https://pythia.org"
-  url "https://pythia.org/download/pythia83/pythia8317.tgz"
+  url "https://pythia.org/releases/pythia83/pythia8317.tgz"
   version "8.317"
   sha256 "1ae551d14dac495ddfe6b344792035ebe410fe6c6004d44a335e0ece0e745adf"
   license "GPL-2.0-or-later"
@@ -25,7 +25,7 @@ class Pythia < Formula
     sha256  x86_64_linux:  "2a3b4b0846b766c5428bae60d3e46d62ef7c171f205ba1e44f22d75252f0ad2f"
   end
 
-  depends_on "rsync" => :build
+  uses_from_macos "rsync" => :build
 
   def install
     system "./configure", *std_configure_args
