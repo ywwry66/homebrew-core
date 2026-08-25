@@ -1,8 +1,8 @@
 class Tetra < Formula
   desc "Tetragon CLI to observe, manage and troubleshoot Tetragon instances"
   homepage "https://tetragon.io/"
-  url "https://github.com/cilium/tetragon/archive/refs/tags/v1.7.0.tar.gz"
-  sha256 "ccccbe870b880212a86f959ce6f3f9f2d378646ad314100862ea6db5cb5f0a2b"
+  url "https://github.com/cilium/tetragon/archive/refs/tags/v1.7.1.tar.gz"
+  sha256 "d4de499f97899855329b5ab8d7fc9fed5be349abd6e45b673c70554e4918bd2a"
   license "Apache-2.0"
 
   livecheck do
@@ -20,14 +20,6 @@ class Tetra < Formula
   end
 
   depends_on "go" => :build
-
-  # Add missing darwin stub for bpfProbes function
-  patch do
-    url "https://github.com/cilium/tetragon/commit/c99f6bc0b8bebb40cf3cdaf1216e62c8717d85cc.patch?full_index=1"
-    sha256 "1a09f1f9324394a117a3f09a995ef56a5d7d4633169b9a8fe103425fabc840f3"
-    type :backport
-    resolves "https://github.com/cilium/tetragon/pull/4933"
-  end
 
   def install
     ldflags = "-X github.com/cilium/tetragon/pkg/version.Version=#{version}"
