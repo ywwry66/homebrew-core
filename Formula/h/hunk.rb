@@ -12,12 +12,12 @@ class Hunk < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "4e5d62c63c57fa3b7389afd26fe9c8d6592a5e1093c4d600f9f690ecf8fe8fd7"
-    sha256                               arm64_sequoia: "4e5d62c63c57fa3b7389afd26fe9c8d6592a5e1093c4d600f9f690ecf8fe8fd7"
-    sha256                               arm64_sonoma:  "4e5d62c63c57fa3b7389afd26fe9c8d6592a5e1093c4d600f9f690ecf8fe8fd7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fce88018c5ab2e16fb2e3fa8136fdcf371eb0848bb86a41057e36d90b00cf99b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a1a4b39d28f8008969e36053d9e30d7230bfd65c4637fab4e82a8d9666df0562"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a59168f73f2e856720ff5075ad39e6883a69a19ebc22fd02ee1996deaede56b2"
+    sha256                               arm64_tahoe:   "6e2e3415c2fcea4c2d6f88512fa3a34faa23994753471b63bd9e9a3247062826"
+    sha256                               arm64_sequoia: "6e2e3415c2fcea4c2d6f88512fa3a34faa23994753471b63bd9e9a3247062826"
+    sha256                               arm64_sonoma:  "6e2e3415c2fcea4c2d6f88512fa3a34faa23994753471b63bd9e9a3247062826"
+    sha256 cellar: :any_skip_relocation, sonoma:        "56a296f926977388ad6634ac785442cc6ad90962d7fa0dcd2a4a5fc5184c373b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f09dd0c3e7b8340123e2a8fa86de39c5204ebeab2734f304746b39c8bdd74f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61c072d22d97302144e08b6763fcbcbcc2fdab5b785e40af59b52e52084a2b05"
   end
 
   depends_on "bun" => :build
