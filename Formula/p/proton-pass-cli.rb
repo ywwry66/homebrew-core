@@ -1,8 +1,8 @@
 class ProtonPassCli < Formula
   desc "Command-line interface for Proton Pass"
   homepage "https://protonpass.github.io/pass-cli/"
-  url "https://github.com/protonpass/pass-cli/archive/refs/tags/2.3.2.tar.gz"
-  sha256 "9b15641124c6a29eb7015f510cabc8f209fdef9274ace2821085eb02e37997ff"
+  url "https://github.com/protonpass/pass-cli/archive/refs/tags/2.3.3.tar.gz"
+  sha256 "a064b89fc4fb5d2db47a99e46e1782b7672dc1078e2ecbb881d0910c01947611"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -17,6 +17,10 @@ class ProtonPassCli < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@4"
+
+  # Upstream does not currently accept external contributions.
+  # Increase the recursion limit required to compile pass-cli 2.3.3.
+  patch :DATA
 
   def install
     system "cargo", "install", *std_cargo_args(path: "pass-cli")
@@ -40,3 +44,14 @@ class ProtonPassCli < Formula
     end
   end
 end
+
+__END__
+diff --git a/pass-cli/src/main.rs b/pass-cli/src/main.rs
+index 43cff31..55c8597 100644
+--- a/pass-cli/src/main.rs
++++ b/pass-cli/src/main.rs
+@@ -1,3 +1,4 @@
++#![recursion_limit = "256"]
+ /*
+  *  Copyright (c) 2026 Proton AG
+  *  This file is part of Proton AG and Proton Pass.
