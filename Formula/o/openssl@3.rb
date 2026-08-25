@@ -91,6 +91,9 @@ class OpensslAT3 < Formula
     args
   end
 
+  # Tests require network access
+  allow_network_access! :build
+
   def install
     if OS.linux?
       ENV.prepend_create_path "PERL5LIB", buildpath/"lib/perl5"
