@@ -12,12 +12,12 @@ class Xk6 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9b9633006a7ea57de327c53ae7b60caf60422f563620e40603f2927e61d329cb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b9633006a7ea57de327c53ae7b60caf60422f563620e40603f2927e61d329cb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9b9633006a7ea57de327c53ae7b60caf60422f563620e40603f2927e61d329cb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ed91f5035dde369b3b5671a6f3f992df6026d6070af6fa8600a5937c06e9ff04"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d3dd7740ce5a16698a98d767b5d3a7d1209c5e34891f9232b7936b96211274e"
-    sha256 cellar: :any,                 x86_64_linux:  "542b04437927f271fc6819e7a42992520181c3a67891d67437034282605bcd98"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bd85df82ac7b647e3225f8dca1994586944a1e7fba71e8754b094a96a8fa3b2d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd85df82ac7b647e3225f8dca1994586944a1e7fba71e8754b094a96a8fa3b2d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd85df82ac7b647e3225f8dca1994586944a1e7fba71e8754b094a96a8fa3b2d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bdbed708ff9b44e55266990675c409dc7405482cc9d4b4248e4acaee1c8f71e7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ed75f25a62ffe82b890e6ec2cb4f4611e660050930f7a01a2fa2dccbe13618c"
+    sha256 cellar: :any,                 x86_64_linux:  "b1e549e9aae181f22ff272b61b5df1e0786238e28985b7716c3ba5108781c488"
   end
 
   depends_on "go"
