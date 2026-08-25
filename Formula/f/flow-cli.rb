@@ -1,8 +1,8 @@
 class FlowCli < Formula
   desc "Command-line interface that provides utilities for building Flow applications"
   homepage "https://onflow.org"
-  url "https://github.com/onflow/flow-cli/archive/refs/tags/v2.17.4.tar.gz"
-  sha256 "9d3e89a99405cfa7b2bbc07db6530ea65a8b6537aff381fe61e4a74f2afd8c3f"
+  url "https://github.com/onflow/flow-cli/archive/refs/tags/v2.18.0.tar.gz"
+  sha256 "c3783a0a00fcc78e03f505fca5bf993bbbf6739d84308e4c0eeb17b013f899ac"
   license "Apache-2.0"
   head "https://github.com/onflow/flow-cli.git", branch: "master"
 
@@ -20,7 +20,7 @@ class FlowCli < Formula
     sha256 cellar: :any,                 x86_64_linux:  "ef4b2c0411c9f25ecba1577752ccae47e32b76494485893010fe0dba95865883"
   end
 
-  depends_on "go@1.25" => :build
+  depends_on "go@1.26" => :build
 
   conflicts_with "flow", because: "both install `flow` binaries"
 
@@ -34,11 +34,11 @@ class FlowCli < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/flow version")
 
-    (testpath/"hello.cdc").write <<~EOS
+    (testpath/"hello.cdc").write <<~CDC
       access(all) fun main() {
         log("Hello, world!")
       }
-    EOS
+    CDC
 
     system bin/"flow", "cadence", "hello.cdc"
   end
