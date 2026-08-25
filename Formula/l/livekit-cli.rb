@@ -1,8 +1,8 @@
 class LivekitCli < Formula
   desc "Command-line interface to LiveKit"
   homepage "https://livekit.io"
-  url "https://github.com/livekit/livekit-cli/archive/refs/tags/v2.18.2.tar.gz"
-  sha256 "068bcc02cfaa5a8b22107763b81b8c7904113d9bbbf022cb0db3d3931539469b"
+  url "https://github.com/livekit/livekit-cli/archive/refs/tags/v2.18.3.tar.gz"
+  sha256 "bf921006f909f903bdd746ff0f5931656e673c19c017fdd7535ca542c46bd101"
   license "Apache-2.0"
   head "https://github.com/livekit/livekit-cli.git", branch: "main"
 
