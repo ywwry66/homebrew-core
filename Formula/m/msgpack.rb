@@ -12,12 +12,12 @@ class Msgpack < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "18a3e8c60e3c9df37207ebc335a72bc59aafb905285e6a59b0dc99e057643adf"
-    sha256 cellar: :any, arm64_sequoia: "4588765193c757f81374fbdb7e024364bbf8529d82e85bbcc6feb329a022240a"
-    sha256 cellar: :any, arm64_sonoma:  "bb5d2a471c69fefdd5f4bb1cd8f4b56b211f6408091ac1c0ee586a1cf68a63b1"
-    sha256 cellar: :any, sonoma:        "fd5a092650d378550f34ff8f7fce9caa98509a7e5543d1b38b654ebf5ddbb18d"
-    sha256 cellar: :any, arm64_linux:   "44a1dfbe8973a63b47c248fdb13c9c7afec231283569b83354f77ac30995639c"
-    sha256 cellar: :any, x86_64_linux:  "4b29c4f5cc173b3153388bfd01e85dac8ad54fc0915bd29cc88100faef391b7b"
+    sha256 cellar: :any, arm64_tahoe:   "0256ac35fddc2e310727c2ebe9303775de6bfa54e71dde35a2c99f3c5e03f651"
+    sha256 cellar: :any, arm64_sequoia: "e096ebf62c431777d00dde83182ee02212b2f0053d5dbb7abbff5800832771b9"
+    sha256 cellar: :any, arm64_sonoma:  "a556ce7e3d22d2d64815e9aedb508b89b4a7f674f14bc1b33f41dc1d4bc828aa"
+    sha256 cellar: :any, sonoma:        "e558e2f6d522fb6a298a375e4a93333344342370b69e31d87ca478445d80acc3"
+    sha256 cellar: :any, arm64_linux:   "a584537e1d1b3e013c83a88a34eb4dfe68aea696617538c349c9c0bb1885930a"
+    sha256 cellar: :any, x86_64_linux:  "d40b5a46ed029404c3d7c820c5b0126d3f776966f8edd8defda0d1405dafa698"
   end
 
   depends_on "cmake" => :build
