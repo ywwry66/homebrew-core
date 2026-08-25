@@ -22,7 +22,7 @@ class FlowCli < Formula
 
   depends_on "go@1.25" => :build
 
-  conflicts_with "flow", because: "both install `flow` binaries"
+  conflicts_with "flow", "flow-control", because: "both install `flow` binaries"
 
   def install
     system "make", "cmd/flow/flow", "VERSION=v#{version}"
