@@ -6,12 +6,12 @@ class Seam < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "88622228e3abea43a2aaffb45371f7950e3f05967e15b9be8fc37fb1067d1bb8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "357d2ebb780b8a77a273d30c5c5e5983a0b87780b272d083f64c934254c3e924"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf2f8b203b6253564af715d92bd5ad4a3bd162d655d55e3962b0f3c1a5ceb412"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c8d5291d124e2108faa51bc80c97f8d6be977b424460ddf97f12b4cbdae8e081"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "78496a97c56d5d59b51aef6523e4634b4b2eca08ed6fd62cc1fb65b44dc1cfb0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80a4f24fa304a51f72e0c8c66799f9015c7ee462dc56d323a3fbb35f4409acc0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "238eece39902ba27391fa4fd1029f05c9c96262f38f7265653d654e90ca75bff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e013ae041ec824a9e34b8393ea4d3a56d6157284002cdba8548c78c4c1214b7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1dca82ba7d710555401aae6c87825fcfb94deaccfe98dc57cc874d253ddb5a98"
+    sha256 cellar: :any_skip_relocation, sonoma:        "716575408ef968c2dfa0b49a1229fee6cb52156132e8a2ad412f4bc89fccb753"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5265f3c0dbf4ba29406479bc6686f766ecb1b32cbeb6c96c87c4d49d936a3de6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d0a570462b8d6928bd4857c666705747fa20b75a0dbe321b6c7c732af400f80"
   end
 
   depends_on "node"
