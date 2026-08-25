@@ -7,12 +7,12 @@ class AtuinServer < Formula
   head "https://github.com/atuinsh/atuin.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "37e39d03014b6bcb952d9c22121d8b62546dfed9eecd8858a248d782a72cc81d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5dc2a797a5da8e4cad6725d743d80aea25274165b2f310fa298abea502519c5d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "080ba1313378855f680dc9ca1350f0f712902712d7a9511e5e72295b6b3e4a82"
-    sha256 cellar: :any_skip_relocation, sonoma:        "49ac5e1e8c58a36156612cc6b39e631775902c24089861f55b271a6a9f994ef4"
-    sha256 cellar: :any,                 arm64_linux:   "2e8111dea9ee8aa82275a137297e9747607c51976ff0671ee04b151e475aaf60"
-    sha256 cellar: :any,                 x86_64_linux:  "f13f1e4872e638dbdc0540f637c75a42580f79d97b5798e6c0b780f76875ea82"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "24427e3a5e44ce39539aa1d6a69324755db8308e1e1b0dc918868cab9f600cfd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5ab069d7423673e6848c4e4010734e61fc0c8c9adddb5e6b1e68fddde25a902b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ac5cf7142d33dc0919cf448f885e0984d84cfcd7d3021c10c54f9e6e90dded8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "30f5425f127a88bf9bdc337559aa11841e7b1e4520af07c4491937187db895e6"
+    sha256 cellar: :any,                 arm64_linux:   "af5ee6274034b0afa5eaf39fa36cf9ffb2d7f0f1420e22a0cbb3eadda7e0f916"
+    sha256 cellar: :any,                 x86_64_linux:  "b0d1e2d09c635aade567a2ee9a2329dccd484d73238665e59ca49ad47ace535c"
   end
 
   depends_on "pkgconf" => :build
