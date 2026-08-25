@@ -2,8 +2,8 @@ class Flyctl < Formula
   desc "Command-line tools for fly.io services"
   homepage "https://fly.io"
   url "https://github.com/superfly/flyctl.git",
-      tag:      "v0.4.91",
-      revision: "721aee94a408089ac70c5e0b8fa4d5e2169456ba"
+      tag:      "v0.4.92",
+      revision: "17564afc1d1fd4bade270bc34dfc864758fdfa83"
   license "Apache-2.0"
   head "https://github.com/superfly/flyctl.git", branch: "master"
 
