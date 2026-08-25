@@ -31,7 +31,6 @@ env:
   HOMEBREW_GITHUB_ACTIONS: 1
   HOMEBREW_NO_AUTO_UPDATE: 1
   HOMEBREW_NO_INSTALL_FROM_API: 1
-  HOMEBREW_SANDBOX_LINUX_LANDLOCK: 1
   HOMEBREW_SORBET_RECURSIVE: 1
   HOMEBREW_NO_BUILD_ERROR_ISSUES: 1
   RUN_URL: ${{github.event.repository.html_url}}/actions/runs/${{github.run_id}}
@@ -87,7 +86,7 @@ jobs:
                   runner:    s,
                   container: {
                     image:   "ghcr.io/homebrew/brew:main",
-                    options: "--user=linuxbrew --env=HOMEBREW_SANDBOX_LINUX_LANDLOCK=1"
+                    options: "--user=linuxbrew"
                   },
                   workdir:   "/github/home",
                   cleanup:   false
