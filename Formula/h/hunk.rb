@@ -1,8 +1,8 @@
 class Hunk < Formula
   desc "Review-first terminal diff viewer for agent-authored changesets"
   homepage "https://hunk.dev/"
-  url "https://github.com/modem-dev/hunk/archive/refs/tags/v0.19.0.tar.gz"
-  sha256 "33e8eb2e116f93e8772f9465556f59cd018e87ac1a9825153afc632e6abaa980"
+  url "https://github.com/modem-dev/hunk/archive/refs/tags/v0.19.1.tar.gz"
+  sha256 "b39d419b9927ed45b6c12f22f53bd2d8d7fa0833b47729223371f1055e4f029e"
   license "MIT"
   head "https://github.com/modem-dev/hunk.git", branch: "main"
 
