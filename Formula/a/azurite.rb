@@ -1,8 +1,8 @@
 class Azurite < Formula
   desc "Lightweight server clone of Azure Storage that simulates it locally"
   homepage "https://github.com/Azure/Azurite"
-  url "https://registry.npmjs.org/azurite/-/azurite-3.36.0.tgz"
-  sha256 "b33f3373449b0b9cc716cafe293a4d1ba6adfdad37ff2c816a3fafbdcbf50f9f"
+  url "https://registry.npmjs.org/azurite/-/azurite-3.37.0.tgz"
+  sha256 "991f93cbfd9006d61f8708a7ff78f4f76ce90ff8ee1dfb76ba47de2323170065"
   license "MIT"
 
   bottle do
