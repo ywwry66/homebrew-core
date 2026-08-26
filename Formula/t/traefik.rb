@@ -1,8 +1,8 @@
 class Traefik < Formula
   desc "Modern reverse proxy"
   homepage "https://traefik.io/"
-  url "https://github.com/traefik/traefik/releases/download/v3.7.11/traefik-v3.7.11.src.tar.gz"
-  sha256 "e046727bf3a6538f7e2205ca0ac27334441102d01e3a854af710c03a138125a1"
+  url "https://github.com/traefik/traefik/releases/download/v3.7.12/traefik-v3.7.12.src.tar.gz"
+  sha256 "2626c9a767fea03f22870f6ba28b550e8061fb6ce4a563839ef8e55a206c20d3"
   license "MIT"
   head "https://github.com/traefik/traefik.git", branch: "master"
 
