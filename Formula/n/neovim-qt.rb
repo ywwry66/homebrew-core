@@ -1,8 +1,8 @@
 class NeovimQt < Formula
   desc "Neovim GUI, in Qt"
   homepage "https://github.com/equalsraf/neovim-qt"
-  url "https://github.com/equalsraf/neovim-qt/archive/refs/tags/v0.2.19.tar.gz"
-  sha256 "2c5a5de6813566aeec9449be61e1a8cd8ef85979a9e234d420f2882efcfde382"
+  url "https://github.com/equalsraf/neovim-qt/archive/refs/tags/v0.2.20.tar.gz"
+  sha256 "1ba4da6594a22c7fd950876329ca55cc483a37bfc87f586b1226eb34b8f3ce9d"
   license "ISC"
   head "https://github.com/equalsraf/neovim-qt.git", branch: "master"
 
@@ -26,6 +26,21 @@ class NeovimQt < Formula
   depends_on "neovim"
   depends_on "qtbase"
   depends_on "qtsvg"
+
+  # Allow msgpack 6 or 7
+  patch do
+    url "https://github.com/equalsraf/neovim-qt/commit/93b62aadef9b1349579585570e49c645ddfd12ad.patch?full_index=1"
+    sha256 "81d3b6941754ab0c0c4cf8d5dacbfd9f9291c95cfed541ddf0f41db87010cf7d"
+    type :backport
+    resolves "https://github.com/equalsraf/neovim-qt/issues/1192"
+  end
+
+  patch do
+    url "https://github.com/equalsraf/neovim-qt/commit/acb4105de6ef7d7144fd84565441b97114a04453.patch?full_index=1"
+    sha256 "f1a3c0d018aed3d7ab3ac8d0f175a481507a4ea9a89898c638e84a8267358a8d"
+    type :backport
+    resolves "https://github.com/equalsraf/neovim-qt/issues/1192"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", "-DUSE_SYSTEM_MSGPACK=ON", "-DWITH_QT=Qt6", *std_cmake_args
