@@ -1,8 +1,8 @@
 class GiteaRunner < Formula
   desc "Official Actions runner for Gitea"
   homepage "https://gitea.com/gitea/runner"
-  url "https://gitea.com/gitea/runner/archive/v3.3.0.tar.gz"
-  sha256 "9c1140d4ef149c674f8344b9945c784b6774c9f2ce1c43647f22eabf4415c4de"
+  url "https://gitea.com/gitea/runner/archive/v3.3.1.tar.gz"
+  sha256 "a0146974eacddbb167e8316350a4b1fc1fa3010730866ec646ea660c008dfc67"
   license "MIT"
 
   bottle do
@@ -48,6 +48,6 @@ class GiteaRunner < Formula
       --token INVALID_TOKEN
     ]
     output = shell_output("#{bin}/gitea-runner register #{args.join(" ")} 2>&1", 1)
-    assert_match "Error: Failed to register runner", output
+    assert_match "Error: failed to register runner", output
   end
 end
