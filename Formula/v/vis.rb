@@ -1,11 +1,22 @@
 class Vis < Formula
   desc "Vim-like text editor"
   homepage "https://github.com/martanne/vis"
-  url "https://github.com/martanne/vis/archive/refs/tags/v0.9.tar.gz"
-  sha256 "bd37ffba5535e665c1e883c25ba5f4e3307569b6d392c60f3c7d5dedd2efcfca"
   license "ISC"
   revision 1
   head "https://github.com/martanne/vis.git", branch: "master"
+
+  stable do
+    url "https://github.com/martanne/vis/archive/refs/tags/v0.9.tar.gz"
+    sha256 "bd37ffba5535e665c1e883c25ba5f4e3307569b6d392c60f3c7d5dedd2efcfca"
+
+    # Apply Fedora patch to support Lua 5.5 until upstream has new release with
+    # https://github.com/martanne/vis/commit/b8fea9bcb14ea10e618c539c400139dd43d90e02
+    patch do
+      url "https://src.fedoraproject.org/rpms/vis/raw/bb0fc38581783fed74ead453dc216d17fbf551e4/f/vis-0.9-lua-5.5.patch"
+      sha256 "300bbabe3c149e94c5e5c64622087d40d2ce8c2f4cf2146e8f3e5a6d672fdae2"
+      type :unofficial
+    end
+  end
 
   bottle do
     sha256 arm64_tahoe:   "48f1f7959be85ddf700d6a18f71e5f1597a490e2679f81038aac4506c3f33472"
@@ -19,7 +30,7 @@ class Vis < Formula
   depends_on "pkgconf" => :build
   depends_on "libtermkey"
   depends_on "lpeg"
-  depends_on "lua@5.4" # https://github.com/martanne/vis/commit/b8fea9bcb14ea10e618c539c400139dd43d90e02
+  depends_on "lua"
   depends_on "tre"
 
   uses_from_macos "unzip" => :build
@@ -30,9 +41,7 @@ class Vis < Formula
   end
 
   def install
-    odie 'Switch to `depends_on "lua"`!' if build.stable? && version > "0.9"
-
-    system "./configure", "--enable-lua", "--enable-lpeg-static=no", *std_configure_args
+    system "./configure", "--enable-lua", *std_configure_args
     system "make", "install"
 
     return unless OS.mac?
