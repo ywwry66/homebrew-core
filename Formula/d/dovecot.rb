@@ -33,7 +33,7 @@ class Dovecot < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "lua@5.4"
+  depends_on "lua"
   depends_on "openldap"
   depends_on "openssl@3"
 
@@ -70,6 +70,13 @@ class Dovecot < Formula
   end
   # `plugins/var-expand-crypt` and `lib-storage-lua` missing `lib-var-expand` in LIBADD
   patch :DATA
+
+  # Apply Fedora patch to support Lua 5.5
+  patch do
+    url "https://src.fedoraproject.org/rpms/dovecot/raw/1b94c9d8fe9f5840e7a8dcd1268960fd4627d419/f/dovecot-2.4.2-lua-5.5.patch"
+    sha256 "e43bf7b80f6f5537178966b915c9d87cf80057da3d129148999b9ec7539f70ef"
+    type :unofficial
+  end
 
   def install
     # Re-generate file as only Linux has inotify support for imap-hibernate
