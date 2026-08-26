@@ -3,11 +3,10 @@ class Openvino < Formula
 
   desc "Open Visual Inference And Optimization toolkit for AI inference"
   homepage "https://docs.openvino.ai"
-  url "https://github.com/openvinotoolkit/openvino/archive/refs/tags/2026.3.0.tar.gz"
-  sha256 "48d97d500916e8fd57972a9ed729584c6d73c286554486745fb786e4cf5cf5df"
+  url "https://github.com/openvinotoolkit/openvino/archive/refs/tags/2026.3.1.tar.gz"
+  sha256 "06128c315f2d81a6d9d390e4e505748eb32f58bc8e717e32143d228546668505"
   license "Apache-2.0"
-  revision 2
-  compatibility_version 5
+  compatibility_version 6
   head "https://github.com/openvinotoolkit/openvino.git", branch: "master"
 
   livecheck do
@@ -134,6 +133,7 @@ class Openvino < Formula
     end
 
     cmake_args = %w[
+      -DENABLE_TESTS=OFF
       -DENABLE_CPPLINT=OFF
       -DENABLE_CLANG_FORMAT=OFF
       -DENABLE_NCC_STYLE=OFF
@@ -158,9 +158,29 @@ class Openvino < Formula
       cmake_args << "-DCMAKE_OSX_DEPLOYMENT_TARGET=#{MacOS.version}.0"
       ENV["MACOSX_DEPLOYMENT_TARGET"] = "#{MacOS.version}.0"
     end
+    if OS.linux? && Hardware::CPU.arm?
+      # Issue 1: Fix linking failure of certain binaries as Scons disables superenv
 
-    # Fix linking failure of certain binaries as Scons disables superenv
-    cmake_args << "-DCMAKE_BUILD_RPATH=#{HOMEBREW_PREFIX}/lib" if OS.linux? && Hardware::CPU.arm?
+      # Issue 2:
+      # On Linux ARM64, OpenVINO's shared frontends can acquire direct NEEDED entries
+      # for Abseil libraries through Homebrew's shared Protobuf/ONNX CMake targets
+      # (e.g. protobuf::libprotobuf-lite -> absl::hash). OpenVINO's BREW packaging
+      # RPATH only points at its own libdir, so add Homebrew's libdir explicitly to
+      # let the dynamic loader resolve libabsl_*.so at runtime.
+      rpaths = [
+        lib,
+        HOMEBREW_PREFIX/"lib",
+        formula_opt_lib("abseil"),
+        formula_opt_lib("protobuf"),
+        formula_opt_lib("onnx"),
+      ].uniq.join(";")
+
+      inreplace "cmake/developer_package/packaging/common-libraries.cmake",
+                'set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${OV_CPACK_LIBRARYDIR}")',
+                "set(CMAKE_INSTALL_RPATH \"#{rpaths}\")"
+
+      cmake_args << "-DCMAKE_BUILD_RPATH=#{rpaths}"
+    end
 
     system "cmake", "-S", ".", "-B", "build", *cmake_args, *std_cmake_args
     system "cmake", "--build", "build"
