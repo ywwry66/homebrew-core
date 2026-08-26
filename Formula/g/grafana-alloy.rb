@@ -6,6 +6,11 @@ class GrafanaAlloy < Formula
   license "Apache-2.0"
   head "https://github.com/grafana/alloy.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8173057a521e9717e15432a8a2b209d17d609d79fd3e041d894f89fb21e7d7fd"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e011bc2f0d5662e4db414b15a15d0ac67d37f0fc970ea6152c9bf01791542cd1"
