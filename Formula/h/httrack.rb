@@ -1,8 +1,8 @@
 class Httrack < Formula
   desc "Website copier/offline browser"
   homepage "https://www.httrack.com/"
-  url "https://github.com/xroche/httrack/releases/download/3.49.23/httrack-3.49.23.tar.gz"
-  sha256 "b91bae2e157e708553e12619702af8e22185d784954ce3ec3553add30b368584"
+  url "https://github.com/xroche/httrack/releases/download/3.49.24/httrack-3.49.24.tar.gz"
+  sha256 "126c047a74f9c9944bfc6339ff310131caa319b67e26e29af81cc62dac287531"
   license "GPL-3.0-or-later" => { with: "openvpn-openssl-exception" }
 
   bottle do
