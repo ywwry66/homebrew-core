@@ -6,13 +6,6 @@ class LuaAT54 < Formula
   license "MIT"
   compatibility_version 1
 
-  # Check for new releases until https://www.lua.org/versions.html#5.4
-  # says "There will be no further releases of Lua 5.4".
-  livecheck do
-    url "https://www.lua.org/ftp/"
-    regex(/href=.*?lua[._-]v?(5\.4(?:\.\d+)+)\.t/i)
-  end
-
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "209dbe6bdb75d426d1e92a1c7eb1c8d05c1b75a98bcc54d21a7fe9db2493ad91"
     sha256 cellar: :any, arm64_sequoia: "14e2fe91a31d0bda4d02ec4839e56bc287f722e7e93c89f6fd8aefb5d86dd2c0"
@@ -23,6 +16,11 @@ class LuaAT54 < Formula
   end
 
   keg_only :versioned_formula
+
+  # See: https://www.lua.org/versions.html#5.4
+  # Last release on 2026-08-25
+  deprecate! date: "2026-08-26", because: :unsupported
+  disable! date: "2027-08-26", because: :unsupported
 
   on_linux do
     depends_on "readline"
