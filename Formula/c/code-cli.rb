@@ -1,8 +1,8 @@
 class CodeCli < Formula
   desc "Command-line interface built-in Visual Studio Code"
   homepage "https://code.visualstudio.com"
-  url "https://github.com/microsoft/vscode/archive/refs/tags/1.134.0.tar.gz"
-  sha256 "aadbaa0830a4e0bbb4224f590cef9bdb5e0c3378a278bca51d0ffe71948fdd35"
+  url "https://github.com/microsoft/vscode/archive/refs/tags/1.135.0.tar.gz"
+  sha256 "2f8faaa98104e6d2193086c5b769f779712928273a09f05d9cce343be29adba5"
   license "MIT"
   head "https://github.com/microsoft/vscode.git", branch: "main"
 
@@ -38,10 +38,6 @@ class CodeCli < Formula
     ENV["OPENSSL_DIR"] = openssl.opt_prefix
 
     ENV["VSCODE_CLI_NAME_LONG"] = "Code OSS"
-
-    # The 1.134.0 tag was cut after `package.json` was bumped to the next release.
-    odie "Check if the `package.json` rewrite is still needed!" if build.stable? && version > "1.134.0"
-    inreplace "package.json", /"version": "[^"]*"/, "\"version\": \"#{version}\""
 
     cd "cli" do
       system "cargo", "install", *std_cargo_args
