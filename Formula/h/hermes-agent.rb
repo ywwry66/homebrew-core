@@ -30,7 +30,8 @@ class HermesAgent < Formula
   depends_on "node"
   depends_on "pillow" => :no_linkage
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.14"
+  # see: https://github.com/Homebrew/homebrew-core/issues/300738
+  depends_on "python@3.13"
   depends_on "ripgrep"
   depends_on "tirith"
 
@@ -296,9 +297,6 @@ class HermesAgent < Formula
 
   def install
     ENV["HERMES_NIX_BUILD"] = "1"
-    # Allow to build with Python 3.14
-    inreplace "pyproject.toml", "requires-python = \">=3.11,<3.14\"", "requires-python = \">=3.11,<3.15\""
-
     # Work around superenv breaking aws-lc-sys `-O0` needed to build CPU Jitter RNG
     ENV["AWS_LC_SYS_NO_JITTER_ENTROPY"] = "1"
 
