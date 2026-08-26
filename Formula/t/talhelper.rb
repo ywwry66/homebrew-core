@@ -1,8 +1,8 @@
 class Talhelper < Formula
   desc "Configuration helper for talos clusters"
   homepage "https://budimanjojo.github.io/talhelper/latest/"
-  url "https://github.com/budimanjojo/talhelper/archive/refs/tags/v3.1.16.tar.gz"
-  sha256 "506b53442cbaa3ea34990f182d2db206d6987d7ae3652f91883ab6358af6b2ee"
+  url "https://github.com/budimanjojo/talhelper/archive/refs/tags/v3.1.17.tar.gz"
+  sha256 "204a1431f215802cc32bd89cc26eddf4eb8c9b0809da386c5f99cc69eec143e0"
   license "BSD-3-Clause"
   head "https://github.com/budimanjojo/talhelper.git", branch: "master"
 
@@ -14,6 +14,9 @@ class Talhelper < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:   "df409811de49059cd385206b56afa0f54dd5327a782fd710cce584742386c529"
     sha256 cellar: :any,                 x86_64_linux:  "90701026c785f4557e7f367ce26bd7b160dfdd3f92ac00268ed141980bae64dc"
   end
+
+  deprecate! date: "2026-08-26", because: :repo_archived
+  disable! date: "2027-08-26", because: :repo_archived
 
   depends_on "go" => :build
 
