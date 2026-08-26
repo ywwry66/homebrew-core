@@ -4,6 +4,7 @@ class AwsCrtCpp < Formula
   url "https://github.com/awslabs/aws-crt-cpp/archive/refs/tags/v0.43.5.tar.gz"
   sha256 "8c83897fb827527b67377f08a5b349576c50add2406fa1ff372cf2dd16fc00f4"
   license "Apache-2.0"
+  revision 1
   compatibility_version 1
 
   bottle do
