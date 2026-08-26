@@ -16,7 +16,7 @@ class Lmod < Formula
 
   depends_on "luarocks" => :build
   depends_on "pkgconf" => :build
-  depends_on "lua@5.4" # due to luaposix
+  depends_on "lua"
   depends_on "tcl-tk"
 
   uses_from_macos "bc-gh" => :build
@@ -41,8 +41,16 @@ class Lmod < Formula
     sha256 "82cd9a96c41a4a3205c050206f0564ff4456f773a8f9ffc9235ff8f1907ca5e6"
   end
 
+  # Apply open PR to fix build with Lua 5.5
+  patch do
+    url "https://github.com/TACC/Lmod/commit/19625072d1d226c7a63bb36cc73074393a30ae62.patch?full_index=1"
+    sha256 "b4ee757b016ad1950dbde17b70a5f3c28c179a9b831b12d51f425670cc8685b1"
+    type :unofficial
+    resolves "https://github.com/TACC/Lmod/pull/854"
+  end
+
   def install
-    lua = Formula["lua@5.4"]
+    lua = Formula["lua"]
     luaversion = lua.version.major_minor
     luapath = libexec/"vendor"
     ENV["LUA_PATH"] = "?.lua;" \
@@ -52,6 +60,16 @@ class Lmod < Formula
 
     resources.each do |r|
       r.stage do
+        # Arch Linux, Debian and Fedora have packaged luaposix 36.3 for Lua 5.5 without code changes.
+        # They don't use luarocks dependency resolver so end up ignoring the Lua constraint.
+        # - https://gitlab.archlinux.org/archlinux/packaging/packages/lua-posix/-/commit/bc724ec92dc18e6496593b58561bae8742cd4fd4
+        # - https://salsa.debian.org/lua-team/lua-posix/-/commit/b1bd0ec25be0599fbdf7b50fc2442b6874f2e51e
+        # - https://src.fedoraproject.org/rpms/lua-posix/c/faa875d881a18fac9b9b277bac4bc72fdeca4624
+        #
+        # TODO: Remove following when luaposix increases Lua upper bound. Upstream is still
+        # waiting on test dependencies: https://github.com/luaposix/luaposix/issues/394
+        inreplace "luaposix-36.3-1.rockspec", "'lua >= 5.1, < 5.5'", "'lua >= 5.1, < 5.6'" if r.name == "luaposix"
+
         system "luarocks", "make", "--tree=#{luapath}", "--lua-dir=#{lua.opt_prefix}"
       end
     end
