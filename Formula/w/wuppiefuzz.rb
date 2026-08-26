@@ -1,10 +1,9 @@
 class Wuppiefuzz < Formula
   desc "Coverage-guided REST API fuzzer developed on top of LibAFL"
   homepage "https://github.com/TNO-S3/WuppieFuzz"
-  url "https://github.com/TNO-S3/WuppieFuzz/releases/download/v1.6.0/source.tar.gz"
-  sha256 "f22bd5f0f1f922dfa1481e752689fe043e49f68bb1139fab195359b388e461f0"
+  url "https://github.com/TNO-S3/WuppieFuzz/releases/download/v1.7.0/source.tar.gz"
+  sha256 "4982dd9b1c1ea9424a58b8c88b373f59c096c78da6396069d9aa3fa77a57120a"
   license "Apache-2.0"
-  revision 2
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "ecf9f532793558ed76c7602e8bc625eae1e1d0918afa24cf0d1715c528f07aca"
@@ -28,6 +27,7 @@ class Wuppiefuzz < Formula
   end
 
   def install
+    rm ".cargo/config.toml" # macOS `-stack_size` flag breaks proc-macro linking
     ENV["Z3_LIBRARY_PATH_OVERRIDE"] = formula_opt_lib("z3")
     ENV["Z3_SYS_Z3_HEADER"] = formula_opt_include("z3")/"z3.h"
     system "cargo", "install", "--no-default-features", *std_cargo_args(features: ["std"])
