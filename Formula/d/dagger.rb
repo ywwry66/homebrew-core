@@ -1,8 +1,8 @@
 class Dagger < Formula
   desc "Portable devkit for CI/CD pipelines"
   homepage "https://dagger.io"
-  url "https://github.com/dagger/dagger/archive/refs/tags/v0.21.8.tar.gz"
-  sha256 "2e02b66958913e773d59e344a701d479e252457dcdc6be341e98428322c91565"
+  url "https://github.com/dagger/dagger/archive/refs/tags/v0.21.9.tar.gz"
+  sha256 "652fffab225340df36ea4f65eded61628a9cf5f1dd2ac2f667aadaa5d84eb430"
   license "Apache-2.0"
   head "https://github.com/dagger/dagger.git", branch: "main"
 
@@ -20,7 +20,8 @@ class Dagger < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4f137da12a54396588f80d728eb1581833ce8446a5091bb95b9e994ae6857f2"
   end
 
-  depends_on "go" => :build
+  # TODO: switch back to `go` when x/net is bumped past v0.54.0 (broken with Go 1.27)
+  depends_on "go@1.26" => :build
   depends_on "docker" => :test
 
   def install
