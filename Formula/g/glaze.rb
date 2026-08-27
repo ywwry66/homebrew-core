@@ -1,8 +1,8 @@
 class Glaze < Formula
   desc "Extremely fast, in-memory JSON and interface library for modern C++"
   homepage "https://stephenberry.github.io/glaze/"
-  url "https://github.com/stephenberry/glaze/archive/refs/tags/v8.1.0.tar.gz"
-  sha256 "8cc479b53e4612fad2b4b74a079421d5ea897944e54a9ab5d1207cd68cf52b9b"
+  url "https://github.com/stephenberry/glaze/archive/refs/tags/v8.2.0.tar.gz"
+  sha256 "dcc1f107cfa3be4094d306bc44b32907ae1331a0557809c16332e643678fe1df"
   license "MIT"
 
   bottle do
@@ -10,7 +10,6 @@ class Glaze < Formula
   end
 
   depends_on "cmake" => [:build, :test]
-  depends_on "llvm" => :test
 
   def install
     args = %w[
@@ -23,7 +22,7 @@ class Glaze < Formula
 
   test do
     (testpath/"CMakeLists.txt").write <<~CMAKE
-      cmake_minimum_required(VERSION 3.16)
+      cmake_minimum_required(VERSION 4.0)
       project(GlazeTest LANGUAGES CXX)
 
       set(CMAKE_CXX_STANDARD 20)
@@ -48,7 +47,6 @@ class Glaze < Formula
       }
     CPP
 
-    ENV.append_to_cflags "-DGLZ_USE_STD_FORMAT_FLOAT=0" if OS.linux?
     system "cmake", "-S", ".", "-B", "build", "-Dglaze_DIR=#{share}/glaze"
     system "cmake", "--build", "build"
     system "./build/glaze_test"
