@@ -3,8 +3,8 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/45/34/bccff53dd91602ad5e895a08f7d4c1b22ad5cf3c940123d402866336e963/flexget-3.20.7.tar.gz"
-  sha256 "640f558fa2c5da99e01cd3f3c5a673ad25eb87334ff2be22c8c4533848b4848f"
+  url "https://files.pythonhosted.org/packages/40/1d/66071935d200f775039c4738e721435b6e106ad72b10787bcda19e66e139/flexget-3.20.8.tar.gz"
+  sha256 "179dfdbebc93dc05f029be14fce33685c25158b328e61f8bee8f2337f2ebb7b2"
   license "MIT"
 
   bottle do
@@ -83,13 +83,13 @@ class Flexget < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
-    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "curl-cffi" do
-    url "https://files.pythonhosted.org/packages/bb/df/8ef4b9a05139fdb6baf39ab44cc6529b91ef2425aab14d4f4a1dab940a56/curl_cffi-0.16.1.tar.gz"
-    sha256 "0662a4fe752d395ab3e2e23fbec68e34e1671884d0dd68dfc9671e150f634a99"
+    url "https://files.pythonhosted.org/packages/d1/f6/347067dfacb19e44a4166d7bdb183e3a2629680beceb5e52f7cb2cc1a3b4/curl_cffi-0.16.2.tar.gz"
+    sha256 "2986a86cdcf514ab73632c2de62a01db3cc97f7ecf17798a1be16180f4474198"
   end
 
   resource "feedparser" do
