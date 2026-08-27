@@ -3,8 +3,8 @@ class Barman < Formula
 
   desc "Backup and Recovery Manager for PostgreSQL"
   homepage "https://www.pgbarman.org/"
-  url "https://github.com/EnterpriseDB/barman/releases/download/release%2F3.19.1/barman-3.19.1.tar.gz"
-  sha256 "2f71c4a1f1ba53f694cbdf838bb9906d8ba02b97d1fd3041196e8999bec7a1ee"
+  url "https://files.pythonhosted.org/packages/6a/f4/aa08320a5763e2be204379a0c384f8557a9de1d8b6a3de2d0f454f876b48/barman-3.20.0.tar.gz"
+  sha256 "02dd8936e62c1829c78597eefedfcab0aa820f5618da2871f38b5bc684891a54"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -16,6 +16,7 @@ class Barman < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f5011eb88f1b8b29e54acd4926426939cea609a95da5c3b0b20f81736c542ed"
   end
 
+  depends_on "rust" => :build # for uv_build > maturin
   depends_on "libpq"
   depends_on "openssl@3"
   depends_on "python@3.14"
