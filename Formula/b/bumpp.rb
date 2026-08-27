@@ -6,7 +6,7 @@ class Bumpp < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0d61a7998d55258810d2e38cd0c860afe4bbaacf6faa81499da6bbb13c523efd"
+    sha256 cellar: :any_skip_relocation, all: "101085d08a34135abc950a9cc84b78e2f699fa63c0e762ba0b2495b0b6f59323"
   end
 
   depends_on "node"
