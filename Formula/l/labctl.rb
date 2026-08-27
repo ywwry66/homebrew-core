@@ -6,12 +6,12 @@ class Labctl < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "69c268c123d3784f8bd850f03e04f8408383c6d1bf7d7301afb135578f091672"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69c268c123d3784f8bd850f03e04f8408383c6d1bf7d7301afb135578f091672"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "69c268c123d3784f8bd850f03e04f8408383c6d1bf7d7301afb135578f091672"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e25e4b1668e40ebfc0a68d28f3524d991617c334fa251f2746cc39d1f02948e5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3748ad4001d27b51a8c68de355f7cc6a115cc5a3aab9be3fbdb81404d02ce145"
-    sha256 cellar: :any,                 x86_64_linux:  "53ae7768807b53827dcc84e33c0225b84f2e46d5b48036355fc51c08c0524196"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "29101fef3d9756ddfa47befd6b65d6d5a3b3da8e8035f70447da62f1ad551199"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "29101fef3d9756ddfa47befd6b65d6d5a3b3da8e8035f70447da62f1ad551199"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "29101fef3d9756ddfa47befd6b65d6d5a3b3da8e8035f70447da62f1ad551199"
+    sha256 cellar: :any_skip_relocation, sonoma:        "37210994f36e3d63b1d8ec6cdc1e15bb3b89eb84fa2a5d9176d7bbe008bc19b1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd87478059c2157741d1522006015babebca7f3c82819aa84e24a3bfb92ef8b4"
+    sha256 cellar: :any,                 x86_64_linux:  "353a38fa55dc1545525446be0c9766863138b71590fef4b9acbdfd22639355c2"
   end
 
   depends_on "go" => :build
