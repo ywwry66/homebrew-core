@@ -1,8 +1,8 @@
 class Nss < Formula
   desc "Libraries for security-enabled client and server applications"
   homepage "https://firefox-source-docs.mozilla.org/security/nss/index.html"
-  url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_127_RTM/src/nss-3.127.tar.gz"
-  sha256 "5a899cad21ae2c9d3c5132de79726eda8df3b7fdf18eeb239fc544d43b87338b"
+  url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_128_RTM/src/nss-3.128.tar.gz"
+  sha256 "70ea638f4e4fc341b24782ef9af6d88a2d3280ef5e46736748411fe8ca586351"
   license "MPL-2.0"
   compatibility_version 1
 
@@ -50,6 +50,8 @@ class Nss < Formula
       NSPR_LIB_DIR=#{formula_opt_lib("nspr")}
       USE_64=1
     ]
+    # Darwin.mk never computes LITTLE_ENDIAN, so NSS 3.128 drops -DHAVE_PLATFORM_GHASH
+    args << "LITTLE_ENDIAN=1" if OS.mac?
 
     # Remove the broken (for anyone but Firefox) install_name
     inreplace "coreconf/Darwin.mk", "-install_name @executable_path", "-install_name #{lib}"
