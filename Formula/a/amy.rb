@@ -5,6 +5,10 @@ class Amy < Formula
   sha256 "284a8dbbead65db09d27b94b3575daa3d645826a037546fda91297561160fb5b"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "feddbbde03c64fb7ce2d9606c69fcd582f52ba467f209be73b27b80df4592f54"
+  end
+
   depends_on "openjdk"
 
   def install
