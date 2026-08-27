@@ -11,12 +11,11 @@ class Composer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a75b416c4ba793c011519b09ce9464c6a1d207c478c4d58fc72b4c4516db468a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a75b416c4ba793c011519b09ce9464c6a1d207c478c4d58fc72b4c4516db468a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a75b416c4ba793c011519b09ce9464c6a1d207c478c4d58fc72b4c4516db468a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "233bb1bb84f102afa03e48e237ed0935dc20942d686abb8ad278590ab764931c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "233bb1bb84f102afa03e48e237ed0935dc20942d686abb8ad278590ab764931c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "233bb1bb84f102afa03e48e237ed0935dc20942d686abb8ad278590ab764931c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8855724526da9db4caa9a2c99f9964676bdc9462098adb8ad1388b051a5ad7b9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8855724526da9db4caa9a2c99f9964676bdc9462098adb8ad1388b051a5ad7b9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8855724526da9db4caa9a2c99f9964676bdc9462098adb8ad1388b051a5ad7b9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4c0a7ebb8e215eadc9489779cabba06ca58e1bb6b4e168c2e2b35b9af32aab6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4c0a7ebb8e215eadc9489779cabba06ca58e1bb6b4e168c2e2b35b9af32aab6"
   end
 
   depends_on "php"
