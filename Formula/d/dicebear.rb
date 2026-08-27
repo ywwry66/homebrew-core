@@ -1,8 +1,8 @@
 class Dicebear < Formula
   desc "CLI for DiceBear - An avatar library for designers and developers"
   homepage "https://www.dicebear.com"
-  url "https://registry.npmjs.org/dicebear/-/dicebear-10.6.1.tgz"
-  sha256 "65606df941583bf78575117cd2ab54e4ea99bf148e66ae8c389cca4c38d0c326"
+  url "https://registry.npmjs.org/dicebear/-/dicebear-10.7.0.tgz"
+  sha256 "9fef906a168742230b3a31e90bd0708a555a7a14d06c6ebd8d13e368d3336902"
   license "MIT"
 
   bottle do
@@ -31,8 +31,8 @@ class Dicebear < Formula
   end
 
   resource "node-gyp" do
-    url "https://registry.npmjs.org/node-gyp/-/node-gyp-13.0.1.tgz"
-    sha256 "455327cde805c299d5a16603419e106853db5b9257dfb85e44eb7f4ec4d99de5"
+    url "https://registry.npmjs.org/node-gyp/-/node-gyp-13.0.2.tgz"
+    sha256 "1b1524d914331bd01312729e31a828192d53af84e113dacb6e36afabb6c21a6d"
   end
 
   def install
