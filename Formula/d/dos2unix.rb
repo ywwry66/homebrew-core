@@ -1,8 +1,8 @@
 class Dos2unix < Formula
   desc "Convert text between DOS, UNIX, and Mac formats"
   homepage "https://waterlander.net/dos2unix/"
-  url "https://waterlander.net/dos2unix/files/dos2unix-7.5.6.tar.gz"
-  sha256 "63650acbd0c7fa8623429bcbf93a888e3351a1cad0f556cf41876f5673dd7d0b"
+  url "https://waterlander.net/dos2unix/files/dos2unix-7.5.7.tar.gz"
+  sha256 "669ee27120ae71589f638fe3a167d6ea54f8633f5ab1b282551bd7a7c9510dfa"
   license "BSD-2-Clause"
 
   livecheck do
