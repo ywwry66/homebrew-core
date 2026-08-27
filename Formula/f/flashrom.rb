@@ -1,8 +1,8 @@
 class Flashrom < Formula
   desc "Identify, read, write, verify, and erase flash chips"
   homepage "https://flashrom.org/"
-  url "https://download.flashrom.org/releases/flashrom-v1.7.0.tar.xz"
-  sha256 "4328ace9833f7efe7c334bdd73482cde8286819826cc00149e83fba96bf3ab4f"
+  url "https://download.flashrom.org/releases/flashrom-v1.8.0.tar.xz"
+  sha256 "654c9c61745c250cd3b5ccd0e56fc43ee76980f92a5e078420420639d66975a2"
   license "GPL-2.0-or-later"
   head "https://review.coreboot.org/flashrom.git", branch: "main"
 
