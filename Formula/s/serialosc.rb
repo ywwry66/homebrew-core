@@ -3,8 +3,8 @@ class Serialosc < Formula
   homepage "https://github.com/monome/docs/blob/gh-pages/serialosc/osc.md"
   # pull from git tag to get submodules
   url "https://github.com/monome/serialosc.git",
-      tag:      "v1.4.7",
-      revision: "94d457f80fe3721d21df5190c99bd522c711185a"
+      tag:      "v1.4.8",
+      revision: "c96ea389dbf82c84d17f6f7adddaf311aed49438"
   license "ISC"
   head "https://github.com/monome/serialosc.git", branch: "main"
 
