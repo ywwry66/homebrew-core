@@ -5,8 +5,8 @@ class Envoy < Formula
   head "https://github.com/envoyproxy/envoy.git", branch: "main"
 
   stable do
-    url "https://github.com/envoyproxy/envoy/archive/refs/tags/v1.39.0.tar.gz"
-    sha256 "a6c5b2af8387f7e9eb953d5ea66d61a57ecb1c2bef698ef154631092195b84b7"
+    url "https://github.com/envoyproxy/envoy/archive/refs/tags/v1.39.1.tar.gz"
+    sha256 "3fca3330b3c9b632d0039f4da1ece3e177fc12348907ebaa8be7b489a9f9287f"
 
     # Allow using host-installed toolchains
     patch do
@@ -33,7 +33,9 @@ class Envoy < Formula
 
   depends_on "bazel@8" => :build
   depends_on "cmake" => :build
-  depends_on "go" => :build
+  # TODO: unpin go@1.26 when envoy updates to rules_go >= 0.62.0
+  # ref: https://github.com/bazel-contrib/rules_go/pull/4641
+  depends_on "go@1.26" => :build
   depends_on "llvm@18" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
@@ -105,6 +107,10 @@ class Envoy < Formula
     else
       ["--config=macos"]
     end
+
+    # TODO: remove when unpinning go@1.26
+    # `--config=macos` resets the action PATH to `/opt/homebrew/bin`, which hides keg-only deps
+    args << "--repo_env=PATH=#{env_path}"
 
     # Write the current version SOURCE_VERSION.
     system "python3", "tools/github/write_current_source_version.py", "--skip_error_in_git",
