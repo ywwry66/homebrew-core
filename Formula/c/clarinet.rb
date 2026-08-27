@@ -13,12 +13,12 @@ class Clarinet < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e8802bca32b586f4e3b6d217c485bd3a6b54303c5a9cf2bc31dfd11c1c80b288"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b9ec28b86a9b5416f96e43e0a5cf70ae050c39fd519f931eaa20f8b4798bdffe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a06a77a8e0b340421623d624325eeb893fb3c171e007c773907bc9f941cba2ba"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c5a9ad331ac3b1bbcaa5daf939ad80e642be6df6cb9d30cc4065cc9017bd648e"
-    sha256 cellar: :any,                 arm64_linux:   "c13b7eda98fe680f6db6f8bc39ca4f7889e65711c3c70ec06ece4e1d88af4dab"
-    sha256 cellar: :any,                 x86_64_linux:  "45870178ad01038fe244517ebf19e21b3456d43a41e8e813f15a5fa432ba11b7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6d29eae4060064ed236971a407c3f76f42cbc59aaf22f0b55944353ba41e640c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42b55b6fd76778262bae61c1ea3769fc2b889753ea906379f234fa5bf67f261d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8dd85fbf573eda92b370ce6a07fd7c9eff985cc89485c72be69fc8b73071d78d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0be6aca06a304e4d21dd99418003d0ba4965369195fc4fef6d00f347f92a39df"
+    sha256 cellar: :any,                 arm64_linux:   "d963739b01e691b640a656a06a91b01e3e94866658d98f27674bd88b6881c147"
+    sha256 cellar: :any,                 x86_64_linux:  "a7b005dbce4064abaffceafcef4146415dee1c3dd7d73b2f33fd7770ff185e22"
   end
 
   depends_on "rust" => :build
