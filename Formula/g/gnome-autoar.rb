@@ -1,8 +1,8 @@
 class GnomeAutoar < Formula
   desc "GNOME library for archive handling"
   homepage "https://github.com/GNOME/gnome-autoar"
-  url "https://download.gnome.org/sources/gnome-autoar/0.4/gnome-autoar-0.4.5.tar.xz"
-  sha256 "838c5306fc38bfaa2f23abe24262f4bf15771e3303fb5dcb74f5b9c7a615dabe"
+  url "https://download.gnome.org/sources/gnome-autoar/0.5/gnome-autoar-0.5.0.tar.xz"
+  sha256 "70915cfbb226746a57d5c605771a01f60de317eab9bc3953f44df2712a53c836"
   license "LGPL-2.1-or-later"
 
   # gnome-autoar doesn't seem to follow the typical GNOME version format where
