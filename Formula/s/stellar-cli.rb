@@ -4,6 +4,7 @@ class StellarCli < Formula
   url "https://static.crates.io/crates/stellar-cli/stellar-cli-28.0.0.crate"
   sha256 "1772d04d1bcd1bc3d2aae81932f3dbad84bac9fdf8b4c76b72aa4eb11394ae64"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/stellar/stellar-cli.git", branch: "main"
 
   bottle do
@@ -15,11 +16,10 @@ class StellarCli < Formula
     sha256 cellar: :any,                 x86_64_linux:  "776275dbe66eedc75e75e41e39b644b16f95c1abca3098e5cb36ec17ef70fe3d"
   end
 
-  depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
 
   on_linux do
+    depends_on "pkgconf" => :build
     depends_on "dbus"
     depends_on "systemd" # for libudev
   end
