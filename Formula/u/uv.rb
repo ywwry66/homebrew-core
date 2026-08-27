@@ -23,6 +23,9 @@ class Uv < Formula
   uses_from_macos "bzip2"
   uses_from_macos "xz"
 
+  # downloads crates on install and wheels in test
+  deny_network_access! :postinstall
+
   def install
     ENV["UV_COMMIT_HASH"] = ENV["UV_COMMIT_SHORT_HASH"] = tap.user
     ENV["UV_COMMIT_DATE"] = time.strftime("%F")
