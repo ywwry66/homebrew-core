@@ -3,8 +3,8 @@ class Torrra < Formula
 
   desc "Find and download torrents without leaving your CLI"
   homepage "https://torrra.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/fe/57/40761bcc4eec8c7801ceea3475217e9538e7b1b4e4ae4cd81714814be79b/torrra-2.3.1.tar.gz"
-  sha256 "d9ad8f150eb3a7a259c4f850bdff144f307d4098fc4a30e82f2d7a9660f80f3a"
+  url "https://files.pythonhosted.org/packages/9e/73/e6916c644f65640a62e07fbe9bf71f77d6d3c49b60cabdb57f7abf093dd5/torrra-2.3.2.tar.gz"
+  sha256 "8eb4c773a08103d87de149761ba6f6e6dd4a46c0e846503d5e8ff13f85e6e0c3"
   license "MIT"
   head "https://github.com/stabldev/torrra.git", branch: "main"
 
