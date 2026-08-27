@@ -1,10 +1,9 @@
 class ProtocGenGrpcWeb < Formula
   desc "Protoc plugin that generates code for gRPC-Web clients"
   homepage "https://grpc.io"
-  url "https://github.com/grpc/grpc-web/archive/refs/tags/2.0.2.tar.gz"
-  sha256 "0f0c8c0c1104306d67dad678be7c14efe52a698795a58b2b72ab67a8bb100c15"
+  url "https://github.com/grpc/grpc-web/archive/refs/tags/2.1.1.tar.gz"
+  sha256 "7766763275c6bf99115c9b535aaa3c507566847d47ea72a1f70da7fe427a98d3"
   license "Apache-2.0"
-  revision 9
 
   livecheck do
     url :stable
