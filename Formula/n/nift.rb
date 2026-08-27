@@ -5,6 +5,11 @@ class Nift < Formula
   sha256 "8e43c1579001d8f97695bb50f2486a3ce48442797fb56d80519335312af34fbd"
   license "MIT"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d7c16a33bf355e0a17f1d07f435b82fbfca9d8a582cd4d1d238b96fb3bc687ad"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c01c81c8d7fb0a62ec6ab981ff18c9ab5093665ebc1c7a594832f5cefe520d02"
