@@ -5,8 +5,8 @@ class Semgrep < Formula
   homepage "https://semgrep.dev"
   # Pull from git tag to get submodules, https://github.com/semgrep/semgrep/issues/10877
   url "https://github.com/semgrep/semgrep.git",
-      tag:      "v1.174.0",
-      revision: "829b72f16f5148e171059ed74518d2324294d1f1"
+      tag:      "v1.175.0",
+      revision: "7963c5a2d7e784ab24d0c14e29c63c6d53751336"
   license "LGPL-2.1-only"
   head "https://github.com/semgrep/semgrep.git", branch: "develop"
 
@@ -107,8 +107,8 @@ class Semgrep < Formula
   end
 
   resource "googleapis-common-protos" do
-    url "https://files.pythonhosted.org/packages/72/73/74bcab964c9a7a61f2bb71e8179b0f13e6fa98f7ce00fd168aab291e4a2e/googleapis_common_protos-1.75.1.tar.gz"
-    sha256 "d3042c6c5a2d4e67113104d6b6818b59b6bd92a197f2a91508e801fe815cf071"
+    url "https://files.pythonhosted.org/packages/c0/90/fb8f1c84537fbf210c1f53a53ae473a805f6599c5a40b93c1bbadd211f7a/googleapis_common_protos-1.75.2.tar.gz"
+    sha256 "8829a3d1e4508c5b7b9a6b9525f7fccff611f8531644579a76466c29295d4bb2"
   end
 
   resource "h11" do
