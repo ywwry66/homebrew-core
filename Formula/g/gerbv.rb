@@ -5,6 +5,10 @@ class Gerbv < Formula
   sha256 "b9a01ed892702f21f78b6ef4ec701e2db3220b5702d1cf93b10e843cad1e69a1"
   license "GPL-2.0-or-later"
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     sha256 arm64_tahoe:   "4dc6433925aeac44a2a626ba71738c2e34758a19f4f50cad7a194e61f8052fa4"
     sha256 arm64_sequoia: "359c1d89dffeabd88988af8a7c8d76d0decc38b25b34adeabd9b98d1e7b0dd71"
@@ -13,6 +17,10 @@ class Gerbv < Formula
     sha256 arm64_linux:   "31c9be5a7194ec14a38eb81f4eb60ac0d8e7cef0bca37852a286d0a3c261790f"
     sha256 x86_64_linux:  "1552e7fc822f0fb03a3768d7aa095d70c7b1bd9ebee8dfa4d6efa79b8e2155a7"
   end
+
+  # Can be undeprecated if upstream moves to GTK 3/4: https://github.com/gerbv/gerbv/issues/71
+  deprecate! date: "2026-08-28", because: "needs EOL `gtk+`"
+  disable! date: "2027-08-28", because: "needs EOL `gtk+`"
 
   depends_on "cmake" => :build
   depends_on "gettext" => :build
