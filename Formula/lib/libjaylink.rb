@@ -1,8 +1,8 @@
 class Libjaylink < Formula
   desc "Provide interoperability with JLINK hardware"
   homepage "https://gitlab.zapb.de/libjaylink/libjaylink"
-  url "https://gitlab.zapb.de/libjaylink/libjaylink/-/archive/0.4.0/libjaylink-0.4.0.tar.bz2"
-  sha256 "492da550fe1093a9b2d958304deb386380abea13ef7ce694b2ef68bfdaec664d"
+  url "https://gitlab.zapb.de/libjaylink/libjaylink/-/archive/0.5.0/libjaylink-0.5.0.tar.bz2"
+  sha256 "6c03a9c4d9d781c41ca0f5203e46bebe47ecd5857c6a7d75cbc52accc7be73f8"
   license "GPL-2.0-or-later"
   head "https://gitlab.zapb.de/libjaylink/libjaylink.git", branch: "master"
 
