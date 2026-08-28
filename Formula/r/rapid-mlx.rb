@@ -3,8 +3,8 @@ class RapidMlx < Formula
 
   desc "Fast local AI engine for Apple Silicon with an OpenAI-compatible API"
   homepage "https://github.com/raullenchai/Rapid-MLX"
-  url "https://files.pythonhosted.org/packages/75/8f/56b17b881dcf60127490aa556b27966bc9f38c5680ed7327cb31c166c160/rapid_mlx-0.13.0.tar.gz"
-  sha256 "9f2d6b7a4a901b748858044a49dc6457de810d8da5f916832836ff6af13d2aa6"
+  url "https://files.pythonhosted.org/packages/4e/40/e595b12fb4a2bbbfc84571f77ff5c9f2d2a117c29853715e6cbdacf17444/rapid_mlx-0.13.1.tar.gz"
+  sha256 "ec0372b5ba4756b7c61e4c1f71b0795b7c6264e5ff3b809f7f6df19d1a5cf1da"
   license "Apache-2.0"
 
   bottle do
@@ -55,8 +55,8 @@ class RapidMlx < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
-    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "fastapi" do
@@ -300,8 +300,8 @@ class RapidMlx < Formula
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/f7/96/e01084f83a64bcb3a27994bd0cb0db68ff29d9c6707fae37ec19b18ba990/websockets-17.0.1.tar.gz"
-    sha256 "5baa9bc0dfbae8c507e51c8cf1b6d4628086f7a87bbd3a9952bd5f035451f1cc"
+    url "https://files.pythonhosted.org/packages/18/72/fba934cb3dff7a85d811820efffcd141ddd52b5a2a01637f64551373ff4d/websockets-17.1.tar.gz"
+    sha256 "acfea4c20bf54384883ea33b1240fc1db4f52e190823a4e2b334bc3e8bfca96a"
   end
 
   def install
