@@ -1,9 +1,9 @@
 class Freeipmi < Formula
   desc "In-band and out-of-band IPMI (v1.5/2.0) software"
   homepage "https://www.gnu.org/software/freeipmi/"
-  url "https://ftpmirror.gnu.org/gnu/freeipmi/freeipmi-1.6.18.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/freeipmi/freeipmi-1.6.18.tar.gz"
-  sha256 "8098b23820038ad0aa39abf0f9a012e24683d384d9f91e760acb2a68b465e0fe"
+  url "https://ftpmirror.gnu.org/gnu/freeipmi/freeipmi-1.6.19.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/freeipmi/freeipmi-1.6.19.tar.gz"
+  sha256 "f95c2b73797c4a0341a42a7b3c43efb60954c4130d082ad348fd40da554b4e85"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -33,9 +33,7 @@ class Freeipmi < Formula
 
     # Hardcode CPP_FOR_BUILD to work around cpp shim issue:
     # https://github.com/Homebrew/brew/issues/5153
-    inreplace "man/Makefile.in",
-      "$(CPP_FOR_BUILD) -nostdinc -w -C -P -I. -I$(top_srcdir)/man $@.pre $@",
-      "#{ENV.cxx} -E -nostdinc -w -C -P -I. -I$(top_srcdir)/man $@.pre > $@"
+    inreplace "man/Makefile.in", "$(CPP_FOR_BUILD)", "#{ENV.cxx} -E"
 
     system "./configure", *std_configure_args
     system "make", "install"
