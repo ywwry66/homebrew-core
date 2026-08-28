@@ -233,6 +233,14 @@ jobs:
           bottles-directory: ${{ env.BOTTLES_DIR }}
           cleanup: ${{ matrix.cleanup }}
 
+      - name: Configure macOS cross-build target
+        if: matrix.target_macos
+        env:
+          TARGET_MACOS: ${{ matrix.target_macos }}
+        run: |
+          test -n "$TARGET_MACOS"
+          echo "HOMEBREW_FAKE_MACOS=$TARGET_MACOS" >> "$GITHUB_ENV"
+
       - name: Test formulae
         id: brew-test-bot-formulae
         run: |
