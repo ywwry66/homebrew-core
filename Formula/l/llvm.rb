@@ -24,12 +24,12 @@ class Llvm < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "2658532afda21bbcda52807c463b1efddf2bc1e7d59f7415fd7bd295c72f5d3e"
-    sha256               arm64_sequoia: "9879522c00f5f7eda58b81ea0bc626b4e025a2f5b8ae155ec2699a1312e908aa"
-    sha256               arm64_sonoma:  "6cb18d6c4307825ca4e1db3b420e1e6061d9225ec60baf50d194a5d76c031ff4"
-    sha256 cellar: :any, sonoma:        "9201a38c2614edf8243dc5e3b1734f3c48a359059a5f5dadf1e56472dcf384ea"
-    sha256 cellar: :any, arm64_linux:   "e35875ebf6f9d968b163be1cccd8dc1f2f94ad8efc7f6fb4971f905a9be253cd"
-    sha256 cellar: :any, x86_64_linux:  "acecee779a55db8a3931ff0481c676299dbc887047e177690e60b7e7cec5aed4"
+    sha256               arm64_tahoe:   "a916d9bdae80f1ea47374528e43f5b1b5f864f3fc9c9ae6db02faa5cba6b3f25"
+    sha256               arm64_sequoia: "ccaf29d02d4dffa52584e5720c711accac378664f1098ef1232defa5d4eb53e0"
+    sha256               arm64_sonoma:  "93d3fc19acc5605054408ab47caed44e4d36729cc1cd5a29a524b9d8a312d5e3"
+    sha256 cellar: :any, sonoma:        "0b0168dc611a9d77aaa62d094178297f8a861d647cc59c43a5dc3f76bd6eb7b2"
+    sha256 cellar: :any, arm64_linux:   "1a2ddcf091e4d316f302ba561f5bf3741cd23e8f309ccb53df9b721c944145a3"
+    sha256 cellar: :any, x86_64_linux:  "654dd1c77fe25f5daca8e46de9c8e26da97ad30bcb6d3f13a00e74d36932b215"
   end
 
   keg_only :provided_by_macos
