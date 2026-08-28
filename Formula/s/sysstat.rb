@@ -1,8 +1,8 @@
 class Sysstat < Formula
   desc "Performance monitoring tools for Linux"
   homepage "https://sysstat.github.io/"
-  url "https://github.com/sysstat/sysstat/archive/refs/tags/v12.7.9.tar.gz"
-  sha256 "e48fc69401135dc08d2cd4ff58dbdbfce9b7485f76fc9049d97848e313c08dda"
+  url "https://github.com/sysstat/sysstat/archive/refs/tags/v12.8.0.tar.gz"
+  sha256 "8aa2054c56c941ab30e1b14ad2e0076a7e6d6bf01f50e22d954885b8a7f9a679"
   license "GPL-2.0-or-later"
   head "https://github.com/sysstat/sysstat.git", branch: "master"
 
@@ -16,6 +16,7 @@ class Sysstat < Formula
   def install
     system "./configure",
            "--disable-file-attr", # Fix install: cannot change ownership
+           "--disable-automated-sar-reporting",
            "--prefix=#{prefix}",
            "conf_dir=#{etc}/sysconfig",
            "sa_dir=#{var}/log/sa"
