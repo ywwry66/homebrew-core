@@ -4,6 +4,7 @@ class Far2lTty < Formula
   url "https://github.com/elfmz/far2l/archive/refs/tags/v_2.9.0.tar.gz"
   sha256 "69a5218fcfd072a2d4b99ecac8363a67d85f2fd67b65243f8ea7b239bb134ed0"
   license "GPL-2.0-only"
+  revision 1
 
   livecheck do
     url :stable
