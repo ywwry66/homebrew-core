@@ -1,9 +1,9 @@
 class Freeswitch < Formula
   desc "Telephony platform to route various communication protocols"
   homepage "https://freeswitch.org"
-  url "https://files.freeswitch.org/releases/freeswitch/freeswitch-1.11.2.-release.tar.gz"
-  version "1.11.2"
-  sha256 "c362690b3bd8e7878ba7a46f5ba88bcdb1dad3eefae33d9e82c5378e6dbe7ba1"
+  url "https://files.freeswitch.org/releases/freeswitch/freeswitch-1.11.3.-release.tar.gz"
+  version "1.11.3"
+  sha256 "e7cfeed1cfbcaea31a30f4d21b778a2fb56c8bd534fdc2a864cec91c3fa3fd79"
   license all_of: [
     "MPL-1.1",
     "LGPL-2.1-only", # spandsp
