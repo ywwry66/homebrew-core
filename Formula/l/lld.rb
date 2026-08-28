@@ -43,6 +43,8 @@ class Lld < Formula
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+
+    man1.install Utils::Gzip.compress("lld/docs/ld.lld.1")
   end
 
   test do
