@@ -3,18 +3,17 @@ class PulpCli < Formula
 
   desc "Command-line interface for Pulp 3"
   homepage "https://github.com/pulp/pulp-cli"
-  url "https://files.pythonhosted.org/packages/01/98/99659e641d3ceda9543da064f537372b57ecb518767169631f0642903de6/pulp_cli-0.40.3.tar.gz"
-  sha256 "9ebd9fc847f757dc7bd2b5c5db30b4aa74bd452ca18e01b322f87c9a294d38be"
+  url "https://files.pythonhosted.org/packages/7c/8b/cff7434c5f7228eb6265a84126974fc4f476cb2d76166c3754f818a71b84/pulp_cli-0.40.4.tar.gz"
+  sha256 "9d618b6710dd891a8ee99a449fe606fb9a49385de8762ea3eef8808d81d2089b"
   license "GPL-2.0-or-later"
   head "https://github.com/pulp/pulp-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f59845463973b8b92d0288fec9a63735a2697a07c84151ca12ec1f4da62a6bd6"
-    sha256 cellar: :any, arm64_sequoia: "d0daddeeff6fb81c4a18215fbb75a4000e1802af2b974ab22ded39a22b8ebfbd"
-    sha256 cellar: :any, arm64_sonoma:  "f7860efbb06f2c9521636d8d870a244c333ce99c0d7105a3caf5fc559eff5273"
-    sha256 cellar: :any, sonoma:        "9edf8d64b75b7430f0b2a14cc58a920374a6fdabd62426e0e698839b7edc7c3d"
-    sha256 cellar: :any, arm64_linux:   "1674c13ce6b1ef4f121ca5afb82f9dc2e479721123d09fcc53365229d08afd75"
-    sha256 cellar: :any, x86_64_linux:  "03f8b43186285aaa4fa3e30ec217dfc662008ebbcc879783941412ad9dc9f1eb"
+    sha256 cellar: :any, arm64_tahoe:   "77d5e66e8542016b3f663b15bbb18205febded7025d348c0b48e9582c47b5f9e"
+    sha256 cellar: :any, arm64_sequoia: "2f9ed19301b9b1b9209840a496f600924921b10bf75cc74d5c8651f88c2d90f6"
+    sha256 cellar: :any, arm64_sonoma:  "bd2ea9298d199cdcf79919f1536575a1029161816accdd6fbd965583d78ed434"
+    sha256 cellar: :any, arm64_linux:   "abed9791f1bd7cc85dc86fcf33671110e42023af520d2cad280df607e0d99181"
+    sha256 cellar: :any, x86_64_linux:  "7f84b4408d66c72cfcae01c9829d39cface10514825bb4ea7a1000bc74d84033"
   end
 
   depends_on "certifi" => :no_linkage
@@ -50,8 +49,8 @@ class PulpCli < Formula
   end
 
   resource "pulp-glue" do
-    url "https://files.pythonhosted.org/packages/7d/43/d8c18db4fe3d1a624901bc4b23c0ff4dfa20f8ef6c3984946255776ebd68/pulp_glue-0.40.3.tar.gz"
-    sha256 "c0dfc6a314bc2b0ad8fae3a2b1943ba17644ae2f67c353845959c469a813fa31"
+    url "https://files.pythonhosted.org/packages/aa/e2/0531dfb8d68f2b2af0ec9ec85e57170dde9050467140b0f2d73b48f4bb63/pulp_glue-0.40.4.tar.gz"
+    sha256 "ff9c59551f20cfd58cdc8188fa0453cbc60259955e4f9e2cfa5d8984bc602751"
   end
 
   resource "pyyaml" do
