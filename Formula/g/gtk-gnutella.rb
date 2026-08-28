@@ -14,6 +14,9 @@ class GtkGnutella < Formula
     sha256 x86_64_linux:  "42da940ea4d5b4e15fc07d033f986b119de287944b136cea7f4ff02319214f24"
   end
 
+  deprecate! date: "2026-08-28", because: "needs EOL `gtk+`"
+  disable! date: "2027-08-28", because: "needs EOL `gtk+`"
+
   depends_on "pkgconf" => :build
 
   depends_on "at-spi2-core"
