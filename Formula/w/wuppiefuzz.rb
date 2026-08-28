@@ -6,11 +6,11 @@ class Wuppiefuzz < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e8037ccfb5cfa779c6de770cc8c05eeab1b0bc79489e423b5f1fd01ec25894ea"
-    sha256 cellar: :any, arm64_sequoia: "47252a24acf6212b48e89956320ebb5341479d30120aec133debc9d399c00ed8"
-    sha256 cellar: :any, arm64_sonoma:  "99b248c1b5fd94d3e76169a3c45be180dab6ca587264d61f972a9f7432790c31"
-    sha256 cellar: :any, arm64_linux:   "ce21391de125a70fb388e8196134480ecc170afd93481afd91215b277706f0f2"
-    sha256 cellar: :any, x86_64_linux:  "9b7093dfd3f75f4b6317ffabac3529a3d22dfee29f8f9336aab9da00dc9417e4"
+    sha256 cellar: :any, arm64_tahoe:   "9c262ae160c959c3a173a1cdac5e8cc8dff007d76b2c9dec36bc18d6b0ffc933"
+    sha256 cellar: :any, arm64_sequoia: "5027f7c0331bf2f97d6ad18807862a9fef576718524fce430cc94afe05b375a6"
+    sha256 cellar: :any, arm64_sonoma:  "fd84fcf149222b32a825730a697d969e152e1837a83288041ae82fe2c6a28aa4"
+    sha256 cellar: :any, arm64_linux:   "30dd3db10fa7bb455866d9c55540b84534f5115f5503558c1192425028c8bfda"
+    sha256 cellar: :any, x86_64_linux:  "bac2b56b09e4d0357d4b02e9265c6df2febea55021bda69a3b04352c4a86919a"
   end
 
   depends_on "cmake" => :build
