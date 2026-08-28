@@ -1,8 +1,8 @@
 class Railway < Formula
   desc "Develop and deploy code with zero configuration"
   homepage "https://railway.com/"
-  url "https://github.com/railwayapp/cli/archive/refs/tags/v5.45.2.tar.gz"
-  sha256 "b309350e5018e8c812f1d5ceb851e6d20b5040cf37659b34cd8d9459b4f9dd60"
+  url "https://github.com/railwayapp/cli/archive/refs/tags/v5.45.5.tar.gz"
+  sha256 "069e3c2d40a6917840da6c086eb02563e6faf42db562baee3503c85691b1f2b1"
   license "MIT"
   head "https://github.com/railwayapp/cli.git", branch: "master"
 
