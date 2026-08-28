@@ -1,10 +1,9 @@
 class Libsail < Formula
   desc "Missing small and fast image decoding library for humans (not for machines)"
   homepage "https://sail.software"
-  url "https://github.com/HappySeaFox/sail/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "fceb5691680ef19cdf46c21e01f34fec1ff68dcc8c7061b32d66c574746a0b7c"
+  url "https://github.com/HappySeaFox/sail/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "fe2673d76e8088084447f388b94b4639f060afec4fab4e080e493049fbb24bf2"
   license "MIT"
-  revision 1
 
   bottle do
     sha256 arm64_tahoe:   "2a754b3a41100520a319878d6dad5e37266d7f492c83e0e5e20aa74717ea949d"
@@ -35,6 +34,7 @@ class Libsail < Formula
     depends_on "brotli"
     depends_on "highway"
     depends_on "little-cms2"
+    depends_on "xz"
   end
 
   def install
