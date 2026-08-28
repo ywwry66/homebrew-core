@@ -11,12 +11,11 @@ class Chrony < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e9e38864bbf2ddb030177f8ddf02c4d21664868ff6002035890da0142873bfb8"
-    sha256 cellar: :any,                 arm64_sequoia: "0ad71dfeedbf1ab26589c26d1a6c0ad4da5aaa89fbc6d6c72d0fe68685c3587a"
-    sha256 cellar: :any,                 arm64_sonoma:  "94f124b782d74410ba8818770899211c21bf3905c4919258ccdcd92c2569319b"
-    sha256 cellar: :any,                 sonoma:        "5a14c7a7ef04c6093b64768074559f4ae29945a578bd5acf9facbb25980305a3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "93cbef7ef10e2348eee38409550e98123fbeddac4b89e90c698570ffb29c97be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0a3272ae4766990b77023294169a3f165ed2f32144a062aa7e83443e3e8bf33"
+    sha256 cellar: :any, arm64_tahoe:   "a1df029e9d933dd0dcce82a8b260475751ff01eeb68767b8362735a7c88c923d"
+    sha256 cellar: :any, arm64_sequoia: "5e74476cc6557b1240bea6d5aefe3aecede3148be44375fc1120de2dc03122cb"
+    sha256 cellar: :any, arm64_sonoma:  "11ceb839ac6aef7f962b23917fdab498e2e9d6db5258f1a7f011c77ac96345c1"
+    sha256 cellar: :any, arm64_linux:   "f55ea3c6e4a3474107db301c1f50b0c054a3eb09a3d69fc987d5fcabbcb6412c"
+    sha256 cellar: :any, x86_64_linux:  "2cacbc292c5a1c7bd20bde5ecb8e4075cce843952bd24ac5418127e4a66d6076"
   end
 
   depends_on "pkgconf" => :build
