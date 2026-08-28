@@ -4,7 +4,7 @@ class Fricas < Formula
   url "https://github.com/fricas/fricas/archive/refs/tags/1.3.13.tar.gz"
   sha256 "7ae03c0f566c4b2bbbd6da1b02965e2a5492b1b8e4f8f2f1d1329c72d44e42a2"
   license "BSD-3-Clause"
-  revision 6
+  revision 7
   head "https://github.com/fricas/fricas.git", branch: "master"
 
   bottle do
