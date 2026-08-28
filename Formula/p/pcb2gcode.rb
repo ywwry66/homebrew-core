@@ -36,6 +36,9 @@ class Pcb2gcode < Formula
     sha256 cellar: :any, x86_64_linux:  "616bea02b2e11a5266a152db3d104de5c714be791bb081769c63050e768e7004"
   end
 
+  deprecate! date: "2026-08-28", because: "uses deprecated `gerbv` which needs EOL `gtk+`"
+  disable! date: "2027-08-28", because: "uses deprecated `gerbv` which needs EOL `gtk+`"
+
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "boost"
