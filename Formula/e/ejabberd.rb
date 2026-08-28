@@ -4,7 +4,7 @@ class Ejabberd < Formula
   url "https://github.com/processone/ejabberd/archive/refs/tags/26.07.tar.gz"
   sha256 "7b2e4efe2d5c867d2ced9cb1391731c5e6b9accd6f166ec71e734a3ae97813d7"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/processone/ejabberd.git", branch: "master"
 
   # There can be a notable gap between when a version is tagged and a
@@ -69,11 +69,14 @@ class Ejabberd < Formula
     # on bootstrap zip extraction in non-interactive environments.
     ENV.deparallelize
 
+    # Makefile asks `elixir` for this and gets a versioned Cellar path, which breaks on every Elixir bump
+    elixir_libdir = "ELIXIR_LIBDIR_RAW=#{formula_opt_prefix("elixir")}/lib/elixir/lib"
+
     # Set CPP to work around cpp shim issue:
     # https://github.com/Homebrew/brew/issues/5153
-    system "make", "CPP=#{ENV.cc} -E"
+    system "make", "CPP=#{ENV.cc} -E", elixir_libdir
 
-    system "make", "install"
+    system "make", "install", elixir_libdir
 
     (etc/"ejabberd").mkpath
     (var/"lib/ejabberd").mkpath
