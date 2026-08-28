@@ -5,6 +5,11 @@ class GtkGnutella < Formula
   sha256 "9631c82b8c975485b9927a8fa48ef10172d1224e7b3b2049462d37ca33d71f08"
   license "GPL-2.0-or-later"
 
+  # Track updates while deprecated. Remove if undeprecated.
+  livecheck do
+    url :stable
+  end
+
   bottle do
     sha256 arm64_tahoe:   "f492432b6563cffe018b22d40bc67ac10df71218191bcb3d01bdb44439c4fd90"
     sha256 arm64_sequoia: "3ddf5be67bae89d47e24e091fe506f7df1c683afa50c0a9f9bfea627294619d0"
