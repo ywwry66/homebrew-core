@@ -5,6 +5,10 @@ class ReadwiseCli < Formula
   sha256 "5cbc88096ca20c70f005b5264453ba698b6203f4bfae8ba72658bc3768a06de9"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "fe044c28473e69cdb20f70445fc0d10098ad4c267eb2eeebe60c068e43fec050"
+  end
+
   depends_on "node"
 
   def install
