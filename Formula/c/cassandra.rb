@@ -22,7 +22,7 @@ class Cassandra < Formula
 
   depends_on "libev"
   depends_on "openjdk@17"
-  depends_on "python@3.11" # required 3.8-3.11, https://github.com/apache/cassandra/blob/trunk/bin/cqlsh#L65-L73
+  depends_on "python@3.13"
 
   conflicts_with "emqx", because: "both install `nodetool` binaries"
 
@@ -62,7 +62,7 @@ class Cassandra < Formula
   def install
     (var/"log/cassandra").mkpath
 
-    python3 = "python3.11"
+    python3 = "python3.13"
     venv = virtualenv_create(libexec/"vendor", python3)
     venv.pip_install resources
 
