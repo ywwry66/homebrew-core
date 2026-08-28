@@ -1,8 +1,8 @@
 class CloudfoundryCli < Formula
   desc "Official command-line client for Cloud Foundry"
   homepage "https://docs.cloudfoundry.org/cf-cli"
-  url "https://github.com/cloudfoundry/cli/archive/refs/tags/v8.18.4.tar.gz"
-  sha256 "1371bedf6c3929d018edb18608634888c0e7a89f6d27faad24ce8bde25e91106"
+  url "https://github.com/cloudfoundry/cli/archive/refs/tags/v8.19.0.tar.gz"
+  sha256 "bfbbb833c2727432e48d7b383ba749f6ca7e5c11c1377cc6cd22ddc802057d23"
   license "Apache-2.0"
   head "https://github.com/cloudfoundry/cli.git", branch: "main"
 
@@ -20,7 +20,8 @@ class CloudfoundryCli < Formula
     sha256 cellar: :any,                 x86_64_linux:  "3301f2ecf831019db6ad3f9a08777eff0c3893ed0d383065b1d0eac884f6bade"
   end
 
-  depends_on "go" => :build
+  # `SermoDigital/jose` registers `crypto.Hash(0)`, which Go 1.27 `RegisterHash` panics on
+  depends_on "go@1.26" => :build
 
   conflicts_with "cf", because: "both install `cf` binaries"
 
