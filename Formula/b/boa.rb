@@ -1,8 +1,8 @@
 class Boa < Formula
   desc "Embeddable and experimental Javascript engine written in Rust"
   homepage "https://github.com/boa-dev/boa"
-  url "https://github.com/boa-dev/boa/archive/refs/tags/v0.21.1.tar.gz"
-  sha256 "fd0a45ff94673120f010d19dc44c411bc8fc5dcd3e5986e6f1dd5f005f918f22"
+  url "https://github.com/boa-dev/boa/archive/refs/tags/v0.22.tar.gz"
+  sha256 "fd12f2cc173e162d0775b6dd07d4cbde0fc2485661a816cc4ef12f8239db96e7"
   license any_of: ["MIT", "Unlicense"]
   head "https://github.com/boa-dev/boa.git", branch: "main"
 
@@ -15,16 +15,17 @@ class Boa < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c083f6db35bd00c0ac4cf40a1fa6b29af35795853ad738cb30394856a57baa70"
   end
 
+  depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
   end
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
 
     system "cargo", "install", *std_cargo_args(path: "cli")
   end
