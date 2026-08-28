@@ -3,8 +3,8 @@ class Torrra < Formula
 
   desc "Find and download torrents without leaving your CLI"
   homepage "https://torrra.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/9e/73/e6916c644f65640a62e07fbe9bf71f77d6d3c49b60cabdb57f7abf093dd5/torrra-2.3.2.tar.gz"
-  sha256 "8eb4c773a08103d87de149761ba6f6e6dd4a46c0e846503d5e8ff13f85e6e0c3"
+  url "https://files.pythonhosted.org/packages/16/0a/5f3bd73167c694317f13aa926ba93a3f3702d3beb9f0594c0008926950cd/torrra-2.5.0.tar.gz"
+  sha256 "308ac08c5ce71feb1f370140e53f1a1b9cd3b7d9bda6d7495719f379d8bc3742"
   license "MIT"
   head "https://github.com/stabldev/torrra.git", branch: "main"
 
@@ -34,8 +34,8 @@ class Torrra < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
-    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "diskcache" do
@@ -84,8 +84,8 @@ class Torrra < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/50/bb/ebc6636e1ae41314f796ebb7215fd28febb45f9aac72f2b04cb74b5071dc/platformdirs-4.11.4.tar.gz"
-    sha256 "f3373be828247211d0febabea97e238c3dfde8a60b3c90c32756fb52cb21556d"
+    url "https://files.pythonhosted.org/packages/ea/06/cf1564dcc2e2261c8c8c6c05628dc8b418943bdae2a4e58640ceb2f770fa/platformdirs-4.11.5.tar.gz"
+    sha256 "e8b31f4f8bcbbedef91a6b57a706255e4f148d2a4e01648382a0a47342539173"
   end
 
   resource "pygments" do
