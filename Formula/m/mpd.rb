@@ -4,6 +4,7 @@ class Mpd < Formula
   url "https://github.com/MusicPlayerDaemon/MPD/archive/refs/tags/v0.24.15.tar.gz"
   sha256 "448172fcd26aa6eb8bfe95c998cf7bd612ae6beaf5ba54f2cbf984d0249d3de4"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/MusicPlayerDaemon/MPD.git", branch: "master"
 
   bottle do
