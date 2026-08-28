@@ -8,7 +8,10 @@ class Picat < Formula
 
   livecheck do
     url "https://picat-lang.org/download.html"
-    regex(/>\s*?Released version v?(\d+(?:[.#]\d+)+)\s*?,/i)
+    regex(/>\s*?Released\s+version\s+v?(\d+(?:[.#]\d+)+)[\s,]/im)
+    strategy :page_match do |page, regex|
+      page.scan(regex).map { |match| match[0].tr("#", ".") }
+    end
   end
 
   no_autobump! because: :incompatible_version_format
