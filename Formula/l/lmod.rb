@@ -1,8 +1,8 @@
 class Lmod < Formula
   desc "Lua-based environment modules system to modify PATH variable"
   homepage "https://lmod.readthedocs.io"
-  url "https://github.com/TACC/Lmod/archive/refs/tags/9.3.2.tar.gz"
-  sha256 "fbcde425a6575f43ac52e9deda87e72b270da5f17b13cafef86c6e80375fd71e"
+  url "https://github.com/TACC/Lmod/archive/refs/tags/9.3.3.tar.gz"
+  sha256 "b9f3f4bf517e84f9dbf08e9b0421d185e587385c96d13cf1aca3ada06d4f5b68"
   license "MIT"
 
   bottle do
@@ -40,14 +40,6 @@ class Lmod < Formula
   resource "luaposix" do
     url "https://github.com/luaposix/luaposix/archive/refs/tags/v36.3.tar.gz"
     sha256 "82cd9a96c41a4a3205c050206f0564ff4456f773a8f9ffc9235ff8f1907ca5e6"
-  end
-
-  # Apply open PR to fix build with Lua 5.5
-  patch do
-    url "https://github.com/TACC/Lmod/commit/19625072d1d226c7a63bb36cc73074393a30ae62.patch?full_index=1"
-    sha256 "b4ee757b016ad1950dbde17b70a5f3c28c179a9b831b12d51f425670cc8685b1"
-    type :unofficial
-    resolves "https://github.com/TACC/Lmod/pull/854"
   end
 
   def install
