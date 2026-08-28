@@ -2,10 +2,9 @@ class Rdkit < Formula
   desc "Open-source chemoinformatics library"
   homepage "https://rdkit.org/"
   # NOTE: Make sure to update RPATHs if any "@rpath-referenced libraries" show up in `brew linkage`
-  url "https://github.com/rdkit/rdkit/archive/refs/tags/Release_2026_03_5.tar.gz"
-  sha256 "336b3ffd9b691e4bfcdf97d361c01e553de34d2ca85c64a941473e9e2f8b707e"
+  url "https://github.com/rdkit/rdkit/archive/refs/tags/Release_2026_03_6.tar.gz"
+  sha256 "d4d20b3b140237084694518aab34fdba6929d44bd7f720bce69329516abef663"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/rdkit/rdkit.git", branch: "master"
 
   livecheck do
@@ -54,14 +53,6 @@ class Rdkit < Formula
   resource "better_enums" do
     url "https://github.com/aantron/better-enums/archive/refs/tags/0.11.3.tar.gz"
     sha256 "1b1597f0aa5452b971a94ab13d8de3b59cce17d9c43c8081aa62f42b3376df96"
-  end
-
-  # Support building with Boost 1.92.0
-  patch do
-    url "https://github.com/rdkit/rdkit/commit/831c34510763a073cc849911f84dc3f069f42010.patch?full_index=1"
-    sha256 "dde4a5a39547c5c23f05add61d63ec6d264e7dd4aa72b13daeb7034ba670c9fa"
-    type :unofficial
-    resolves "https://github.com/rdkit/rdkit/pull/9494"
   end
 
   def python3
