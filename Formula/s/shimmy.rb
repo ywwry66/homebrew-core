@@ -1,8 +1,8 @@
 class Shimmy < Formula
   desc "Small local inference server with OpenAI-compatible GGUF endpoints"
   homepage "https://github.com/Michael-A-Kuykendall/shimmy"
-  url "https://github.com/Michael-A-Kuykendall/shimmy/archive/refs/tags/v2.6.0.tar.gz"
-  sha256 "b319065509860b1b087ecd17f191cf447a4f51061a008d5be3829add0f3b4c19"
+  url "https://github.com/Michael-A-Kuykendall/shimmy/archive/refs/tags/v2.6.1.tar.gz"
+  sha256 "fbac58683eaabe87fe1cd00926b6bfbb8be8d042253bf6ec2965bce8149b675d"
   license "Apache-2.0"
   head "https://github.com/Michael-A-Kuykendall/shimmy.git", branch: "main"
 
@@ -12,12 +12,11 @@ class Shimmy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c9e65e50307faedf841dc9667a17a7a075918163a50c8b98b88a4794225b0306"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a8bff3b860e5c24bbdc9c137136b3c4337aaf9a4e9d4c946d7197c1b8f1be5cb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d86d1e65a5280d72eab1a6e42b4e7c0db231bb31b946693bd74d185d50c3f306"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0acecc6968eeb88d64ee766c0e657113843a17954a14a0df52eec0ce9a1de533"
-    sha256 cellar: :any,                 arm64_linux:   "0a63f1922aea2b1985fed302d7999b0ed6639a6a9a5c33b62ff8de7a81630155"
-    sha256 cellar: :any,                 x86_64_linux:  "0712a0d956cae6e6402b70cdc778d949e42d6372acc904907366ffa6f3822284"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a9444ab7a168600c349ccd4ceecbe1fe6a6b8d842528723e88f2c19a0ffc82f7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e19b184b50a422d72c9b57e978c3a4e37e2c83ee911c55f8d9048814cd67ea9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4dbb1d985126dff10187dd8ff9f96a6d39b018bc7c046a4a39e28ccb27f0caac"
+    sha256 cellar: :any,                 arm64_linux:   "f4121cb2bc6c692447077af970c58b79907637d15107f0dcf5710f2a1cc2e0f1"
+    sha256 cellar: :any,                 x86_64_linux:  "b5940dbe62ff9d7af970c560b64fb27df685e246d99d2acaf2a7f5aa808cfdb9"
   end
 
   depends_on "cmake" => :build # for llama-cpp-sys-2
