@@ -7,6 +7,7 @@ class Foundry < Formula
       tag:      "v1.8.1",
       revision: "982849d3140c01fd3b72905759581a132df7aa98"
   license any_of: ["MIT", "Apache-2.0"]
+  revision 1
   head "https://github.com/foundry-rs/foundry.git", branch: "master"
 
   livecheck do
@@ -35,8 +36,20 @@ class Foundry < Formula
   def install
     ENV["TAG_NAME"] = tap.user
 
+    # matches features from the official foundry release workflow
+    # https://github.com/foundry-rs/foundry/blob/61ae26af36320d4fa1020f7db53785885e29eeb5/.github/workflows/release.yml#L18-L24
+    features = %w[aws-kms gcp-kms turnkey cli asm-keccak js-tracer monad optimism]
+    features << "touch-id" if OS.mac? && Hardware::CPU.arm?
+    features << "jemalloc" if OS.mac? || Hardware::CPU.intel?
+
+    build_args = %w[build --release --bins --no-default-features]
+    build_args += ["--features", features.join(",")]
+
+    cargo_args = std_cargo_args.reject { |arg| arg.start_with?("--root=", "--path=") }
+    system "cargo", *build_args, *cargo_args
+
     %w[forge cast anvil chisel].each do |binary|
-      system "cargo", "install", *std_cargo_args(path: "crates/#{binary}")
+      bin.install "target/release/#{binary}"
 
       # https://book.getfoundry.sh/config/shell-autocompletion
       generate_completions_from_executable(bin/binary.to_s, "completions") if binary != "chisel"
