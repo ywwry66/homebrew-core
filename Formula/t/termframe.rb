@@ -7,12 +7,11 @@ class Termframe < Formula
   head "https://github.com/pamburus/termframe.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e403dc07152616b319c38e5633352c94ee98979fe56de4b9d9f83156d4fdf5ff"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c4343edae5f77ca24075c08dbd30cbf369c390f97e911e16ffe413f2e2b52b9d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f5ccfe083cf5b7ccf3f01737bcbf1dc4babf5b87d792e96ab7dcb7b65c77a972"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a3536bd6ac77f00aedc17c69078ad5f14c81742c1cf82489343a5c415a4087c1"
-    sha256 cellar: :any,                 arm64_linux:   "4bc8e21f8f9f1c0260cc28079c62a66ddd962364debab493a264dc00cbf00dd3"
-    sha256 cellar: :any,                 x86_64_linux:  "72dbdaaf2b7eb23ac6f090df8c2dda8278feb641e9893b722e771b791c4a8714"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6e9f66e8e72283c48d4a918304842321a4b371fa56123c20d3eaceb42ed797fe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "57ccb9521431b93af20832ef4fbb73a91cd890a5b87bf3049834066c7da06f7a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d4731be417c885a4a4fffc422a34ca77970a161d04dc0179e4fb7f5f13dd584"
+    sha256 cellar: :any,                 arm64_linux:   "a5cc0b77254afabddb94b37f3f4df413380efbaaa737a96032a87befa2055364"
+    sha256 cellar: :any,                 x86_64_linux:  "b9e1793eb81d4db067c57eed8258b6946bc284b6ab1726917c497d0164a5286a"
   end
 
   depends_on "rust" => :build
