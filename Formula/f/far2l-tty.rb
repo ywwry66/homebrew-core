@@ -11,12 +11,11 @@ class Far2lTty < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "aafbf3294219de53a3a202fabb4890121a89a470fffbeca77ecb5b27e6ef294d"
-    sha256 cellar: :any, arm64_sequoia: "8b3fd615b63e574606a5487cbecfb59b20869fe203d4a6d1831414561699d8ca"
-    sha256 cellar: :any, arm64_sonoma:  "869859f8a61f63e52526db8244dc90926f08a5938a9cf892f8f6f95bac39f4db"
-    sha256 cellar: :any, sonoma:        "cd59a529ad376e5020b1840e6303694e0abb37c2afd610523dc7af72cf72dde3"
-    sha256 cellar: :any, arm64_linux:   "cabbb677711aa18391364086a1bb1b49b0d664444deebb486efe5065908a40e8"
-    sha256 cellar: :any, x86_64_linux:  "f302fde41f809c451dd98487ba2407474143503b3fb97bf0c4be8d2a1a7efd40"
+    sha256 cellar: :any, arm64_tahoe:   "0132c8e0cc42d0771119fe9035d4cfedf6dea68fbbf34764e45ec67b544ef2ad"
+    sha256 cellar: :any, arm64_sequoia: "825621b11d97ac082e0c0b3c508fcbb3396dd2d6ce37125a411041cd0d1d6627"
+    sha256 cellar: :any, arm64_sonoma:  "baf8d67e2b1798a60cc120dc3d52167913dcd1b7800e3de490dfb21f161ca5ff"
+    sha256 cellar: :any, arm64_linux:   "e64ca0855afb3353d722057af53179b5e43bc6388f4394ac0643091b5b1912a1"
+    sha256 cellar: :any, x86_64_linux:  "097cd1e780d9caec6a6aad10d49c0dba4e3192af2fb07254032e66926c361195"
   end
 
   depends_on "cmake" => :build
