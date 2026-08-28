@@ -7,12 +7,11 @@ class GoCamo < Formula
   head "https://github.com/cactus/go-camo.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed94771f4ea8868608c253d4d02acf439ef03d510ba3efbe6ac6ec2569a65137"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18aeee00e969d291da7cbf26fe89133934ac03c33a01859bd8b9d5da3ce563ac"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c4e8ea00f798546dcd7d59793186f11c4435bc91f796c02bf5124952d31ec80a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d7258ca64b1d0a4ecf2dfde560d2689a907ffe3fbee7ac88f7993d9d1c49e5cc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "77f05a875f155ffb139d822f007e1b0983dbc05365d997a03f6b52b44a833f0d"
-    sha256 cellar: :any,                 x86_64_linux:  "021d08fd27c4f75042c0f5674702418ed455fc5dd7bfae82ceb63bf9d4e0e162"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9201bf242753aad3e3079ba521736da298f6ee07fd606aa9444ed6019550b3ef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "56eca7ac0c1e597dbe48cba793e2e8511b4ee1f4975eaa2dbb4dc7805fa00d47"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a47f0fd499638f9df31f04118713c7907e77da5f96b6218042f404661a158bbf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a5439264d7fb6e5f2283bfbb226ae766d009e69c8466d26de972f052a286708"
+    sha256 cellar: :any,                 x86_64_linux:  "c7c2cc3acf8a187a737ad77b8e088a4c3099c097c1048749579900af6ba23809"
   end
 
   depends_on "go" => :build
