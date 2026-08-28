@@ -14,12 +14,11 @@ class HermesAgent < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "a8281d2c06b64e9faca6769e069653222236fcf90f62bdeaf40221fd05ab518b"
-    sha256 cellar: :any, arm64_sequoia: "c8ce8db436e2a0bf8a7e657bd456905be7ad1ef24369ab514be796f597829422"
-    sha256 cellar: :any, arm64_sonoma:  "4771bdda76a5567ca6267ba6e7b6f4ad4bf89f5080dbf67cf4aad4f88a8e921c"
-    sha256 cellar: :any, arm64_linux:   "bbeb26ae9bc6b19d004ab57d6e3bbaa539868fc2b2ea5194ef68ab6e2769f342"
-    sha256 cellar: :any, x86_64_linux:  "d9c8ecc99f13ace33f01bf513808013a0c1b008f936ba4cd73dd487688669370"
+    sha256 cellar: :any, arm64_tahoe:   "afa4b75f38fcdf9554e5f1f980fc9267049e6e6b60f38de9b3ff21ba08689cde"
+    sha256 cellar: :any, arm64_sequoia: "55276fd609a61527843ca431a37d1e47ccb6f6e161341350201d814fa093229e"
+    sha256 cellar: :any, arm64_sonoma:  "5935120f0bc842707e4479cb896f5347d0bbe010bfee34f68ad53e59f398b0f4"
+    sha256 cellar: :any, arm64_linux:   "712b450e3fa50fc98d892dad62e2e0d2a3ddce0048b91207c65fa49288b5d3a6"
+    sha256 cellar: :any, x86_64_linux:  "a44846e669bc97beb319a29c6986d3bb2c68a8bd5512046b0e88745b765b3275"
   end
 
   depends_on "pkgconf" => :build
