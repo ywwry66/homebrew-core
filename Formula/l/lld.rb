@@ -12,12 +12,12 @@ class Lld < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "649422eca528ccb5df73500b04eec3932e08441777ade98b90821d9aad9b4559"
-    sha256 cellar: :any, arm64_sequoia: "fd55f8ebf5312bec97577d81eb7d0f11d63692376d8415797726d3e0509aa144"
-    sha256 cellar: :any, arm64_sonoma:  "b8420f4e4c5a3f8f6947b01b95d761e3f5f2b7cc96d1edd45bc1c44638d22e85"
-    sha256 cellar: :any, sonoma:        "c8affeb82959e53875d13cd58bc459f75863f17e3d4ad68d4ca939a104fd18d5"
-    sha256 cellar: :any, arm64_linux:   "a3fc00d5bda3083edca579cfaed896a21afce3c98cd8d18a4bbaa7ca81d2a5c9"
-    sha256 cellar: :any, x86_64_linux:  "4de10f8b9ecaca90c1f69c4b4cf35316f0ab0a20e0ab630866105e47e881da49"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "35b77bb8c0b2d5f23a348f567c5ea6fe88161ae93ea022c589d81c5c75efae4e"
+    sha256 cellar: :any, arm64_sequoia: "baee5d0dfcaa166bde65587605bfe981fa500da4993250dec584aa1c18278ee8"
+    sha256 cellar: :any, arm64_sonoma:  "cc216676219943696cf1a0d18fa3ca64e4d662686ba4a37d016c8b3a5f351b89"
+    sha256 cellar: :any, arm64_linux:   "1c7d56cc737195c9ee79e60ca7af4cb9bd324f8bf70f18747d8dc73870295e10"
+    sha256 cellar: :any, x86_64_linux:  "9976092bff4b2ce3b6cedab7cb15a5f7d20ae1be2fe5a46f7d08f831635ae1f6"
   end
 
   depends_on "cmake" => :build
@@ -43,6 +43,8 @@ class Lld < Formula
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+
+    man1.install Utils::Gzip.compress("lld/docs/ld.lld.1")
   end
 
   test do
