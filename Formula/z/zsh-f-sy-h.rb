@@ -7,8 +7,7 @@ class ZshFSyH < Formula
   head "https://github.com/z-shell/F-Sy-H.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "471a7ee20877bec72b47a50515a8cab4b768ff09ad72560d3d0647a6d0a94be1"
+    sha256 cellar: :any_skip_relocation, all: "6f111e49b0f927b08af4194279c39a9191cd8ba6738fe8392fed01f4bb41bd47"
   end
 
   uses_from_macos "zsh" => :test
