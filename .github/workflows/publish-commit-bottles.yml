@@ -641,7 +641,7 @@ jobs:
         working-directory: ${{ steps.set-up-homebrew.outputs.repository-path }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh pr checkout "$PR" --repo "$GITHUB_REPOSITORY"
+        run: gh pr checkout "$PR" --repo "$GITHUB_REPOSITORY" --detach
 
       - name: Resolve target version
         id: resolve
