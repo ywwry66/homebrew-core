@@ -10,6 +10,13 @@ class Crowdin < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    sha256                               arm64_tahoe:   "c8a59843f6224b2f6a81fc78a801f5d7ec828f5dee3c078388dc778e5b0c3fa7"
+    sha256                               arm64_sequoia: "a32a021489ebe6e363d83a6f926fc26c8baa7dd06c15199cc12ca6809afe9344"
+    sha256                               arm64_sonoma:  "8967826814b961f022ef568eccc0a7f319baf0a3d873fe12782d860e2dc6cd47"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7b46f85bed80d118dc0be58bdc33952c31fcfce0f70a4ba5847f4d44674bd940"
+  end
+
   depends_on "bun" => :build
 
   def install
