@@ -5,6 +5,7 @@ class GnuTar < Formula
   mirror "https://ftp.gnu.org/gnu/tar/tar-1.35.tar.gz"
   sha256 "14d55e32063ea9526e057fbf35fcabd53378e769787eff7919c3755b02d2b57e"
   license "GPL-3.0-or-later"
+  revision 1
   compatibility_version 1
 
   bottle do
@@ -52,8 +53,16 @@ class GnuTar < Formula
     # fix commit, https://git.savannah.gnu.org/cgit/tar.git/commit/?id=8632df39, remove in next release
     ENV.append "LDFLAGS", "-liconv" if OS.mac?
 
+    if OS.linux? && build.stable?
+      # Backport https://git.savannah.gnu.org/cgit/tar.git/commit/?id=08c3fc2e9337094aff01a511170fd35fdb8f1ee3
+      %w[acl_get_file_at acl_set_file_at acl_delete_def_file_at].each do |function|
+        inreplace "src/xattrs.c", function, "tar_#{function}"
+      end
+    end
+
     system "./bootstrap" if build.head?
     system "./configure", *args
+    inreplace "lib/Makefile", /^DEFAULT_RMT_DIR = .+$/, "DEFAULT_RMT_DIR = /etc" if OS.linux?
     system "make", "install"
 
     return unless OS.mac?
@@ -85,6 +94,8 @@ class GnuTar < Formula
     else
       system bin/"tar", "-czvf", "test.tar.gz", "test"
       assert_match "test", shell_output("#{bin}/tar -xOzf test.tar.gz")
+      assert_match "--rmt-command=/etc/rmt", shell_output("#{bin}/tar --show-defaults")
+      assert_path_exists libexec/"rmt"
     end
   end
 end
