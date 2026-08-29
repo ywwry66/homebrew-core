@@ -7,12 +7,11 @@ class Dockerize < Formula
   head "https://github.com/jwilder/dockerize.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cb7664884e286907024b0442d642bfe3eb9779810b06d20bc97c24d888049dcc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb7664884e286907024b0442d642bfe3eb9779810b06d20bc97c24d888049dcc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb7664884e286907024b0442d642bfe3eb9779810b06d20bc97c24d888049dcc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2f1f422d9b0ccf94052bfea259e9671975d40655350ca4e274c149ddf6ceb1d4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fec1e0ddbfb6824e17d2d8f6bff5c5baf2fd86c3e3530015dff63c251c359f2f"
-    sha256 cellar: :any,                 x86_64_linux:  "971b610f4fd5e7e61fa2364f588b4a552cb058d0fe33f0ccf940691c01e0b914"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "705873f7b0ededa090899cc237ae8e3d2b5317762a8cbc29445f8ab396d2ca8b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "705873f7b0ededa090899cc237ae8e3d2b5317762a8cbc29445f8ab396d2ca8b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "705873f7b0ededa090899cc237ae8e3d2b5317762a8cbc29445f8ab396d2ca8b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9063ebe34037a731834a6e467854e2760acbe5dda53427d673cec082366c6918"
+    sha256 cellar: :any,                 x86_64_linux:  "2c6f0d62811ed43939bb0423d0b2e3e92708c2a4afc25257b33bb49a72d8259f"
   end
 
   depends_on "go" => :build
