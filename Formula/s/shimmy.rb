@@ -12,11 +12,11 @@ class Shimmy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "75a01fba37e1d1f2e32fe3b00752ac87762f2aab2c309377266dec7d27a02493"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1c5b21675685c2770aa36111395ff1ee4165b42181a5ef879d928d949052fd4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "841e24e3cf04f1ef0554cc045cf048f23d02854374f282691d42bcbe2f8a3c7a"
-    sha256 cellar: :any,                 arm64_linux:   "a7c3554656a818a1a8b4c6df037970300d663c25d637fd3af545f06af3cd20fe"
-    sha256 cellar: :any,                 x86_64_linux:  "25ce5bd85460e4a04771389ff3f71e303366031cdef18980b7b37143720d9543"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c5e6eb0a57279cb3fd15e9365d532fc1e7a92afd34549bf9f205444e0c078c4f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca966f7a0b7baaef46537ee7f6556a383bbe93e3dc3a3c03a312873de3410d05"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1968999e5bc2e29dd957e86d429287f1c50236cc592abbc212b1904d01d7be35"
+    sha256 cellar: :any,                 arm64_linux:   "a2dee00223291e0fce164c475765a3793812ed51ee27339754d2a4ca9594ee88"
+    sha256 cellar: :any,                 x86_64_linux:  "cbb304839e1819e349e308a4f335ee2c8aa850e536a45735a07e9b71ff12860b"
   end
 
   depends_on "cmake" => :build # for llama-cpp-sys-2
