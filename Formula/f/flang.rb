@@ -1,10 +1,23 @@
 class Flang < Formula
   desc "LLVM Fortran Frontend"
   homepage "https://flang.llvm.org/"
-  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.0/llvm-project-23.1.0.src.tar.xz"
-  sha256 "ab1f0e3ec52448c33e8782eaf0422504b87c7b016b22514653ee0d8fcee479ff"
   license "Apache-2.0" => { with: "LLVM-exception" }
+  revision 1
   head "https://github.com/llvm/llvm-project.git", branch: "main"
+
+  stable do
+    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.0/llvm-project-23.1.0.src.tar.xz"
+    sha256 "ab1f0e3ec52448c33e8782eaf0422504b87c7b016b22514653ee0d8fcee479ff"
+
+    resource "llvm_man_pages" do
+      url "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.0/llvm_man_pages-23.1.0.tar.xz"
+      sha256 "4574585793ef218dd06ceac849381c981ffce653f342deb7b6db174ac57748a0"
+
+      livecheck do
+        formula :parent
+      end
+    end
+  end
 
   livecheck do
     formula "llvm"
@@ -37,18 +50,22 @@ class Flang < Formula
 
     common_args = %W[
       -GNinja
-      -DBUILD_SHARED_LIBS=ON
       -DLLVM_DIR=#{llvm.opt_lib}/cmake/llvm
       -DLLVM_ENABLE_FATLTO=ON
       -DLLVM_ENABLE_LTO=ON
     ]
 
+    # LLVM_INSTALL_TOOLCHAIN_ONLY is to avoid shipping unnecessary libraries. Gentoo uses the same option.
+    # Fedora builds as part of full LLVM so manually removes files after install to achieve a similar result:
+    # https://src.fedoraproject.org/rpms/llvm/blob/821c6dcbd0d721d2c91e7c87bb4e483aaf1af715/f/llvm.spec#_2477-2523
     flang_args = %W[
       -DCLANG_DIR=#{llvm.opt_lib}/cmake/clang
       -DFLANG_INCLUDE_TESTS=OFF
       -DFLANG_REPOSITORY_STRING=#{tap&.issues_url}
       -DFLANG_VENDOR=#{tap&.user}
+      -DLLVM_INSTALL_TOOLCHAIN_ONLY=ON
       -DLLVM_RAM_PER_COMPILE_JOB=5000
+      -DLLVM_RAM_PER_LINK_JOB=10000
       -DLLVM_USE_SYMLINKS=ON
       -DMLIR_DIR=#{llvm.opt_lib}/cmake/mlir
     ]
@@ -74,6 +91,12 @@ class Flang < Formula
     system "cmake", "-S", "runtimes", "-B", "build-rt", *flang_rt_args, *common_args, *std_cmake_args
     system "cmake", "--build", "build-rt"
     system "cmake", "--install", "build-rt"
+
+    if build.stable?
+      resource("llvm_man_pages").stage do
+        man1.install Utils::Gzip.compress("flang.1")
+      end
+    end
 
     # Add symlink to avoid extra RPATH on Linux. See if the upstream provides a better way of handling:
     # https://github.com/llvm/llvm-project/blob/main/flang-rt/cmake/modules/AddFlangRT.cmake#L379-L392
@@ -103,10 +126,20 @@ class Flang < Formula
   end
 
   test do
-    (testpath/"hello.f90").write <<~FORTRAN
-      PROGRAM hello
-        WRITE(*,'(A)') 'Hello World!'
-      ENDPROGRAM
+    (testpath/"sqrt72.f90").write <<~FORTRAN
+      module m
+      contains
+        real(kind=kind(0.d0)) function f()
+          f = 72.d0
+          f = sqrt(f)
+        end function f
+      end module m
+      program p
+        use m
+        real(kind=kind(0.d0)) :: r
+        r = f()
+        write(*,'(F12.6)') r
+      end program p
     FORTRAN
 
     (testpath/"test.f90").write <<~FORTRAN
@@ -121,12 +154,6 @@ class Flang < Formula
       end
     FORTRAN
 
-    system bin/"flang", "-v", "hello.f90", "-o", "hello"
-    assert_equal "Hello World!", shell_output("./hello").chomp
-
-    system bin/"flang", "-v", "-flto", "test.f90", "-o", "test"
-    assert_equal "Done", shell_output("./test").chomp
-
     (testpath/"omptest.f90").write <<~FORTRAN
       PROGRAM omptest
       USE omp_lib
@@ -136,25 +163,23 @@ class Flang < Formula
       ENDPROGRAM
     FORTRAN
 
-    system bin/"flang", "-v", "-fopenmp", "omptest.f90", "-o", "omptest"
-    testresult = shell_output("./omptest")
-
-    expected_result = <<~EOS
-      Hello from thread 0, nthreads 4
-      Hello from thread 1, nthreads 4
-      Hello from thread 2, nthreads 4
-      Hello from thread 3, nthreads 4
-    EOS
-
-    sorted_testresult = testresult.split("\n").sort.join("\n")
-    assert_equal expected_result.strip, sorted_testresult.strip
-
     (testpath/"runtimes.f90").write <<~FORTRAN
       Program main
         Complex :: y
         y = y/2
       End Program
     FORTRAN
+
+    system bin/"flang", "-v", "-O2", "sqrt72.f90", "-o", "sqrt72"
+    assert_equal "8.485281", shell_output("./sqrt72").strip
+
+    system bin/"flang", "-v", "-flto", "test.f90", "-o", "test"
+    assert_equal "Done", shell_output("./test").chomp
+
+    system bin/"flang", "-v", "-fopenmp", "omptest.f90", "-o", "omptest"
+    expected = (0..3).map { "Hello from thread #{it}, nthreads 4" }
+    assert_equal expected, shell_output("./omptest").lines(chomp: true).sort
+
     system bin/"flang", "-v", "runtimes.f90"
 
     return if OS.linux?
