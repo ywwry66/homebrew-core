@@ -1,8 +1,8 @@
 class ZshFSyH < Formula
   desc "Feature-rich Syntax Highlighting for Zsh"
   homepage "https://wiki.zshell.dev/search?q=F-Sy-H"
-  url "https://github.com/z-shell/F-Sy-H/archive/refs/tags/v1.67.tar.gz"
-  sha256 "4d8b112b326843443fbbbeb9d8c0694b57c331b91ca6bb1d5f67750f3254e6f5"
+  url "https://github.com/z-shell/F-Sy-H/archive/refs/tags/v1.67.1.tar.gz"
+  sha256 "303e515618c2be95781ef86ac7b018da95aa874a59a4c7e7c721f43c310125fb"
   license "BSD-3-Clause"
   head "https://github.com/z-shell/F-Sy-H.git", branch: "main"
 
