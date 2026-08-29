@@ -6,7 +6,7 @@ class Corepack < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6f53c0ce368aa727d2959455f4e8a96bc0adb48b6c24afa3fe9961c857296e4a"
+    sha256 cellar: :any_skip_relocation, all: "713a97356e9f4b8da721b2323a65f62221da917a7c79322119d7532b47c63544"
   end
 
   depends_on "node"
