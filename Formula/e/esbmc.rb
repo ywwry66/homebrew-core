@@ -1,10 +1,9 @@
 class Esbmc < Formula
   desc "Efficient SMT-based context-bounded model checker for C, C++, and Python"
   homepage "https://esbmc.github.io/"
-  url "https://github.com/esbmc/esbmc/archive/refs/tags/v8.4.tar.gz"
-  sha256 "9959fef848ffae597adac6fa2d74063f9553b4fcee93ed7cbe8aae3bd667bf91"
+  url "https://github.com/esbmc/esbmc/archive/refs/tags/v8.5.tar.gz"
+  sha256 "61a240ca75cccbd037292d4921b7da01bf12fef0ae760401d3284a3a8a17cff3"
   license "Apache-2.0"
-  revision 4
   head "https://github.com/esbmc/esbmc.git", branch: "master"
 
   livecheck do
@@ -36,6 +35,9 @@ class Esbmc < Formula
   depends_on "z3"
 
   uses_from_macos "flex" => :build
+
+  # Avoid std::atomic<double> arithmetic, which needs libc++ 18 or newer.
+  patch :DATA
 
   def install
     python3 = which("python3.14")
@@ -81,3 +83,22 @@ class Esbmc < Formula
     assert_match "VERIFICATION FAILED", output
   end
 end
+
+__END__
+diff --git a/src/esbmc/bmc.cpp b/src/esbmc/bmc.cpp
+--- a/src/esbmc/bmc.cpp
++++ b/src/esbmc/bmc.cpp
+@@ -3037,7 +3037,12 @@
+       note_cov_suppressed_violation(claim.claim_cstr);
+     }
+ 
+-    solver_stats.total_time_ms.fetch_add(solve_stop - solve_start);
++    // libc++ before 18 has no std::atomic<double> arithmetic (P0020R6),
++    // so accumulate with a compare-exchange loop instead.
++    double prev = solver_stats.total_time_ms.load(std::memory_order_relaxed);
++    while (!solver_stats.total_time_ms.compare_exchange_weak(
++      prev, prev + (solve_stop - solve_start), std::memory_order_relaxed))
++      ;
+ 
+     // A claim that reached no verdict — a backend failure (P_ERROR) or an
+     // SMTLIB-only emission (P_SMTLIB) — would otherwise leave final_result at
