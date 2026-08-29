@@ -20,7 +20,7 @@ class Mesa < Formula
     { "GPL-1.0-or-later" => { with: "Linux-syscall-note" } }, # include/drm-uapi/sync_file.h
     { "GPL-2.0-only" => { with: "Linux-syscall-note" } }, # include/drm-uapi/{d3dkmthk.h,dma-buf.h,etnaviv_drm.h}
   ]
-  revision 1
+  revision 2
   compatibility_version 1
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
@@ -35,6 +35,7 @@ class Mesa < Formula
 
   depends_on "bindgen" => :build
   depends_on "bison" => :build # can't use from macOS, needs '> 2.3'
+  depends_on "cmake" => :build # for mesa-libclc
   depends_on "glslang" => :build
   depends_on "libxrandr" => :build
   depends_on "libxrender" => :build
@@ -48,7 +49,6 @@ class Mesa < Formula
   depends_on "rust" => :build
   depends_on "xorgproto" => :build
 
-  depends_on "libclc" => :no_linkage # OpenCL support needs share/clc/*.bc files at runtime
   depends_on "libpng"
   depends_on "libx11"
   depends_on "libxcb"
@@ -117,26 +117,36 @@ class Mesa < Formula
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
-  def python3
-    "python3.14"
+  # Mesa is not compatible with LLVM 23+ libclc as it no longer provides spirv64-mesa3d-.spv.
+  # Until Mesa updates to handle it, use mesa-libclc which Mesa applies fixes to:
+  # https://gitlab.freedesktop.org/mesa/mesa/-/commit/b8f6be5a51b0952e4b2fc2a71d42eedea884739e
+  resource "mesa-libclc" do
+    url "https://gitlab.freedesktop.org/karolherbst/mesa-libclc/-/archive/22.1.8.3/mesa-libclc-22.1.8.3.tar.bz2"
+    sha256 "ff6c01fb68c4b885e13400c50298ee6a8bfcf3ac5995cf3039565f6814095226"
+
+    livecheck do
+      url :url
+    end
   end
 
+  def python3 = "python3.14"
+
   def install
-    # Work around superenv to avoid mixing `expat` usage in libraries across dependency tree.
-    # Brew `expat` usage in Python has low impact as it isn't loaded unless pyexpat is used.
-    # TODO: Consider adding a DSL for this or change how we handle Python's `expat` dependency
-    env_vars = %w[CMAKE_PREFIX_PATH HOMEBREW_INCLUDE_PATHS HOMEBREW_LIBRARY_PATHS PATH PKG_CONFIG_PATH]
-    if OS.mac? && MacOS.version < :sequoia
-      ENV.remove env_vars, /(^|:)#{Regexp.escape(formula_opt_prefix("expat"))}[^:]*/
-      ENV.remove "HOMEBREW_DEPENDENCIES", "expat"
+    resource("mesa-libclc").stage do
+      system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+      system "cmake", "--build", "build"
+      system "cmake", "--install", "build"
+      ENV.prepend_path "PKG_CONFIG_PATH", share/"pkgconfig"
     end
+
     # TODO: Remove once bindgen issue is fixed: https://github.com/rust-lang/rust-bindgen/issues/3397
+    env_vars = %w[CMAKE_PREFIX_PATH HOMEBREW_INCLUDE_PATHS HOMEBREW_LIBRARY_PATHS PATH PKG_CONFIG_PATH]
     ENV.remove env_vars, /(^|:)#{Regexp.escape(formula_opt_prefix("llvm@22"))}[^:]*/
     ENV.remove "HOMEBREW_DEPENDENCIES", "llvm@22"
     ENV["CLANG_PATH"] = formula_opt_bin("llvm@22")/"clang"
 
     venv = virtualenv_create(buildpath/"venv", python3)
-    venv.pip_install resources.reject { |r| OS.mac? && r.name == "ply" }
+    venv.pip_install resources.reject { |r| r.name == "mesa-libclc" || (OS.mac? && r.name == "ply") }
     ENV.prepend_path "PYTHONPATH", venv.site_packages
     ENV.prepend_path "PATH", venv.root/"bin"
     ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath}" if OS.mac?
