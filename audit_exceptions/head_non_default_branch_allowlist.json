@@ -1,6 +1,7 @@
 {
   "awscli": "v2",
   "flarectl": "v0",
+  "gnu-tar": "master",
   "libngspice": "master",
   "libpng": "libpng16",
   "lmdb": "mdb.master",
