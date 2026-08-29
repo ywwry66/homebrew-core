@@ -1,8 +1,8 @@
 class Llgo < Formula
   desc "Go compiler based on LLVM integrate with the C ecosystem and Python"
   homepage "https://github.com/xgo-dev/llgo"
-  url "https://github.com/xgo-dev/llgo/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "ad31bdf097990cccd96c8703452a59f790ecdc3efd7a0fcf1f6465c026b99748"
+  url "https://github.com/xgo-dev/llgo/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "f79aa5da8c7baad55b0a287c0c9c7d073428156a58750204ef0fa9098ea71f5d"
   license "Apache-2.0"
   head "https://github.com/xgo-dev/llgo.git", branch: "main"
 
@@ -22,7 +22,7 @@ class Llgo < Formula
   end
 
   depends_on "bdw-gc" => :no_linkage
-  depends_on "go@1.26" # TODO: unpin go@1.26 when llgo supports go 1.27
+  depends_on "go"
   depends_on "libuv" => :no_linkage
   depends_on "openssl@3"
   depends_on "pkgconf"
