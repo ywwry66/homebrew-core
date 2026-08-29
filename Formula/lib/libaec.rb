@@ -1,11 +1,11 @@
 class Libaec < Formula
   desc "Adaptive Entropy Coding implementing Golomb-Rice algorithm"
-  homepage "https://gitlab.dkrz.de/k202009/libaec"
-  url "https://gitlab.dkrz.de/k202009/libaec/-/archive/v1.1.7/libaec-v1.1.7.tar.bz2"
-  sha256 "7cf0034eca8f53449252f2fab863d855aedc0520ceb8d3f3fcd3bd601ce4c85e"
+  homepage "https://github.com/Deutsches-Klimarechenzentrum/libaec"
+  url "https://github.com/Deutsches-Klimarechenzentrum/libaec/releases/download/v1.1.7/libaec-1.1.7.tar.gz"
+  sha256 "cc7b93be9002e25a88b45d6b8d5f6120756cb5e1000613f91d803ce0beba24d9"
   license "BSD-2-Clause"
   compatibility_version 1
-  head "https://gitlab.dkrz.de/k202009/libaec.git", branch: "main"
+  head "https://github.com/Deutsches-Klimarechenzentrum/libaec.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "8d708bade896916d6694d8e85300dff0ae549ccf6d1ad9709577e8777ad087f5"
