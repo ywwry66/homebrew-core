@@ -19,7 +19,18 @@ class Crowdin < Formula
 
   depends_on "bun" => :build
 
+  on_linux do
+    depends_on "icu4c@78"
+  end
+
   def install
+    if OS.linux?
+      bun_icu = Formula["bun"].deps.find { |dep| dep.name.match?(/^icu4c/) }.to_formula
+      icu = deps.find { |dep| dep.name.match?(/^icu4c/) }.to_formula
+
+      odie "Update icu4c dependency!" if bun_icu.name != icu.name
+    end
+
     system "bun", "install", "--frozen-lockfile", "--ignore-scripts"
     system "bun", "run", "build"
 
