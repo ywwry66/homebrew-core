@@ -9,12 +9,11 @@ class Acronym < Formula
   revision 5
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "70091b832ced0937439abf512a63857a917bc41c5385a04b04236e2c4c99edb2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a311fe3ded06daadceb0d8581edbdc3a13bc95c337553d1f503c31b728553fd3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f323e3b65cde39d9eb33a719e151cf86664bc7701f6d8bd2efd6439bf67813b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "02ddfd59470cb2b884425658967b3273aa0c8655084912311f995e1a74647b9f"
-    sha256                               arm64_linux:   "0bd8205b8ecbee2b9454ab586ebf3766263bfc236c9f551f8d7aabfc3a74a307"
-    sha256                               x86_64_linux:  "82f4302a3816f42d5f05c5679d759d18935150aa8499a42f6670a2f2d9574b07"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "67ceec788b30221c97af9122e483361b50bc489ca5186f116b80f994af07b52a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e8e7fae4f33b048eb99598a114bac2e06be5f4a48da5517620dfe041c284215"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1574b1b3736f8d5c785dc7b79c2d68052a5272ca48ca872c8043760ace869e1c"
+    sha256 cellar: :any,                 arm64_linux:   "c126a4ec1454bb29e7ec32469ce730eca812d3eb2576356a75322257db8c5a65"
+    sha256 cellar: :any,                 x86_64_linux:  "ed818ec3e73bad52271ac423eddbf8cb783c4deb9ba68e6e9e207d583a1471cb"
   end
 
   depends_on "cmake" => :build
