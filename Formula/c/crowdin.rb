@@ -1,8 +1,8 @@
 class Crowdin < Formula
   desc "Command-line tool that allows to manage your resources with crowdin.com"
   homepage "https://support.crowdin.com/cli-tool/"
-  url "https://github.com/crowdin/crowdin-cli/releases/download/4.15.1/crowdin-cli.zip"
-  sha256 "6e09860ecb127f05d6111b87ad3fb921e77e9d7dbac7f2d21f94b7519e160948"
+  url "https://github.com/crowdin/crowdin-cli/archive/refs/tags/5.0.0.tar.gz"
+  sha256 "e7489414d2da9fdb4b0aab6b90479c5cea672fbf515221e9fc24124feef3dedc"
   license "MIT"
 
   livecheck do
@@ -11,14 +11,19 @@ class Crowdin < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b0543db638d8649e6a009a035dcca1b63c0825ce0f375bdfb48b4ce6778118cd"
+    sha256                               arm64_tahoe:   "c8a59843f6224b2f6a81fc78a801f5d7ec828f5dee3c078388dc778e5b0c3fa7"
+    sha256                               arm64_sequoia: "a32a021489ebe6e363d83a6f926fc26c8baa7dd06c15199cc12ca6809afe9344"
+    sha256                               arm64_sonoma:  "8967826814b961f022ef568eccc0a7f319baf0a3d873fe12782d860e2dc6cd47"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7b46f85bed80d118dc0be58bdc33952c31fcfce0f70a4ba5847f4d44674bd940"
   end
 
-  depends_on "openjdk"
+  depends_on "bun" => :build
 
   def install
-    libexec.install "crowdin-cli.jar"
-    bin.write_jar_script libexec/"crowdin-cli.jar", "crowdin"
+    system "bun", "install", "--frozen-lockfile", "--ignore-scripts"
+    system "bun", "run", "build"
+
+    bin.install "dist/crowdin"
   end
 
   test do
@@ -37,8 +42,6 @@ class Crowdin < Formula
         }
       ]
     YAML
-
-    system bin/"crowdin", "init"
 
     assert "Failed to collect project info",
       shell_output("#{bin}/crowdin upload sources --config #{testpath}/crowdin.yml 2>&1", 102)
