@@ -6,12 +6,11 @@ class SymfonyCli < Formula
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f027e096d3efa44395284209c963820add9f6423db30154fa5e92cf7991b59f7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42802acfb3bdb2d8bb47e5d59beb0857c826cbc88434218eaa5012a75eef8c8c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ac18ebab87bc8b909399f84c9780c94b526a88cc300e991d4ee34a8acb02cce"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f1a6b1436130dc8810d018e4262aa70f1a56a9dcd1d9019ee1106cf4388e344c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d674394ea8a904a687c163d2407b45350da0a755b5864b0e87e2838802cc0729"
-    sha256 cellar: :any,                 x86_64_linux:  "9e41e332c4be31bc85f6f752d34bc4784b4dfce4e8eb5f2a6840007cd7651563"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4a6ea35d3bab3d4e19d2c5c5b63f7cd2c2eee406443b334bd02b84b1cbfe37b8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d54c29c835761895c4dfada3b62d7c275416c625791bd28787cf2a87e2ba1e7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "423e0ab008485c6c4c699f3290ce45b97b2ed510534053f89034ddf1b5f894e1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "54df7c542a8ffcae55de7196e04ff741dc5a3f83e0653ec0813a79b7307534c9"
+    sha256 cellar: :any,                 x86_64_linux:  "158e4fae43aac84cf45592e575f0e6277eb551b3ffa5f09bc7ce2845d2dd2b46"
   end
 
   depends_on "go" => :build
