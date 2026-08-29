@@ -11,10 +11,12 @@ class Crowdin < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "c8a59843f6224b2f6a81fc78a801f5d7ec828f5dee3c078388dc778e5b0c3fa7"
-    sha256                               arm64_sequoia: "a32a021489ebe6e363d83a6f926fc26c8baa7dd06c15199cc12ca6809afe9344"
-    sha256                               arm64_sonoma:  "8967826814b961f022ef568eccc0a7f319baf0a3d873fe12782d860e2dc6cd47"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7b46f85bed80d118dc0be58bdc33952c31fcfce0f70a4ba5847f4d44674bd940"
+    rebuild 1
+    sha256 arm64_tahoe:   "b7a4fae2d5118110a182e319e270759b93ae860a5d46405a672d81467d118652"
+    sha256 arm64_sequoia: "4f52f1c6e54310dbdf796f5d5b6cedb42516ab2e29dec31b2ed9c399fffa4ca7"
+    sha256 arm64_sonoma:  "8588d1a064fc6133ad01cd82c70cf57fa04abe82f26038a085173713decfd94c"
+    sha256 arm64_linux:   "eecd405fe13ab4e0796adecdfd778ac0fa79dbfb0af94627ef00554c73c39d00"
+    sha256 x86_64_linux:  "e571718c5554642c6e95f8fa6a8b14ff8b80e8841815dc7494ebf13bacf219bb"
   end
 
   depends_on "bun" => :build
