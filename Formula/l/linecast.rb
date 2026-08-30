@@ -7,6 +7,10 @@ class Linecast < Formula
   sha256 "4c278f791905ed22ae065ed089ce7f81fcaa412e2abcb740ed190af833e99cca"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "1be370f66bc66e8fc676945a77a8b5d3aafb2a85556906b0fdb36e0de2a900f2"
+  end
+
   depends_on "python@3.14"
 
   def install
