@@ -3,8 +3,8 @@ class Parsedmarc < Formula
 
   desc "DMARC report analyzer and visualizer"
   homepage "https://domainaware.github.io/parsedmarc/"
-  url "https://files.pythonhosted.org/packages/28/50/d7d42f882f701ab0769ab37c798f8107b062d759cae3ed373ca2b0fd1d23/parsedmarc-10.5.0.tar.gz"
-  sha256 "651f3c8f08e4071f2907fecdac338a904ee01ca42b1ca0870b07254a925aaefb"
+  url "https://files.pythonhosted.org/packages/a8/05/3dd1b02225740fb643755e7e1e509b5d9570fbc32e0026f372f173b01f20/parsedmarc-11.0.0.tar.gz"
+  sha256 "cf0db42e83d2de86581c9b315ca337e156c24a0ddf525ec1e674da531d04a94a"
   license "Apache-2.0"
   head "https://github.com/domainaware/parsedmarc.git", branch: "master"
 
@@ -25,7 +25,8 @@ class Parsedmarc < Formula
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
 
-  pypi_packages exclude_packages: %w[certifi cryptography]
+  pypi_packages package_name:     "parsedmarc[all]",
+                exclude_packages: %w[certifi cryptography]
 
   resource "aiohappyeyeballs" do
     url "https://files.pythonhosted.org/packages/ce/f4/eec0465c2f67b2664688d0240b3212d5196fd89e741df67ddb81f8d35658/aiohappyeyeballs-2.7.1.tar.gz"
@@ -85,11 +86,6 @@ class Parsedmarc < Formula
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
     sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
-  end
-
-  resource "dateparser" do
-    url "https://files.pythonhosted.org/packages/59/6a/9f06999c4f27e9192c5eb38bfffadc2e6752df8178e97e88b10b9eb4c682/dateparser-1.4.2.tar.gz"
-    sha256 "bed2a3fd9bad8f2fb2d72b57748bada260b3a9349a264c22ffc23c3249d7049a"
   end
 
   resource "dkimpy" do
@@ -392,19 +388,9 @@ class Parsedmarc < Formula
     sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
   end
 
-  resource "pytz" do
-    url "https://files.pythonhosted.org/packages/fb/48/fb042503b6ca6cd271261dc559fd6432f7d8c713153e9ec5c591af4dfc1c/pytz-2026.3.post1.tar.gz"
-    sha256 "2211d3fcf9a797d3405cac96ac7f61d80e6a644f72a3309607282fe8a2010c5d"
-  end
-
   resource "pyyaml" do
     url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
-  end
-
-  resource "regex" do
-    url "https://files.pythonhosted.org/packages/20/98/04b13f1ddfb63158025291c02e03eb42fbb7acb51d091d541050eb4e35e8/regex-2026.7.19.tar.gz"
-    sha256 "7e77b324909c1617cbb4c668677e2c6ae13f44d7c1de0d4f15f2e3c10f3315b5"
   end
 
   resource "requests" do
@@ -440,11 +426,6 @@ class Parsedmarc < Formula
   resource "typing-extensions" do
     url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
     sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
-  end
-
-  resource "tzlocal" do
-    url "https://files.pythonhosted.org/packages/81/5b/879b2f932adfa7a053c360d50bc896c977fa6426109185f7c12ebdd0cb9d/tzlocal-5.4.4.tar.gz"
-    sha256 "8dbb8660838688a7b6ba4fed31d18dedf842afb4d47ca050d6d891c2c15f3be4"
   end
 
   resource "uritemplate" do
