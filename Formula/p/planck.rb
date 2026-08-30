@@ -27,8 +27,8 @@ class Planck < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "52ba1633a236729c1ef9108e169c8bbf1bc4ca262a5cd05f67f7a2dc4f70ae37"
   end
 
-  deprecate! date: "2026-02-21", because: :does_not_build
-  disable! date: "2027-02-21", because: :does_not_build
+  deprecate! date: "2026-02-21", because: :unmaintained
+  disable! date: "2027-02-21", because: :unmaintained
 
   depends_on "clojure" => :build
   depends_on "cmake" => :build
@@ -38,7 +38,6 @@ class Planck < Formula
 
   uses_from_macos "vim" => :build # for xxd
   uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on xcode: :build
@@ -46,6 +45,7 @@ class Planck < Formula
 
   on_linux do
     depends_on "webkitgtk"
+    depends_on "zlib-ng-compat"
   end
 
   # Don't mix our ICU4C headers with the system `libicucore`.
@@ -62,7 +62,7 @@ class Planck < Formula
       # We extract this from the filename programmatically and store it in javascriptcore_api_version
       # and make sure planck-c/CMakeLists.txt is updated accordingly.
       # On macOS this dependency is provided by JavaScriptCore.Framework, a component of macOS.
-      javascriptcore_pc_file = (Formula["webkitgtk"].lib/"pkgconfig").glob("javascriptcoregtk-*.pc").first
+      javascriptcore_pc_file = formula_opt_lib("webkitgtk").glob("pkgconfig/javascriptcoregtk-*.pc").first
       javascriptcore_api_version = javascriptcore_pc_file.basename(".pc").to_s.split("-").second
       inreplace "planck-c/CMakeLists.txt", "javascriptcoregtk-4.0", "javascriptcoregtk-#{javascriptcore_api_version}"
     end
