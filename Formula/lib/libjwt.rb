@@ -24,7 +24,7 @@ class Libjwt < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "jansson"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   def install
     args = %W[
