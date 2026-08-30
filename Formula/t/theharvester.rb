@@ -35,12 +35,11 @@ class Theharvester < Formula
   # No sdist on PyPI, so we use the GitHub tarball
   # Ref: https://github.com/microsoft/playwright-python/issues/2579
   resource "playwright" do
-    url "https://github.com/microsoft/playwright-python/archive/refs/tags/v1.60.0.tar.gz"
-    sha256 "fbff350bef7de11b522d7e0450e4c95abce9fa20747eb3cf9fe713473dce925e"
+    url "https://github.com/microsoft/playwright-python/archive/refs/tags/v1.62.0.tar.gz"
+    sha256 "30cc72a0c00a22c3d287539233d3d6abd579becbfe7d02aef80bd3e75c951455"
 
     livecheck do
-      url "https://raw.githubusercontent.com/laramies/theHarvester/refs/tags/#{LATEST_VERSION}/pyproject.toml"
-      regex(/"playwright==v?(\d+(?:\.\d+)+)"/i)
+      url :url
     end
   end
 
@@ -344,6 +343,8 @@ class Theharvester < Formula
     sha256 "9ac374123c6fd7abf64d1fec93962b0bd4ee2c19751755a762a72dd96c0378f8"
   end
 
+  deny_network_access! [:test]
+
   def install
     ENV["SETUPTOOLS_SCM_PRETEND_VERSION_FOR_PLAYWRIGHT"] = resource("playwright").version
     virtualenv_install_with_resources
@@ -351,8 +352,10 @@ class Theharvester < Formula
   end
 
   test do
-    output = shell_output("#{bin}/theharvester -d brew.sh --limit 1 --source urlscan 2>&1")
-    assert_match "docs.brew.sh", output
-    assert_match "formulae.brew.sh", output
+    output = shell_output("#{bin}/theharvester -d brew.sh --source invalid 2>&1", 1)
+    assert_match "theHarvester #{version}", output
+    assert_match "The following engines are not supported", output
+
+    system libexec/"bin/python", "-c", "import theHarvester.lib.api.api"
   end
 end
