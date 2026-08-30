@@ -14,19 +14,20 @@ class Sh4d0wup < Formula
     sha256 cellar: :any, x86_64_linux:  "e3b870856fc7d543a46ae5dab82905b4d5785dda722f4d9cdb0478a1bb26c5ec"
   end
 
-  depends_on "llvm" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "pgpdump" => :test
 
-  depends_on "openssl@3"
-  depends_on "pcsc-lite"
+  depends_on "openssl@4"
   depends_on "xz"
   depends_on "zstd"
 
+  uses_from_macos "llvm" => :build
+  uses_from_macos "pcsc-lite"
+
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
 
     system "cargo", "install", *std_cargo_args
 
@@ -49,8 +50,8 @@ class Sh4d0wup < Formula
     assert_match("ASN1 OID: secp256k1", output)
 
     [
-      formula_opt_lib("openssl@3")/shared_library("libssl"),
-      formula_opt_lib("openssl@3")/shared_library("libcrypto"),
+      formula_opt_lib("openssl@4")/shared_library("libssl"),
+      formula_opt_lib("openssl@4")/shared_library("libcrypto"),
     ].each do |library|
       assert Utils.binary_linked_to_library?(bin/"sh4d0wup", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
