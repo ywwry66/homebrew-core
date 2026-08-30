@@ -1,8 +1,8 @@
 class Fracturedjson < Formula
   desc "JSON formatter that produces highly readable but fairly compact output"
   homepage "https://github.com/j-brooke/FracturedJson"
-  url "https://github.com/j-brooke/FracturedJson/archive/refs/tags/cli-v1.0.1.tar.gz"
-  sha256 "9da9a09e1e512b114b220620cc2bdfe2db491eb8094d87a0b773d88a855e16c0"
+  url "https://github.com/j-brooke/FracturedJson/archive/refs/tags/cli-v1.0.2.tar.gz"
+  sha256 "039e199c246206cb7a01dc800d10c60aced0e26572660c10148c7e6f303e3ab3"
   license "MIT"
 
   livecheck do
