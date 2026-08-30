@@ -6,12 +6,12 @@ class Sh4d0wup < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "572cc7d6702e91fa5f298e1e2e35051f211a6a18e31ea96575b6e7744210fa08"
-    sha256 cellar: :any, arm64_sequoia: "fb2ef791853b2121d4a94362d0fc8a2a591e92dd1bc0bd66f3b5a53f1f359e05"
-    sha256 cellar: :any, arm64_sonoma:  "31ecc5ad8eb1e9a51301c4ccb991a9191ae131b27505e86a0c83e2bca7728a88"
-    sha256 cellar: :any, sonoma:        "d454a2ebb5b997cb3fa3657fcd81e3ee21ae92bc2da12f2027188d052aa19ad6"
-    sha256 cellar: :any, arm64_linux:   "29fcbfee357e11addcbd141c0fc826dfd219d35b354c099d1427ae41c9de48d4"
-    sha256 cellar: :any, x86_64_linux:  "e3b870856fc7d543a46ae5dab82905b4d5785dda722f4d9cdb0478a1bb26c5ec"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "a6279e7eeb190a0a04ab8a9f90a101f84438c54e6c6cd61ed39d40edb6caf236"
+    sha256 cellar: :any, arm64_sequoia: "314a2bc7d776e0cf034a665cec3f9036b2a3fd24812c9e96f2444a2fdd1deede"
+    sha256 cellar: :any, arm64_sonoma:  "a9080458a5d207b84902f2b5bd29b30907536a2e09f3d58a7544c56e2116d498"
+    sha256 cellar: :any, arm64_linux:   "fbe8a62b11f71851f3a5fa620c7c1691aafd9d3bce41414475fc648c3de8f4e0"
+    sha256 cellar: :any, x86_64_linux:  "5a7deebaadb04cd1e385afe305a7d366a71e4cb8dc2fe9be5de3a6daae38e45e"
   end
 
   depends_on "pkgconf" => :build
