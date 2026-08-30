@@ -8,12 +8,11 @@ class Mycli < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5aa035ba9c38b283d003c60c69328d48a4680c00a82f4d4113b6fe2200c0b801"
-    sha256 cellar: :any, arm64_sequoia: "ddfc2bd698f03ae4d63d5cbc816846a1a597ec35727aeb673d9d190514140f85"
-    sha256 cellar: :any, arm64_sonoma:  "faa2d1046589ecb8ab847107e04565cb1d4d29a7781deff763bcc835ce7091bf"
-    sha256 cellar: :any, sonoma:        "381d6bcea5938d2e40d470cfc6d3e12174aa99345d7dcbcd14b68b96e57173c2"
-    sha256 cellar: :any, arm64_linux:   "76299fecd866df76d8223148c79b1bc1d51b11eb82c1fad7c7dda16073f960fe"
-    sha256 cellar: :any, x86_64_linux:  "cfc4a4ca35de702409f03d9128157fde85ee84eb57d30fe9b372e2f7596e91c9"
+    sha256 cellar: :any, arm64_tahoe:   "1373743cbb4a363644b031400b0c1884bdffe7bab84b7cdbc2e8027d26cb7fa8"
+    sha256 cellar: :any, arm64_sequoia: "10d7efab7333d921f8e871bebc67e909459637505e34b5e4e6eb257dd9837eb1"
+    sha256 cellar: :any, arm64_sonoma:  "d35e73f81dd92253e6298e66a5c6a0dc73c8019c507fcbcd155adcb162647b88"
+    sha256 cellar: :any, arm64_linux:   "052c0e09dfb49e42e0603f95839fe290fa85e036756553b343bd561925a114c9"
+    sha256 cellar: :any, x86_64_linux:  "8cb4f60a563924f41277a7f75d3cc69bd95b8e67d83bb6cce065f431ac78593f"
   end
 
   depends_on "rust" => :build # for jiter, polars, vl-convert
