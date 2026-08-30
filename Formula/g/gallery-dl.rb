@@ -9,12 +9,11 @@ class GalleryDl < Formula
   head "https://codeberg.org/mikf/gallery-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "7733b678884b8f65f07a51614e617e4b7422bac7cffce4cfd55bd43acf49c405"
-    sha256 cellar: :any, arm64_sequoia: "4b402b6f06afad01dd4a132256b40a89e5c23e57a0d53bd09e7fb65f865ec3a2"
-    sha256 cellar: :any, arm64_sonoma:  "838d1f30a9da2c4abf1f6c32fc62fd1196e99427db1911ecdee0f70e99f9a872"
-    sha256 cellar: :any, sonoma:        "d6b32c9fbfc326b95a1acb17ed1f4a2041566b0a51f1369c4a78d89d641400db"
-    sha256 cellar: :any, arm64_linux:   "648379506e4526b049cb22d1abb0bbaab6ce2ff6487e88da4d96387ed28cab5c"
-    sha256 cellar: :any, x86_64_linux:  "780afe7a72daa3a516ef4d6a5b546a2df18048a87996f7b995f72278f9329225"
+    sha256 cellar: :any, arm64_tahoe:   "c719de4c3e1c6075b4f80d4ac9bb944484f3dfae8894c3af83187672434b9dba"
+    sha256 cellar: :any, arm64_sequoia: "96f678f52c9c9eb000ccfd3b951bfb56b30b6e880643ed076f8ee2f3cd09294d"
+    sha256 cellar: :any, arm64_sonoma:  "8e7494d4096aefe152a1aa66f513703984bee25958b818159272fd2b9cde7c4e"
+    sha256 cellar: :any, arm64_linux:   "c9cd8c3b97dbba86e31181254f7900f7ace0a1355692d1dd0099077b579089f7"
+    sha256 cellar: :any, x86_64_linux:  "81d6b150bde3492b1f54172c55f62fdde4c8fc352327c4af55bb0b667126a9f6"
   end
 
   depends_on "certifi" => :no_linkage
