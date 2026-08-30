@@ -1,8 +1,8 @@
 class Uftrace < Formula
   desc "Function graph tracer for C/C++/Rust"
   homepage "https://uftrace.github.io/slide/"
-  url "https://github.com/namhyung/uftrace/archive/refs/tags/v0.19.tar.gz"
-  sha256 "c35ef25f279684fc7d79dcc250fb29386890870fd2c9f812e587151419ca01af"
+  url "https://github.com/namhyung/uftrace/archive/refs/tags/v0.20.tar.gz"
+  sha256 "03189061130693b274a4d0af47c4a3135d4a496ca111b78233593bfcb3d3720f"
   license "GPL-2.0-only"
   head "https://github.com/namhyung/uftrace.git", branch: "master"
 
@@ -20,11 +20,9 @@ class Uftrace < Formula
   depends_on "luajit"
   depends_on "ncurses"
   depends_on "python@3.14"
+  depends_on "xz"
 
   def install
-    # TODO: Obsolete with git master, to be removed when updating to next release
-    inreplace "misc/version.sh", "deps/have_libpython2.7", "deps/have_libpython*"
-
     python3 = "python3.14"
     pyver = Language::Python.major_minor_version python3
     # Help pkg-config find python as we only provide `python3-embed` for aliased python formula
