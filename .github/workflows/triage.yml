@@ -299,6 +299,7 @@ jobs:
                 dotnet|\
                 emscripten|\
                 envoy|\
+                flang|\
                 gcc|\
                 gdb|\
                 ghc|\
@@ -340,7 +341,6 @@ jobs:
                 ghc|\
                 glib|\
                 gtk\\+3|\
-                harfbuzz|\
                 jpeg-turbo|\
                 libomp|\
                 libpng|\
