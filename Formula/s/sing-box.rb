@@ -7,11 +7,11 @@ class SingBox < Formula
   head "https://github.com/SagerNet/sing-box.git", branch: "testing"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4e8311eb94860b5d6181497fa9a28583bf4740b1d7e6818fa84fc6a6b98304d8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a021be2164994c4613c42afed8b8a0f945bb57db382fe16dbc504e83249d8ae6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f6022f218e058695342e11a336f850ed0123127dd2ae84fdcc176aed2869dcd"
-    sha256 cellar: :any,                 arm64_linux:   "66ac1e4eea88eab5d4ac773a22ef595ef96eeef52f9c5feff038c48995c48af6"
-    sha256 cellar: :any,                 x86_64_linux:  "2cc18a428155faeafa1698b2a21b0e97484f5ee64b7728ee2f66b8d963f35e77"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "07bae3366ea95dd3f4117104eaf608f57716f60bbb50c00301ad63f6c3dc26f4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "586f237853b42d5e850eb98358fb4bdb21dc308e78b8a5e82a5c35e8eb017e8f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9071c8735181b873bb1cb118f933de1233a49d691535595101a32252504677fe"
+    sha256 cellar: :any,                 arm64_linux:   "f24a220ab68a3b17f1dec397c513666511d8a2b122c0ace43154fd8e0eb188c7"
+    sha256 cellar: :any,                 x86_64_linux:  "8011cc5f95c540a4cdcb3e55aea212d60e9b60059ca43e7836707f1233c22e2f"
   end
 
   # TODO: unpin go@1.26 when sing-box supports go 1.27
