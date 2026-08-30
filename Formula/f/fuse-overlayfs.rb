@@ -1,9 +1,17 @@
 class FuseOverlayfs < Formula
   desc "FUSE implementation for overlayfs"
   homepage "https://github.com/containers/fuse-overlayfs"
-  url "https://github.com/containers/fuse-overlayfs/archive/refs/tags/v1.17.tar.gz"
-  sha256 "cefffecfbb001b2784f19af344f27eae07b31a4faa38d345b738af96b2bec59e"
+  url "https://github.com/containers/fuse-overlayfs/archive/refs/tags/v1.18.tar.gz"
+  sha256 "fdd1896c8de35a15eb14444d7880be81d635fcbbc4ad162d8bc3ccf5627aa8c7"
   license "GPL-2.0-or-later"
+
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   bottle do
     sha256 cellar: :any, arm64_linux:  "2984a4e1dea792d2d0687b9435af67f6c4724fc1caedecdf577330bdc83d7a02"
