@@ -12,6 +12,14 @@ class PlinkNg < Formula
     regex(/^v?(\d+(?:\.\d+)+-a\.\d+(?:\.\d+)*)$/i)
   end
 
+  bottle do
+    sha256 cellar: :any, arm64_tahoe:   "6d03ea01ab1c85e4ead87ba21ca5fcb2ab2a6ff4302edc4bfed1f6e76c395073"
+    sha256 cellar: :any, arm64_sequoia: "e2edf93f8b4f65aac0e34706769864d6ad37669eeec55ccb70aab1df131c1bb8"
+    sha256 cellar: :any, arm64_sonoma:  "09168d48489881f43385d782eadfa9ecdaabe5f16e9224380e316060c51e0325"
+    sha256 cellar: :any, arm64_linux:   "411aed802a40536a706a870b092765aad045c019ce488bf07e9abc838edc14b6"
+    sha256 cellar: :any, x86_64_linux:  "28a595a27b7595d2d24e489a9878fda886d2045e76e06da5d618bbdb8866351f"
+  end
+
   depends_on "zstd"
 
   on_linux do
