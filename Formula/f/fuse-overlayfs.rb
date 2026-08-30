@@ -14,8 +14,8 @@ class FuseOverlayfs < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_linux:  "2984a4e1dea792d2d0687b9435af67f6c4724fc1caedecdf577330bdc83d7a02"
-    sha256 cellar: :any, x86_64_linux: "7574002cc6c46fffb2c793e0a3f1310c53d9d62ebdea119669b6979f6e3cef93"
+    sha256 cellar: :any, arm64_linux:  "07e98bb9c3567a01f235c2795f26ecd26527e74d7c028799d7f959d64b7fca7d"
+    sha256 cellar: :any, x86_64_linux: "9716362ba6cf8a65ae245092aff2934a8690bf9841f1ba297046a3a53a9811d1"
   end
 
   depends_on "autoconf" => :build
