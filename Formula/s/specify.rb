@@ -3,8 +3,8 @@ class Specify < Formula
 
   desc "Toolkit to help you get started with Spec-Driven Development"
   homepage "https://github.github.com/spec-kit/"
-  url "https://github.com/github/spec-kit/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "3987fb3d5654a79b9dffbb2a8704031072cfd32ecdd6b7bfaa86837c9481563e"
+  url "https://github.com/github/spec-kit/archive/refs/tags/v1.0.2.tar.gz"
+  sha256 "f821197e88d6735c68b096f196a6ef0367a3f5f4a5f931c916ea543428df4985"
   license "MIT"
 
   bottle do
@@ -28,8 +28,8 @@ class Specify < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
-    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "json5" do
@@ -58,8 +58,8 @@ class Specify < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/b8/d7/e7bfbc86e9f99ff7807e24de7703f032e9c9ba80bb355cf26e0e9bc5a75e/platformdirs-4.11.3.tar.gz"
-    sha256 "66a73d38a849810252df809a3d8bcbda8e26f6c189920e7535ad608a48dbb5ab"
+    url "https://files.pythonhosted.org/packages/ea/06/cf1564dcc2e2261c8c8c6c05628dc8b418943bdae2a4e58640ceb2f770fa/platformdirs-4.11.5.tar.gz"
+    sha256 "e8b31f4f8bcbbedef91a6b57a706255e4f148d2a4e01648382a0a47342539173"
   end
 
   resource "pygments" do
@@ -88,8 +88,8 @@ class Specify < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/ae/40/4a3db7990d1f62a53182aa96eaef57aeb2886a27f90a195bc66713565d31/typer-0.27.1.tar.gz"
-    sha256 "a79bef8469a79c45498e7b814ecf8d603cc7644e9acbd9e19cac0334240b18df"
+    url "https://files.pythonhosted.org/packages/16/f7/57713ba479fd405eb76de31404b2c744c289e336b2d999511ebf51e496f7/typer-0.27.2.tar.gz"
+    sha256 "269b7eb9d3c202ca84b4bc9618cb04ebb43d3d4d1e567e4c768607232c05f945"
   end
 
   def install
