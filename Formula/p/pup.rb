@@ -7,11 +7,11 @@ class Pup < Formula
   head "https://github.com/DataDog/pup.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f2f902759af63303fd8576d4baf0fa9acc66c9ec6627db356f5debdd59ff97db"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a1164ae52276266205fb14493711b4787ae31c332dedc6ce9c0f99cc32fca5a0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e225bee96319f15ce0d8113cf4733dd83db886da15471edf0901e6730d9691d"
-    sha256 cellar: :any,                 arm64_linux:   "8bb7bbf51a7f497ecf5be2277bd70ed16128131977f65cce57ed406cd3162a0f"
-    sha256 cellar: :any,                 x86_64_linux:  "8abe3bc72bc5912ff612aedf03126e428ad14896b7acf10f47509f0afc78ea69"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e0bd14346dfc2511939e8df13a61011f00ea248d8b89021e6cb02ee6d609a6bd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4db9e08659bb19cda8af7580a16bdc9b20c24bfff31d76a3c8a81d4ae34b43b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0c5aac3a7dd562fa7887c78543cf83e095f86205cd9fbeaff3df5871a62b2c31"
+    sha256 cellar: :any,                 arm64_linux:   "17012edf922084fc6cf9463c33d28f9ee9c7b0e7b0774289d36313500f7411f1"
+    sha256 cellar: :any,                 x86_64_linux:  "05a2a80f5bc039a91e1c59dde6c4077990c8443c13db79ae4a3a3642be0073bd"
   end
 
   depends_on "pkgconf" => :build
