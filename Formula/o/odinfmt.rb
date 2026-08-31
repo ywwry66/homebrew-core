@@ -1,8 +1,8 @@
 class Odinfmt < Formula
   desc "Formatter for The Odin Programming Language"
   homepage "https://github.com/DanielGavin/ols"
-  url "https://github.com/DanielGavin/ols/archive/refs/tags/dev-2026-06.tar.gz"
-  sha256 "f8055ff723994dc4debc02817c230d0173c43a23df4a9d6a7104fea69bfeeb79"
+  url "https://github.com/DanielGavin/ols/archive/refs/tags/dev-2026-08.tar.gz"
+  sha256 "e8d368f35b6833efa7e840753881d01f76607f3c0872c614e536f2b7e939f800"
   license "MIT"
 
   bottle do
