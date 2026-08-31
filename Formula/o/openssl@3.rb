@@ -14,15 +14,11 @@ class OpensslAT3 < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_tahoe:   "2e0d0064219ff12cef90d794ac87da8d5dbc091060a1100291e692c9377a9328"
-    sha256 arm64_sequoia: "fe8806b81ab6906d2e355e7455b60fd73e2746bf8eaa257e03029b7fbadb51f4"
-    sha256 arm64_sonoma:  "bcc920ec4b157ba2fb001ef3e701ea35beb860814f21414a9af8d95ad9af4b27"
-    sha256 tahoe:         "65934be4cf0b0aa46d502f60ed15bf879c84932ab79d975ad73541c182a8df6e"
-    sha256 sequoia:       "639e9bd5f9002411601529fd7cfd23043670c451b7fef9356fafb9556e9ade69"
-    sha256 sonoma:        "756b4206f7032468825c0494ec46cc519666be06d40f068d68f20ad229a01681"
-    sha256 arm64_linux:   "8c149300f890514f89a883e60d6143e0eeb6213f32f457236cc2a8b3adde0597"
-    sha256 x86_64_linux:  "239ee48da2eafa3b5df11a20068e0dc3dfaa20f34bab097cb34733dc1d5166b2"
+    sha256 arm64_tahoe:   "8c7dab98311d025fda379dba80eaf985af1ceca26c403c66318b3c7d43a028b9"
+    sha256 arm64_sequoia: "b7139450ed389be82f807daaadffa778d9c4753a3b2d8f784da1cf7383994ee2"
+    sha256 arm64_sonoma:  "01887accd1964e9940ba516509e948eed9850d58d55cc02ca52c503435750685"
+    sha256 arm64_linux:   "e0f84cb8ab776813a17750423a6ce1b75b870df3ab2c21c54df9ce02646c1e1c"
+    sha256 x86_64_linux:  "73c4159878b98d82e6f4e343ef34a79b74ca2224927d38c0956ce3ea781d6d20"
   end
 
   depends_on "ca-certificates" => :no_linkage
