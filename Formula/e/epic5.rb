@@ -23,7 +23,7 @@ class Epic5 < Formula
     sha256 x86_64_linux:  "6562f2e4c0c28c6127a5dce9dd311bc655c6abc6e3f14707d8837b840c8e3b56"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
@@ -31,7 +31,7 @@ class Epic5 < Formula
   def install
     system "./configure", "--mandir=#{man}",
                           "--with-ipv6",
-                          "--with-ssl=#{formula_opt_prefix("openssl@3")}",
+                          "--with-ssl=#{formula_opt_prefix("openssl@4")}",
                           *std_configure_args
     system "make"
     system "make", "install"
