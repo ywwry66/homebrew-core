@@ -3,8 +3,8 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/40/1d/66071935d200f775039c4738e721435b6e106ad72b10787bcda19e66e139/flexget-3.20.8.tar.gz"
-  sha256 "179dfdbebc93dc05f029be14fce33685c25158b328e61f8bee8f2337f2ebb7b2"
+  url "https://files.pythonhosted.org/packages/de/0b/11b278e8488ba69e242b1196922a982fa2f432856e9ddd45ac34a1c09e20/flexget-3.20.9.tar.gz"
+  sha256 "335cc77ebe0b2cd9ea533acbdfaa5282a4480ec0e8bc914dec17631e4ce0e119"
   license "MIT"
 
   bottle do
@@ -353,8 +353,8 @@ class Flexget < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/ae/40/4a3db7990d1f62a53182aa96eaef57aeb2886a27f90a195bc66713565d31/typer-0.27.1.tar.gz"
-    sha256 "a79bef8469a79c45498e7b814ecf8d603cc7644e9acbd9e19cac0334240b18df"
+    url "https://files.pythonhosted.org/packages/16/f7/57713ba479fd405eb76de31404b2c744c289e336b2d999511ebf51e496f7/typer-0.27.2.tar.gz"
+    sha256 "269b7eb9d3c202ca84b4bc9618cb04ebb43d3d4d1e567e4c768607232c05f945"
   end
 
   resource "typer-slim" do
