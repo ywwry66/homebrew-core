@@ -1,8 +1,8 @@
 class Soar < Formula
   desc "Fast, modern package manager for Static Binaries, Portable Formats and more"
   homepage "https://soar.qaidvoid.dev"
-  url "https://github.com/pkgforge/soar/archive/refs/tags/v0.13.2.tar.gz"
-  sha256 "70740ce9bb51c4d77eef94e4d24e8e2405ac9af2ccb1b37340018ed0316190c6"
+  url "https://github.com/pkgforge/soar/archive/refs/tags/v0.13.3.tar.gz"
+  sha256 "6cab6e40c7e34a5f461662f030f57e21f9691a9a60f17b824cccd5399678e2bb"
   license "MIT"
 
   livecheck do
