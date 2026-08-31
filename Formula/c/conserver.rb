@@ -19,7 +19,7 @@ class Conserver < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e62d98d49a9f17bb8be6628da6758273db6c59f53ff11e9f601d7095ed35013"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "krb5"
   uses_from_macos "libxcrypt"
