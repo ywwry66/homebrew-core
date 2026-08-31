@@ -1,8 +1,8 @@
 class CargoGenerate < Formula
   desc "Use pre-existing git repositories as templates"
   homepage "https://github.com/cargo-generate/cargo-generate"
-  url "https://github.com/cargo-generate/cargo-generate/archive/refs/tags/v0.23.14.tar.gz"
-  sha256 "0fcd5c503e471d90ae3debf2238052acf30ab5052bc8bf2deca7e54091385cab"
+  url "https://github.com/cargo-generate/cargo-generate/archive/refs/tags/v0.24.0.tar.gz"
+  sha256 "cdabbd70646c41f48fded463fd937a79b1686b3bed6673d14eb9dd9e0e4663f8"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/cargo-generate/cargo-generate.git", branch: "main"
 
@@ -15,40 +15,18 @@ class CargoGenerate < Formula
     sha256 cellar: :any, x86_64_linux:  "96a2e01e1b04b381fd598293afe428585e30ea823ca676500b6dba1ddaba458b"
   end
 
-  depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "libgit2"
-  depends_on "libssh2"
-  depends_on "openssl@3"
 
   def install
-    ENV["LIBGIT2_NO_VENDOR"] = "1"
-    ENV["LIBSSH2_SYS_USE_PKG_CONFIG"] = "1"
-    # Ensure the correct `openssl` will be picked up.
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
-
-    system "cargo", "install", "--no-default-features", *std_cargo_args
+    system "cargo", "install", *std_cargo_args
   end
 
   test do
-    require "utils/linkage"
-
     assert_match "No favorites defined", shell_output("#{bin}/cargo-generate gen --list-favorites")
 
     system bin/"cargo-generate", "gen", "--git", "https://github.com/ashleygwilliams/wasm-pack-template",
                                  "--name", "brewtest"
     assert_path_exists testpath/"brewtest"
     assert_match "brewtest", (testpath/"brewtest/Cargo.toml").read
-
-    linked_libraries = [
-      formula_opt_lib("libgit2")/shared_library("libgit2"),
-      formula_opt_lib("libssh2")/shared_library("libssh2"),
-      formula_opt_lib("openssl@3")/shared_library("libssl"),
-    ]
-    linked_libraries << (formula_opt_lib("openssl@3")/shared_library("libcrypto")) if OS.mac?
-    linked_libraries.each do |library|
-      assert Utils.binary_linked_to_library?(bin/"cargo-generate", library),
-             "No linkage with #{library.basename}! Cargo is likely using a vendored version."
-    end
   end
 end
