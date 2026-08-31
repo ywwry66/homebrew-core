@@ -10,6 +10,14 @@ class Jcode < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b3a754a045a2fe804cd2646494c322a82e726316a1c5fbf56dc8a09cd397589c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ae0540ab10157d39907ad4b6e9284639e3b33e1ddee7d7b44d4b781dc24b4cc9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "09c7818adc510af99b77995ce8ee7f1701f38c4850ea4afc07d76a9ffb6fedf4"
+    sha256 cellar: :any,                 arm64_linux:   "abcdd73ee2848774ccacb27eb3c090af95864ee96cb28cfe29785e987696732b"
+    sha256 cellar: :any,                 x86_64_linux:  "dd6d41977b5f11ac251bf9c6ad6fac1485ce579d1de184525b4f3c109fdc4125"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
