@@ -13,12 +13,11 @@ class Convox < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd159bb976a247b84f4fc83a6292ad43e5b24dcd4c3e69beae261dc7371249d2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b2dbd7708dc977192d98dc9ca7b634b14decfbfc42ae0da99476f7eb10e063e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f7114387835902a1b4ea8d013a530dbe14db226cdecc527c27bbe039aae8733"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fe4e16e129bda0f4c7d0ea1dcd6cdeaed95731839ca8cf17fb59a38266ac43b6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b21fe345cf1dcfce46077d1e034be95243980b4dd17ecdf32d264677001cc4b5"
-    sha256 cellar: :any,                 x86_64_linux:  "e73f1c98ad64e570ec10ca0eee802d42e707ccea495ccdd4a182f7b19248f142"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b7b78f9683f9889fb0a45ae8bc713672653c79f3785f6ae18e1cf17c97bc8ac3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "49c16abc75ab6657df6ebe22a8d83873b7bea685f6a3b54db778e05bd789f074"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd7361da2cb690d5155240b8f2f7f496c1ac46d707557b19e037cb96955988dd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1616e65867c41195d2ad2bc4d848557a9bb4d92b0da7a229f0e8303813bd6c3f"
+    sha256 cellar: :any,                 x86_64_linux:  "184acb97016c3889eba6a2909402aeecc5194caf935239c265599b0986d00fe1"
   end
 
   depends_on "go" => :build
