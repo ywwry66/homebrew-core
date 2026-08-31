@@ -1,8 +1,8 @@
 class Grpcurl < Formula
   desc "Like cURL, but for gRPC"
   homepage "https://www.fullstory.com/resources/content/fullstory-engineering-blog/"
-  url "https://github.com/fullstorydev/grpcurl/archive/refs/tags/v1.9.3.tar.gz"
-  sha256 "bb555087f279af156159c86d4d3d5dd3f2991129e4cd6b09114e6851a679340d"
+  url "https://github.com/fullstorydev/grpcurl/archive/refs/tags/v1.9.4.tar.gz"
+  sha256 "bea899ba2f483a951bf40aa05d41e069dd2f7bfe52d2a229717abfdb5620cb7c"
   license "MIT"
   head "https://github.com/fullstorydev/grpcurl.git", branch: "master"
 
