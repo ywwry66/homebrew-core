@@ -1,10 +1,9 @@
 class Gearman < Formula
   desc "Application framework to farm out work to other machines or processes"
   homepage "https://gearman.org/"
-  url "https://github.com/gearman/gearmand/releases/download/2.0.0/gearmand-2.0.0.tar.gz"
-  sha256 "690cb9c7a58c03d6be18031dc4a1a93778f6fa713590b4ce527ceb8b43ea0688"
+  url "https://github.com/gearman/gearmand/releases/download/2.1.0/gearmand-2.1.0.tar.gz"
+  sha256 "4d24340ab39be851b40d895687c17d6d16e730ece1fa9d9294d6b2b0a8cb1261"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "80e57d251960e8922de58fa5d9326743b379e7a0f55868598721d1571cc6e924"
@@ -47,9 +46,6 @@ class Gearman < Formula
       --without-mysql
       --without-postgresql
     ]
-
-    ENV.append_to_cflags "-DHAVE_HTONLL"
-    ENV.append "CXXFLAGS", "-std=c++14"
 
     (var/"log").mkpath
     system "./configure", *args
