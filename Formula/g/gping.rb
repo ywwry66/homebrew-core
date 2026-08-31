@@ -1,10 +1,10 @@
 class Gping < Formula
   desc "Ping, but with a graph"
   homepage "https://github.com/orf/gping"
-  url "https://github.com/orf/gping/archive/refs/tags/gping-v1.20.4.tar.gz"
-  sha256 "63baad8181b8161ed1f1d9091c1a0e8a7f5a63c5f680c7272d0a164596100e25"
+  url "https://github.com/orf/gping/archive/refs/tags/gping-v1.21.0.tar.gz"
+  sha256 "350c091923f67fdc72847e12368b2f207015be200ea1d781bce422a2a884d1c6"
   license "MIT"
-  head "https://github.com/orf/gping.git", branch: "master"
+  head "https://github.com/orf/gping.git", branch: "main"
 
   # The GitHub repository has a "latest" release but it can sometimes point to
   # a release like `v1.2.3-post`, `v1.2.3-post2`, etc. We're checking the Git
