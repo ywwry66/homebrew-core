@@ -20,6 +20,8 @@ class SpeedtestCli < Formula
 
   depends_on "python@3.14"
 
+  conflicts_with "speedtest-go", because: "both install `speedtest` binaries"
+
   # Support Python 3.10, remove on next release
   patch do
     url "https://github.com/sivel/speedtest-cli/commit/22210ca35228f0bbcef75a7c14587c4ecb875ab4.patch?full_index=1"
