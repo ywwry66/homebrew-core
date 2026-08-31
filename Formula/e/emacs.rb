@@ -5,6 +5,7 @@ class Emacs < Formula
   mirror "https://ftp.gnu.org/gnu/emacs/emacs-31.1.tar.xz"
   sha256 "1da5790d9580c81932b5bf700633114468da7b3412d69faa767daebf974f4586"
   license "GPL-3.0-or-later"
+  revision 1
   compatibility_version 1
 
   bottle do
