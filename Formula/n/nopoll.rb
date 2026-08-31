@@ -22,7 +22,7 @@ class Nopoll < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "233ad48b7c725a46695aa3b60261610281ffd81cb010f58fd089b2bd0c4fbbd1"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   def install
     system "./configure", *std_configure_args, "--disable-silent-rules"
