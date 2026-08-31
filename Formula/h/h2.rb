@@ -9,7 +9,7 @@ class H2 < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "25e30c35e2bec1dbb31e0312715d8f1bc79e1700b8eef3931b2257ba609d53f2"
+    sha256 cellar: :any_skip_relocation, all: "59f9ed0fd0eae88d83ffd6f2866d835298441422998eed6bcdf11e201c1cd944"
   end
 
   depends_on "openjdk"
