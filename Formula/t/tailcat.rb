@@ -6,6 +6,14 @@ class Tailcat < Formula
   license "BSD-3-Clause"
   head "https://github.com/tailscale/tailcat.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "386b6b41303e70f6f0cc6d435b4b91ac1ad7a5cef9ff315b3c31b269d6a86fa5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2cda9e2a3ad892217702ae774b9534af447e4f02d68681541c67c57186a1a272"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "68ffc0a6963ba301e252e36a98c3cab0ef063b28b0d5f770a3acc10781e6bdd2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c3d0c14524beb67b05b607cc489b3b030d205e4a00b8072b082af323a45cd2f7"
+    sha256 cellar: :any,                 x86_64_linux:  "5de470295fd11bc9b491ab0cfc3f621b9282474466d69f1ea8f133cabcefc699"
+  end
+
   depends_on "go" => :build
 
   def install
