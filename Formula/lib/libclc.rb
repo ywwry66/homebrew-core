@@ -12,12 +12,11 @@ class Libclc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b2bd33ec0c3983ca9e316d213d6af5b949fef9b620f14aaf70008d85a56bccbe"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b2bd33ec0c3983ca9e316d213d6af5b949fef9b620f14aaf70008d85a56bccbe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b2bd33ec0c3983ca9e316d213d6af5b949fef9b620f14aaf70008d85a56bccbe"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b2bd33ec0c3983ca9e316d213d6af5b949fef9b620f14aaf70008d85a56bccbe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2bd33ec0c3983ca9e316d213d6af5b949fef9b620f14aaf70008d85a56bccbe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d316e940d3fb558c1ec25794856203a2a1beea9b85b749c4e6a07eee26c38a1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7e44b6f6b9068aff1cdb19f2b081864f3abae5549a2d342000d31d12680848f0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5eb494ce128bcb046bcd0a3201359458cb84f167a4588072531c354bb3ac19f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d57e2acc89ab56c3caadf12467cc1cf9958f8b2903e876099a7f6c25fcbb260"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c20c30b1d3249dd94c55da1ed3c6da44cfb269e54f6e24534816ff1ddf853ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "957733cfe37485dcace943cb3ec74f0dd24735f962c47e5d03b4942790887c43"
   end
 
   depends_on "cmake" => :build
