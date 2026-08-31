@@ -8,7 +8,7 @@ class GradleCompletion < Formula
   head "https://github.com/gradle/gradle-completion.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "06f278725faa897d62f285c65c4889fecc33cb8a267cc03c387c25f9531f1c42"
+    sha256 cellar: :any_skip_relocation, all: "0a2985133a86d63156145d7c4f5bd29830e481bd2359bf777bed7ec61b204f73"
   end
 
   def install
