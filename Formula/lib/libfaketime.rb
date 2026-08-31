@@ -1,8 +1,8 @@
 class Libfaketime < Formula
   desc "Report faked system time to programs"
   homepage "https://github.com/wolfcw/libfaketime"
-  url "https://github.com/wolfcw/libfaketime/archive/refs/tags/v0.9.12.tar.gz"
-  sha256 "4fc32218697c052adcdc5ee395581f2554ca56d086ac817ced2be0d6f1f8a9fa"
+  url "https://github.com/wolfcw/libfaketime/archive/refs/tags/v0.9.13.tar.gz"
+  sha256 "8e56deeb805682b025107e095f1d94a6ea677472f05824cd475f5c5e6e1a5ddf"
   license "GPL-2.0-only"
   head "https://github.com/wolfcw/libfaketime.git", branch: "master"
 
@@ -48,16 +48,18 @@ end
 
 __END__
 diff --git a/src/Makefile.OSX b/src/Makefile.OSX
-index 405c021..dae9880 100644
+index 654fa35..00d50e8 100644
 --- a/src/Makefile.OSX
 +++ b/src/Makefile.OSX
-@@ -72,8 +72,7 @@ LIB_LDFLAGS += -dynamiclib -current_version 0.9.12 -compatibility_version 0.7
- ARCH := $(shell uname -m)
-
+@@ -80,10 +80,7 @@ all: ${LIBS} ${BINS}
+ 
  ifeq ($(ARCH),arm64)
--    CFLAGS += -arch arm64e -arch arm64
--    CFLAGS += -fptrauth-calls -fptrauth-returns
-+    CFLAGS += -arch arm64
- endif
-
- SONAME = 1
+ libfaketime.${SONAME}.dylib: libfaketime.c ft_sem.c
+-	${CC} -o libfaketime.arm64e.dylib ${CFLAGS} -arch arm64e -fptrauth-calls -fptrauth-returns ${LDFLAGS} ${LIB_LDFLAGS} -install_name ${PREFIX}/lib/faketime/$@ libfaketime.c ft_sem.c
+-	${CC} -o libfaketime.arm64.dylib ${CFLAGS} -arch arm64 ${LDFLAGS} ${LIB_LDFLAGS} -install_name ${PREFIX}/lib/faketime/$@ libfaketime.c ft_sem.c
+-	lipo -create -output $@ libfaketime.arm64e.dylib libfaketime.arm64.dylib
+-	rm libfaketime.arm64e.dylib libfaketime.arm64.dylib
++	${CC} -o $@ ${CFLAGS} -arch arm64 ${LDFLAGS} ${LIB_LDFLAGS} -install_name ${PREFIX}/lib/faketime/$@ libfaketime.c ft_sem.c
+ 
+ faketime: faketime.c ft_sem.c
+ 	${CC} -o $@ ${CFLAGS} -arch arm64e -arch arm64 ${LDFLAGS} faketime.c ft_sem.c
