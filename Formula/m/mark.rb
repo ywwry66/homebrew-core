@@ -7,11 +7,11 @@ class Mark < Formula
   head "https://github.com/kovetskiy/mark.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fcd339faabe943d37147713864e8fc0d03cdb6470caf632d49496145490ac8bc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fcd339faabe943d37147713864e8fc0d03cdb6470caf632d49496145490ac8bc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fcd339faabe943d37147713864e8fc0d03cdb6470caf632d49496145490ac8bc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d7cf1ca722ee3ca05441baa663abe2bd722af20d9e42ad195f7a63505aa8753"
-    sha256 cellar: :any,                 x86_64_linux:  "36c5cf7006fff4dd45c669ab70d35efda3d3fc8caecf5e9d987dc224e157f455"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6804e5630971b280839c7ae8288dc3b0f4cc245d80193aa5f43b791e928170d0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6804e5630971b280839c7ae8288dc3b0f4cc245d80193aa5f43b791e928170d0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6804e5630971b280839c7ae8288dc3b0f4cc245d80193aa5f43b791e928170d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "60b28123888b2dcf78b2be7864d8f6a07001303a318f1092ea57614b7fea1019"
+    sha256 cellar: :any,                 x86_64_linux:  "5974a3d51fc2da56dee1ad2d47e5da3b4f5246354242498a0b7c87e887835164"
   end
 
   depends_on "go" => :build
