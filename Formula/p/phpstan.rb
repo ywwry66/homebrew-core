@@ -6,7 +6,7 @@ class Phpstan < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d1d663a2ffd951162bee723a2a14148999120ab8b749bbb7ed826b5e45b5c431"
+    sha256 cellar: :any_skip_relocation, all: "95e38f2632846b10ecd329930c07f78c1b695f90e0b3a83844af974c10929e5c"
   end
 
   depends_on "php" => :test
