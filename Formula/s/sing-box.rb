@@ -1,8 +1,8 @@
 class SingBox < Formula
   desc "Universal proxy platform"
   homepage "https://sing-box.sagernet.org"
-  url "https://github.com/SagerNet/sing-box/archive/refs/tags/v1.13.21.tar.gz"
-  sha256 "c994018d7c2a8fc9fcf6080e4b9cc4f2f915e755342238b77e46fc0806fe96db"
+  url "https://github.com/SagerNet/sing-box/archive/refs/tags/v1.14.0.tar.gz"
+  sha256 "87baf6852e37941cbe40bdd94bec81c957c88a56751cecd6bbf0e6108bc69398"
   license "GPL-3.0-or-later"
   head "https://github.com/SagerNet/sing-box.git", branch: "testing"
 
@@ -32,8 +32,8 @@ class SingBox < Formula
   resource "cronet-go" do
     # Using git checkout for submodules
     url "https://github.com/sagernet/cronet-go.git",
-        revision: "ec9a39c5ba3b4a8d625ede04deaf3c9020afb916"
-    version "ec9a39c5ba3b4a8d625ede04deaf3c9020afb916"
+        revision: "45832ab074849607406baa3e3a2c4660274602ed"
+    version "45832ab074849607406baa3e3a2c4660274602ed"
 
     livecheck do
       url "https://raw.githubusercontent.com/SagerNet/sing-box/v#{LATEST_VERSION}/.github/CRONET_GO_VERSION"
@@ -78,15 +78,6 @@ class SingBox < Formula
   def install
     resource("cronet-go").stage("cronet-go")
     resource("gn").stage("cronet-go/naiveproxy/src/gn")
-
-    # Work around Chromium build system only supporting development Clang
-    # TODO: Remove when LLVM 23 is available
-    inreplace "cronet-go/naiveproxy/src/build/config/compiler/BUILD.gn" do |s|
-      s.gsub! "cflags += [ \"-fno-lifetime-dse\" ]", ""
-      s.gsub! "cflags += [ \"-fdiagnostics-show-inlining-chain\" ]", ""
-    end
-    inreplace "cronet-go/naiveproxy/src/build/config/sanitizers/sanitizers.gni",
-              "\"-fsanitize-ignore-for-ubsan-feature=${invoker.sanitizer}\",", ""
 
     # Source build libcronet.a and replace cronet-go to use it
     arch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s
