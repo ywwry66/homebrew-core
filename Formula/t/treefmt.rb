@@ -1,8 +1,8 @@
 class Treefmt < Formula
   desc "One CLI to format the code tree"
   homepage "https://treefmt.com/latest/"
-  url "https://github.com/numtide/treefmt/archive/refs/tags/v2.5.0.tar.gz"
-  sha256 "0d30d2d2a0faf642f8c13c00b7e71a58e4e72f0c403a0e478caea4ab596ad8f8"
+  url "https://github.com/numtide/treefmt/archive/refs/tags/v2.6.0.tar.gz"
+  sha256 "90993f858b376c0a0ca49920b9679dc774107a96fad8ffc3808809c6a82f4ece"
   license "MIT"
   head "https://github.com/numtide/treefmt.git", branch: "main"
 
@@ -25,7 +25,9 @@ class Treefmt < Formula
 
   test do
     output = shell_output("#{bin}/treefmt 2>&1", 1)
-    assert_match "failed to find treefmt config file: could not find [treefmt.toml .treefmt.toml]", output
+    assert_match "failed to find treefmt config file: could not find " \
+                 "[treefmt.toml .treefmt.toml .config/treefmt.toml]",
+                 output
     assert_match version.to_s, shell_output("#{bin}/treefmt --version")
   end
 end
