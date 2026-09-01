@@ -7,12 +7,11 @@ class CargoGenerate < Formula
   head "https://github.com/cargo-generate/cargo-generate.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4ed7ccd776762896cae329061f28894faa5878c1c4253df6dc70c6d459afb14c"
-    sha256 cellar: :any, arm64_sequoia: "6dc62f8cdba9d01bf911b9cee55ee0a3c34d1aa9ff52167459a145a55ed711a8"
-    sha256 cellar: :any, arm64_sonoma:  "68869fee25e58c1cc3cb6b3a5204fdadde090c07a8c9667e812753f49880bd75"
-    sha256 cellar: :any, sonoma:        "70b2fedede54de683de486cb11fae2651d602cf69399d2b756a98d23320bdfef"
-    sha256 cellar: :any, arm64_linux:   "14a37cdeba8a4c6bf0e3b1fa948d2bdfbc04e11bce7f318f99e8a5370a40bd1a"
-    sha256 cellar: :any, x86_64_linux:  "96a2e01e1b04b381fd598293afe428585e30ea823ca676500b6dba1ddaba458b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f1e27cfe217f1c56ca1f32071c5aa406ddd458c8bdd86e68de6c216cdf9ac371"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "76f369f6b0f302867029e80ff35401eb42454d64a94fc847b68f50e2b5289f7d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d7c569b36512ee7cffc2e527e37bcf4204cc046f88767e442a11048b9cd73120"
+    sha256 cellar: :any,                 arm64_linux:   "3ef72c55fc567bf6dbe2126c07fdd0f2f3a3d62313d1e50ae4abc4523e45ef28"
+    sha256 cellar: :any,                 x86_64_linux:  "27afafce25134342b371d9d83dedcf6d9651553383a375338dc777af89df49aa"
   end
 
   depends_on "rust" => :build
