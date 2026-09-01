@@ -11,11 +11,11 @@ class Harlequin < Formula
   no_autobump! because: "has non-PyPI resources"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "99391d0d99a6f8144ff8838f31d178078204bc4d26826e35b6ac0b44315ff1b8"
-    sha256 cellar: :any, arm64_sequoia: "32897628e3c2d18bbfbdf6617dd0db79c14cb46f8566646d156f439d14ca6d45"
-    sha256 cellar: :any, arm64_sonoma:  "3949d3b079bcc9c5e5e9ec134f63fc2cc04f0b32fdf764b209ae55ffc002e3bd"
-    sha256 cellar: :any, arm64_linux:   "baa5edfabfd724366b496c59ee1e7d84c3f40fd8196aef78d43feb028e2e56c1"
-    sha256 cellar: :any, x86_64_linux:  "2f5927834a7aba39b2ac2e31ed467de12eea50b35bdac25fa17ebdc23a3f81d6"
+    sha256 cellar: :any, arm64_tahoe:   "48354993aabd5b220b0a282015ac8b390540cc57b9e2dba0fb49bb204972eac6"
+    sha256 cellar: :any, arm64_sequoia: "1c35e8783a491bbae459142101dd9aa58754d2d6bea3969d9976887dfc8ac61c"
+    sha256 cellar: :any, arm64_sonoma:  "9b185fcfda06fd1f67eb40b1b0d436345ebff997481c96bd45fa870a3634faa1"
+    sha256 cellar: :any, arm64_linux:   "df81b253bd152feb58513fff9b6eda897066624bda60fd805bd003e090f8397c"
+    sha256 cellar: :any, x86_64_linux:  "ee206e45cc6462b5be81f45970c6edbfa2ed276640f8bd90095999e42d860c20"
   end
 
   depends_on "cmake" => :build
