@@ -1,18 +1,17 @@
 class Kew < Formula
   desc "Command-line music player"
   homepage "https://github.com/ravachol/kew"
-  url "https://github.com/ravachol/kew/archive/refs/tags/v4.2.7.tar.gz"
-  sha256 "04e505bc7d9f9d13e65f1121556fffb14769f181961712c65732973982195577"
+  url "https://github.com/ravachol/kew/archive/refs/tags/v4.2.8.tar.gz"
+  sha256 "38b70431955c6977447eaa400d63eb78ae9adaa48649f7048461e4a675c5dcd0"
   license "GPL-2.0-or-later"
   head "https://github.com/ravachol/kew.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "a873612084526aa9e897100cd2f7ce60aa1f1b882b94bfa7f9748e1ab7e16726"
-    sha256 arm64_sequoia: "e73e0045f46c85a525f3073da45bee47593dc3c2bf734b4efcdab3255d9d7362"
-    sha256 arm64_sonoma:  "4c290189efbd517349c689a82d14759c5b86d78ebf329c9d8dff0446b9792604"
-    sha256 sonoma:        "4187891ce7b2eebd74ee610978cad0dee2cac8a2405b7221def646e235cfd084"
-    sha256 arm64_linux:   "d03e92b4bfcd1b7c6ad457792fd221a98757e42bcba64b1aeb8e4c4d5b4759b2"
-    sha256 x86_64_linux:  "441748fcb009c5976cdbae7dc33bf50f06cd004ceec6a22c9ad8ea2fe210545b"
+    sha256 arm64_tahoe:   "75e2950ecd5317b942cd245ca0667c1313f5faba36072ea1641630aee85bac33"
+    sha256 arm64_sequoia: "ef55017b01ee4e2ed50942e7a49d50c409c7cb0fd8a5ee580d22a95fc0d97a0c"
+    sha256 arm64_sonoma:  "acf70572b35016bd63fcd8dee752112cfe1a4299abf11cc224bc46d3e4ed2772"
+    sha256 arm64_linux:   "af8547261f4598459de8893e405b61e56fbf915419615a8712edffd2676dcb4c"
+    sha256 x86_64_linux:  "16700b8475a28fa530a3642ff8dfea1b8c1c0010e7fc03af73d2b8296c8798a5"
   end
 
   depends_on "pkgconf" => :build
@@ -35,14 +34,6 @@ class Kew < Formula
 
   on_linux do
     depends_on "libnotify"
-  end
-
-  # Fix crash when D-Bus session bus is unavailable
-  patch do
-    url "https://github.com/ravachol/kew/commit/a57240bc8ff60a80ea151e0ce842104ce99496fb.patch?full_index=1"
-    sha256 "98eb8b9217ff2a2c125108128b03160b730f45d33dfb96d967c5b355a81f3c58"
-    type :unofficial
-    resolves "https://github.com/ravachol/kew/pull/564"
   end
 
   def install
