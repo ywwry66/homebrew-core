@@ -1,17 +1,16 @@
 class McpServerKubernetes < Formula
   desc "MCP Server for kubernetes management commands"
   homepage "https://github.com/Flux159/mcp-server-kubernetes"
-  url "https://registry.npmjs.org/mcp-server-kubernetes/-/mcp-server-kubernetes-4.1.4.tgz"
-  sha256 "290ccc8eddc31a70a25deec7e4b329d4982a3a8a368e265610088986b0177da9"
+  url "https://registry.npmjs.org/mcp-server-kubernetes/-/mcp-server-kubernetes-4.1.5.tgz"
+  sha256 "837b119cec9a95c8eb991cbf6641d172b6d3943adb5df57a27e86b22d9eba3ff"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "de497759a60b2eeb52a2e80b3a7a4c0a4f52976f78e20cc86cd22eda09a13543"
-    sha256 cellar: :any, arm64_sequoia: "de497759a60b2eeb52a2e80b3a7a4c0a4f52976f78e20cc86cd22eda09a13543"
-    sha256 cellar: :any, arm64_sonoma:  "de497759a60b2eeb52a2e80b3a7a4c0a4f52976f78e20cc86cd22eda09a13543"
-    sha256 cellar: :any, sonoma:        "b672e1c3471c846fb476ff528e274f38142967254a192da4c626615a9d83f1cb"
-    sha256 cellar: :any, arm64_linux:   "853afb3a0b89572b694c7328e13838c565926d81dd98f51320e1fd605cf86d72"
-    sha256 cellar: :any, x86_64_linux:  "e2769380c590c541aa331686b79152b386a80b3e46ba938ec9e619552bfdb627"
+    sha256 cellar: :any, arm64_tahoe:   "5314f3d114de0384a793438e96f370035615421ec9546e9fe64f30fa840d5e2d"
+    sha256 cellar: :any, arm64_sequoia: "5314f3d114de0384a793438e96f370035615421ec9546e9fe64f30fa840d5e2d"
+    sha256 cellar: :any, arm64_sonoma:  "5314f3d114de0384a793438e96f370035615421ec9546e9fe64f30fa840d5e2d"
+    sha256 cellar: :any, arm64_linux:   "ddbd7668715be0e6cc4eda03690733a14d5133689949600f0fb732c7f239d3fc"
+    sha256 cellar: :any, x86_64_linux:  "18153584a5890a4cad7609988dc3ba3b8bd2b57029446df5a08332d582564195"
   end
 
   depends_on "node"
