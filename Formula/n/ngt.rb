@@ -11,12 +11,11 @@ class Ngt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "95e86a836368dd32b795b28cdcb5deaa4e3e70fd03649d8313c8e738fd245aaf"
-    sha256 cellar: :any,                 arm64_sequoia: "674e2a599257266ead781e3d9a9a6a7ac0ddeb516852e8d99e2799ed91530e2b"
-    sha256 cellar: :any,                 arm64_sonoma:  "44bafbfe3d2cd2ed9c24e1e050364488226c8cefccbd0c3dfcf8e1e24569d58f"
-    sha256 cellar: :any,                 sonoma:        "c485400757cb3d361c86393c1f696e8b89f7d80bc4ac3d99606cd1a73b46280d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c38b28dc90ca9400c5c688ae188b1b0e0a9df4ceecbfc54c22402235d3f27f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6fef73a749fca9d0d24fe2200a9f7c0f1d46a4cf1c4f679e97d255fae0b7fcc8"
+    sha256 cellar: :any, arm64_tahoe:   "73cc2257068a41fc0e4b24d49812feeb6cd4f99b7cddd816885d484822f93552"
+    sha256 cellar: :any, arm64_sequoia: "9daeff0a4f46bb36f5097856a48ff99891a1d810f338ee6210936a2e1d26392f"
+    sha256 cellar: :any, arm64_sonoma:  "a0164c7bd4e9df6c88bb51999e75a33e95da8c5c04e1ca8b8d4252fcbc559d28"
+    sha256 cellar: :any, arm64_linux:   "127ae7b4b02ca58cdddb58f1986f36a54c24776a5694c4a0666f3e234a771553"
+    sha256 cellar: :any, x86_64_linux:  "ea501a816f18b1f5658c6532aa1c3c0f2bd23b6bbac1bcf6fdcf3eeb678fdbb1"
   end
 
   depends_on "cmake" => :build
