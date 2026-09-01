@@ -7,11 +7,11 @@ class ChiselTunnel < Formula
   head "https://github.com/jpillora/chisel.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ad5d2047cd55542c7bb93504bfebfff4ab761b4b62ffb84967039f0feac00199"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad5d2047cd55542c7bb93504bfebfff4ab761b4b62ffb84967039f0feac00199"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad5d2047cd55542c7bb93504bfebfff4ab761b4b62ffb84967039f0feac00199"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1962a1f29aa7937421ac5587d80cc4fc90e0afe52c403b2aec641e056f5d8473"
-    sha256 cellar: :any,                 x86_64_linux:  "05c553616548db7ec817e3d6ac584dd02a8bc1bb90e4f6394b39cb2fb21dc208"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c87771870461e2fae82e20dc4a3be3d885eb0a7528bae6b5879b0d283fb4474d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c87771870461e2fae82e20dc4a3be3d885eb0a7528bae6b5879b0d283fb4474d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c87771870461e2fae82e20dc4a3be3d885eb0a7528bae6b5879b0d283fb4474d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "767ccd52ddf31e579637b24f08ae369f9397e5e59451277d4fc4998090da53c4"
+    sha256 cellar: :any,                 x86_64_linux:  "c6f512bf8ee8d98be462dc08661a23f807a4db91ef3f1eecaa018095d73edd34"
   end
 
   depends_on "go" => :build
