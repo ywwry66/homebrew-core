@@ -1,8 +1,8 @@
 class Gpgmepp < Formula
   desc "C++ bindings for gpgme"
   homepage "https://www.gnupg.org/related_software/gpgme/"
-  url "https://www.gnupg.org/ftp/gcrypt/gpgmepp/gpgmepp-2.1.0.tar.xz"
-  sha256 "57f804468f0204504b172c6b139cb05124b4263be7ad514932c7c4c5062a16e2"
+  url "https://www.gnupg.org/ftp/gcrypt/gpgmepp/gpgmepp-2.2.0.tar.xz"
+  sha256 "6651c5f7f801543d5b676719df9fec8053b0a6f5aba40b98ca0d2bee11136f30"
   license "LGPL-2.1-or-later"
   compatibility_version 1
 
