@@ -1,8 +1,8 @@
 class Ngt < Formula
   desc "Neighborhood graph and tree for indexing high-dimensional data"
   homepage "https://github.com/NGT-labs/NGT"
-  url "https://github.com/NGT-labs/NGT/archive/refs/tags/v2.7.4.tar.gz"
-  sha256 "0faad6f5185e5c66868c8907c4dd91f8776782aa81ba1abaeefe3b0774d6e170"
+  url "https://github.com/NGT-labs/NGT/archive/refs/tags/v2.8.0.tar.gz"
+  sha256 "37c7538f128f2ee8ce45e93e5a5e22bf2539935a635e4f80a960e4a1b2e29b59"
   license "Apache-2.0"
 
   livecheck do
@@ -27,13 +27,6 @@ class Ngt < Formula
 
   on_linux do
     depends_on "openblas"
-  end
-
-  patch do
-    url "https://github.com/NGT-labs/NGT/commit/ddb97ff021bab08b3bae6144d5971a1616e1477c.patch?full_index=1"
-    sha256 "3d622749ca18e34c11bb3ef3ffe61e4b534231937e4c0a321b62dec6cf21a3a0"
-    type :backport
-    resolves "https://github.com/NGT-labs/NGT/pull/194"
   end
 
   def install
