@@ -1,8 +1,8 @@
 class Kew < Formula
   desc "Command-line music player"
   homepage "https://github.com/ravachol/kew"
-  url "https://github.com/ravachol/kew/archive/refs/tags/v4.2.7.tar.gz"
-  sha256 "04e505bc7d9f9d13e65f1121556fffb14769f181961712c65732973982195577"
+  url "https://github.com/ravachol/kew/archive/refs/tags/v4.2.8.tar.gz"
+  sha256 "38b70431955c6977447eaa400d63eb78ae9adaa48649f7048461e4a675c5dcd0"
   license "GPL-2.0-or-later"
   head "https://github.com/ravachol/kew.git", branch: "main"
 
@@ -35,14 +35,6 @@ class Kew < Formula
 
   on_linux do
     depends_on "libnotify"
-  end
-
-  # Fix crash when D-Bus session bus is unavailable
-  patch do
-    url "https://github.com/ravachol/kew/commit/a57240bc8ff60a80ea151e0ce842104ce99496fb.patch?full_index=1"
-    sha256 "98eb8b9217ff2a2c125108128b03160b730f45d33dfb96d967c5b355a81f3c58"
-    type :unofficial
-    resolves "https://github.com/ravachol/kew/pull/564"
   end
 
   def install
