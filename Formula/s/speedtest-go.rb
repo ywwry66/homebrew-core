@@ -7,11 +7,11 @@ class SpeedtestGo < Formula
   head "https://github.com/showwin/speedtest-go.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "484fcfd3ce7d194a61e8d267b9977923e9dc3bf1ca2e6a35116438addee8adf1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "484fcfd3ce7d194a61e8d267b9977923e9dc3bf1ca2e6a35116438addee8adf1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "484fcfd3ce7d194a61e8d267b9977923e9dc3bf1ca2e6a35116438addee8adf1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a37a7c4c5494560ae81eecf3e6ac6d9ca15e6d3ffb93292c898cb4f3a6d527d"
-    sha256 cellar: :any,                 x86_64_linux:  "d1cce4a1844e43ba5d95ff69598c417a0c5316a2830ab9e53b2acd05c6e013a5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c460180f156e1e70209edc76a39348297fc69452767167a8d39623305ece5703"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c460180f156e1e70209edc76a39348297fc69452767167a8d39623305ece5703"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c460180f156e1e70209edc76a39348297fc69452767167a8d39623305ece5703"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c44d2c556d2ee1e5a06a852b315d70505f48367d659f35bc3959036e61ea1b05"
+    sha256 cellar: :any,                 x86_64_linux:  "c791f67a07932b13b1f974248fd2136cb0ecde7258bca39eb7efa346f25dbf28"
   end
 
   depends_on "go" => :build
