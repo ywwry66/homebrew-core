@@ -1,8 +1,8 @@
 class Httrack < Formula
   desc "Website copier/offline browser"
   homepage "https://www.httrack.com/"
-  url "https://github.com/xroche/httrack/releases/download/3.49.25/httrack-3.49.25.tar.gz"
-  sha256 "dad5657be5ff39e9b95ceb0a1f2d1495d389f036dc580970e481a4ed3455993a"
+  url "https://github.com/xroche/httrack/releases/download/3.50.0/httrack-3.50.0.tar.gz"
+  sha256 "8d86694cc84cf25c00fc544c090c3c0605102be9b30020f28533ab3c4f7008fe"
   license "GPL-3.0-or-later" => { with: "openvpn-openssl-exception" }
 
   bottle do
@@ -21,6 +21,8 @@ class Httrack < Formula
 
   def install
     ENV.deparallelize
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}" if OS.mac?
+
     system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make", "install"
     # Don't need Gnome integration
