@@ -7,14 +7,11 @@ class Libfaketime < Formula
   head "https://github.com/wolfcw/libfaketime.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "bcd23642919c6bacca9c7d75e1c473fdf1f86f5e748503f089fe9324eac7c369"
-    sha256 arm64_sequoia: "c030c10a9d07fc14da42e60bcc11d8a376439b7bffd59e419bbb76abd82727f9"
-    sha256 arm64_sonoma:  "6e77335420fdca3480dbe4a8d8c208700d098986d2a1919b090d18e894ee1f68"
-    sha256 arm64_ventura: "ce35c8e69155c44bb30e3966ad6f61d4f8b6e6d4d75205f9d243cf1fea4b92f1"
-    sha256 sonoma:        "73638e62bae905cfe0e2484f8c8a0a01ad064cdd68c5c55b8708a2ee8ebe9720"
-    sha256 ventura:       "fb1d11b731aaf10df060a0a3b1376f55cd1e37924494ff20732bd62db0a3ff7d"
-    sha256 arm64_linux:   "600785347f8e59a106e286b38c4fd82a2ba422be0fd6d453baf8d71179f56da4"
-    sha256 x86_64_linux:  "feb25281dd8aec835459b0381734f5a2cd877738c23da58d636d2b7d95bc9a0f"
+    sha256 arm64_tahoe:   "1bea320380706963c4a0898c7f29deaca81d86d1adf68bb6cab7a5aa0fb75250"
+    sha256 arm64_sequoia: "575600c6defeadc47186bf1dcfb51ab959cd5bc8bd39da52ed85642e9a689ffd"
+    sha256 arm64_sonoma:  "970c857258b8298e7a7f4f1dd6c436c85066706729506276f8fafeebf3033a5a"
+    sha256 arm64_linux:   "cf567f1c26a12ece368764d52060daf707af194131a57b58b6be51644ef75b75"
+    sha256 x86_64_linux:  "ad9bcb5cc3764a2b6ef502578051757abd0e4b3a9bde35d42838ac84e20e85e6"
   end
 
   on_macos do
