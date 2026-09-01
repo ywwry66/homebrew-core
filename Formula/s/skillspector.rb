@@ -7,6 +7,14 @@ class Skillspector < Formula
   sha256 "9a89a4e057bcf85bb75750b7791f4ecf262c98e1f8653e10533ec06e61772ed9"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any, arm64_tahoe:   "3214528824fb4ca30993d77dbd368febfcbce884ecb7dc2e2820844e70c259ef"
+    sha256 cellar: :any, arm64_sequoia: "32e9a5c9e79753a87b4d652ef7e65dc83a8999f3b49edc4570d292ba284e99ff"
+    sha256 cellar: :any, arm64_sonoma:  "63cdec420284e9b0716f94a99e8d6588cef23037a3b808eb18338353f8c4dfb5"
+    sha256 cellar: :any, arm64_linux:   "e8edb16d9ee759d059f82a79dd71dfcba13efa687f1206e3a5d100305588cb11"
+    sha256 cellar: :any, x86_64_linux:  "0d9ff0dff99a918ce0a596040eb0e592387bb8e257962e5f826dd368c6e3b5c3"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
